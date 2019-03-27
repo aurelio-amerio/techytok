@@ -1,0 +1,9 @@
+Aurelio Amerio:
+  name        : "Aurelio Amerio"
+  bio         : "Studente di fisica magistrale all'università di Torino, si diverte con esperimenti informatici"
+  avatar      : "/assets/images/avatar/aure.jpg"
+  location         : "Torino"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:aure.amerio@gmail.com"
