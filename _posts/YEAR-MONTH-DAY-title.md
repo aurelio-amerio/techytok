@@ -1,4 +1,6 @@
 ---
+layout: post
+title:  "Un post di prova"
 excerpt: "A unique line of text to describe this post that will display in an archive listing and meta description with SEO benefits."
 search: true #questa pagina non deve essere indicizzata
 # author_profile: true
