@@ -1,12 +1,14 @@
 ---
 layout: home
 title: Home Page
-header: "http://cdn.wonderfulengineering.com/wp-content/uploads/2014/06/galaxy-wallpapers-2.jpg"
+header:
+  image: /assets/images/avatar/aure.jpg
 author_profile: false
 ---
 
-## This is my homepage
+## Questa è la mia homepage
 
-I have created this page to show that the site works
+Ho creato questa homepage come prova per vedere se il sito funziona, bella la galassia, vero?
 
-hello world
+Se ti piacce eccone un'altra!
+![image-center](http://allpicts.in/download/8708/2016/05/Crab_Nebula_for_Cool_Galaxy_Backgrounds-1920x1080.jpg){: .align-center}
