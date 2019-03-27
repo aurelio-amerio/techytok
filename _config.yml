@@ -16,13 +16,13 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "it-IT"
-title                    : "My Portfolio"
+title                    : "TechyTok"
 title_separator          : "-"
 name                     : "Aurelio Amerio"
-description              : "An amazing website."
+description              : "Diario di bordo dei miei progetti ed esperimenti"
 url                      : "https://aurelio-amerio.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : aurelio-amerio/aurelio-amerio.github.io# GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : aurelio-amerio/aurelio-amerio.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -60,8 +60,8 @@ staticman:
         format           : # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
   endpoint               : # URL of your own deployment with trailing slash, will fallback to the public instance
 reCaptcha:
-  siteKey                :
-  secret                 :
+  siteKey                : 6LfGWZoUAAAAADZupLbAt0ay3pQN9kIHIQAjbWH5
+  secret                 : 6LfGWZoUAAAAACrj6wFbTcpmuT82XSr3T8rIxqQ
 atom_feed:
   path                   : # blank (default) uses feed.xml
 search                   : # true, false (default)
@@ -108,9 +108,9 @@ analytics:
 author:
   name             : "Aurelio Amerio"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  bio              : "Studente di fisica magistrale all'università di Torino, si diverte con esperimenti informatici"
+  location         : "Torino"
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
