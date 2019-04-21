@@ -108,7 +108,7 @@ analytics:
 author:
   name             : "Aurelio Amerio"
   avatar           : "/assets/images/avatar/foto_profilo.jpg"
-  bio              : "Studente di fisica magistrale all'università di Torino, si diverte con esperimenti informatici"
+  bio              : "Master student in Theoretical Physics at the University of Turin, he likes to experiment with new programming techniques"
   location         : "Torino"
   email            :
   links:
@@ -219,6 +219,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
+permalink: /about/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
