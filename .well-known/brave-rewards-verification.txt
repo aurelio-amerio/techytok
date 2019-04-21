@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: aurelio-amerio.github.io
+Token: 9d28e5d99542d569b3693d52dfd4c9d6b8d5d5065a12139b787a67de9a00d691
