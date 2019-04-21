@@ -19,7 +19,7 @@ locale                   : "en-GB"
 title                    : "TechyTok"
 title_separator          : "-"
 name                     : "Aurelio Amerio"
-description              : "Diario di bordo dei miei progetti ed esperimenti"
+description              : "A logbook for my little projects and ideas"
 url                      : "https://aurelio-amerio.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : aurelio-amerio/aurelio-amerio.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -107,7 +107,7 @@ analytics:
 # Site Author
 author:
   name             : "Aurelio Amerio"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/avatar/foto_profilo.jpg"
   bio              : "Studente di fisica magistrale all'università di Torino, si diverte con esperimenti informatici"
   location         : "Torino"
   email            :
