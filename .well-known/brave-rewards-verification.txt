@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: techytok.ml
-Token: 0e4f2dd612d7c387c133ded23a3f2d121a0800238c1163b1a03b44cc30c92d32
