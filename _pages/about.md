@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "About me"
+permalink: /about/
 ---
 I am a Master student in theoretical physics and astrophysics at the University of Turin. I aim to become a researcher in the field of astroparticle physics and, in particular, I'd like to research Dark Matter.
 
