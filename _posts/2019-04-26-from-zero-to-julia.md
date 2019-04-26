@@ -433,4 +433,6 @@ Julia will download some initial packages and compile them, and after that you s
 
 You have successfully set up Julia to work with a Docker container. Now, when you want to start coding with Julia, you simply need start you containers either via DockStation or `docker-compose up` and connect to them using Atom and the Juno IDE.
 
+You can find all the code for this tutorial at <https://github.com/aurelio-amerio/techytok-examples/tree/master/julia-docker> and the docker hub repository at <https://cloud.docker.com/repository/docker/aureamerio/techytok-examples/general> 
+
 Have fun exploring Julia! I hope you enjoyed this tutorial, if you liked it stay tuned for further guides here, at TechyTok!
