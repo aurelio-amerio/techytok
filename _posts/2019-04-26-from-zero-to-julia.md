@@ -5,9 +5,6 @@ header:
 excerpt: "A tutorial for the installation of Docker and Julia and the setup of the Juno IDE using a dockerized Julia container "
 permalink: /from-zero-to-julia/
 ---
-
-# From zero to Julia!
-
 In this guide we will learn how to setup a fully containerized development environment for the Julia language.
 
 We will go through the following steps:
@@ -86,7 +83,7 @@ Let's start writing our **Dockerfile**. First create an empty file, named **Dock
 
 In order to have a working Julia environment, we simply need to use the official Julia docker image, like this
 
-```dockerfile {.line-numbers}
+```dockerfile
 FROM julia:1.0.3
 MAINTAINER Aurelio Amerio
 ```
