@@ -2,6 +2,7 @@
 title: "From zero to Julia!"
 header:
   image: /assets/images/2019/04/26/Docker-julia.png
+  teaser: /assets/images/2019/04/26/teaser.png
 excerpt: "A tutorial for the installation of Docker and Julia and the setup of the Juno IDE using a dockerized Julia container "
 permalink: /from-zero-to-julia/
 ---
@@ -22,11 +23,11 @@ But first, **what are Julia and Docker?** The following two paragraphs are meant
 
 > [Julia](#<https://julialang.org/>) is a high-level dynamic programming language designed to address the needs of high-performance numerical analysis and computational science, without the typical need of separate compilation to be fast, while also being effective for general-purpose programming, web use or as a specification language.
 
-When programming, especially for scientific computations, one has to come into terms with both the complexity of  the problem and the task of writing a good code. In physics, we want our code to run fast, but as we are not programmers we want also to quickly build a program to test new ideas. 
+When programming, especially for scientific computations, one has to come into terms with both the complexity of  the problem and the task of writing a good code. In physics, we want our code to run fast, but as we are not programmers we want also to quickly build a program to test new ideas.
 
-**Python** is considered one of the best languages (in the scientific world) for its simplicity and the vast community, but it tends to be slow and it doesn't always use all the computational resource we have at hand. Thus, core libraries for computation are implemented using "low level languages" such as C++ or Fortran, and they are then called by Python functions. 
+**Python** is considered one of the best languages (in the scientific world) for its simplicity and the vast community, but it tends to be slow and it doesn't always use all the computational resource we have at hand. Thus, core libraries for computation are implemented using "low level languages" such as C++ or Fortran, and they are then called by Python functions.
 
-Languages like **C++** and **Fortran** can be blazing fast, as the binaries are optimized for the machine they run on, but on the other hand it is difficult to code fluently in those languages. That's the reason why ideas are often quickly prototyped using Python and then they are re-implemented using C++ for deployment. 
+Languages like **C++** and **Fortran** can be blazing fast, as the binaries are optimized for the machine they run on, but on the other hand it is difficult to code fluently in those languages. That's the reason why ideas are often quickly prototyped using Python and then they are re-implemented using C++ for deployment.
 
 That is the so called **two language problem**, i.e the need to write the code two times, to cut it short.
 
@@ -40,9 +41,9 @@ If you want to learn more about Julia, you can look at its [website](#<https://j
 
 > [Docker](#<https://www.docker.com/why-docker>) a container technology for Linux that allows a developer to package up an application with all of the parts it needs.
 
-Think of it as a Virtual Machine on steroids: it enables you to craft a developing environment in minutes with exactly the specs you need. 
+Think of it as a Virtual Machine on steroids: it enables you to craft a developing environment in minutes with exactly the specs you need.
 
-What I think is extraordinary about Docker, is that once you have built an image, you can install it on any machine running docker, and you can be sure that if you code works on your docker container, it will work anywhere else if you run it inside the same image. 
+What I think is extraordinary about Docker, is that once you have built an image, you can install it on any machine running docker, and you can be sure that if you code works on your docker container, it will work anywhere else if you run it inside the same image.
 
 This feature is extraordinary important, if you need to develop a program to analyze some data and you need to run it on a cluster: once you have submitted your code it will be run, and if there are some bugs it means that you have wasted computational power and possibly your research funds!
 
@@ -52,7 +53,7 @@ If you want to read more about docker, you can look at the project's [webiste](#
 
 ![image-center](/assets/images/2019/04/26/docker.png){: .align-center}
 
-First we need to install Docker. I will not delve into the details as the procedure is well explained [here](#<https://www.docker.com/get-started>) on the Docker website. 
+First we need to install Docker. I will not delve into the details as the procedure is well explained [here](#<https://www.docker.com/get-started>) on the Docker website.
 
 If you are using **Windows** or **Mac**, I suggest that you install Docker for Windows/Mac.
 
@@ -75,7 +76,7 @@ This is an optional step, if you are already acquainted with Docker. DockStation
 
 ## Create a Julia container <a name="create-container"></a>
 
-Ok, now that we have set up docker and docker compose, it is time to create a container for Julia: here is where the magic lies! I won't go into the details of how to write a **dockerfile**, but I'll try to give you a flavour of it, in order to make you understands what's going on. 
+Ok, now that we have set up docker and docker compose, it is time to create a container for Julia: here is where the magic lies! I won't go into the details of how to write a **dockerfile**, but I'll try to give you a flavour of it, in order to make you understands what's going on.
 
 Let's start writing our **Dockerfile**. First create an empty file, named **Dockerfile**, then we need to open it and write a script which will build the docker container.
 
@@ -96,13 +97,13 @@ Now we need to install a series of Linux packages. In order to be able to connec
 #install required packages
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     apt-utils gcc g++ openssh-server cmake build-essential \
-    gdb gdbserver rsync vim locales 
+    gdb gdbserver rsync vim locales
 RUN apt-get install -y bzip2 wget gnupg dirmngr apt-transport-https \
 	ca-certificates tmux && \
     apt-get clean
 ```
 
-Here we update the list of the packages and then we install everything we need. 
+Here we update the list of the packages and then we install everything we need.
 
 Note that after we have installed everything, the `apt-get clean ` command is issued in order to free space. We should try to delete all the unnecessary files and keep the image as small as possible, when we are building a Docker container.
 
@@ -117,7 +118,7 @@ RUN mkdir /var/run/sshd && \
     mkdir /root/.ssh
 ```
 
-You should change the root password (`root_pwd`) on line 3 to something else, for safety reasons. Lines 3-4 are needed to fix permissions. 
+You should change the root password (`root_pwd`) on line 3 to something else, for safety reasons. Lines 3-4 are needed to fix permissions.
 
 Now we remove the leftovers and expose the ports of the ssh server and gbd server (c++ debugger):
 
@@ -129,7 +130,7 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 EXPOSE 22 7777
 ```
 
-Exposing a port means that I will be able to access services which listen to that port, in particular I will be able to ssh into the container. 
+Exposing a port means that I will be able to access services which listen to that port, in particular I will be able to ssh into the container.
 
 **Watch Out!** Usually, it is not needed to ssh into a container in order to get a bash shell. In this case, an ssh server is only needed because we want to connect to the container using Juno. As a rule of thumb, you shouldn't install ssh server into a container, if the container is not an ssh server itself.
 {: .notice--warning}
@@ -181,7 +182,7 @@ MAINTAINER Aurelio Amerio
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     apt-utils gcc g++ openssh-server cmake build-essential gdb \
-    gdbserver rsync vim locales 
+    gdbserver rsync vim locales
 RUN apt-get install -y bzip2 wget gnupg dirmngr apt-transport-https \
 	ca-certificates openssh-server tmux && \
     apt-get clean
@@ -243,7 +244,7 @@ If you don't want to build the image yourself, I have built it already and uploa
 
 ![image-center](/assets/images/2019/04/26/atom.png){: .align-center}
 
-Atom is a hackable text editor for the 21st Century! 
+Atom is a hackable text editor for the 21st Century!
 
 It is basically a text editor with support for syntax highlighting and open source plugins. It is made by github (for reference, this website is hosted at github pages) and it offers great flexibility: there is a set of plugins to create an ide for almost all programming languages!
 
@@ -275,7 +276,7 @@ First open the `file`→`settings` menu in atom and click on packages. Now searc
 
 ![image-center](/assets/images/2019/04/26/juno-setup-1.png){: .align-center}
 
-and click `Settings`. 
+and click `Settings`.
 
 Now scroll to the section called `Remote Options` and set the path to the Julia bin (see figure)
 
@@ -287,7 +288,7 @@ Now scroll to the section called `Remote Options` and set the path to the Julia 
 
 and tick `Use a persistent tmux session`, `Use ssh agent` and `Forward SSH Agent`.
 
-Now hit `ctrl+space` in order to open the `ftp-remote-edit` menu. You will be asked to set a password. You should remember that password as it will be used to secure the credentials of you ssh logins. 
+Now hit `ctrl+space` in order to open the `ftp-remote-edit` menu. You will be asked to set a password. You should remember that password as it will be used to secure the credentials of you ssh logins.
 
 Right click on the new tab in order to open the context menu:
 
@@ -313,7 +314,7 @@ If you have reached this point, and the build of your docker image is finished, 
 
 Now you can either create a docker compose project visually with DockStation, if you have installed it, or skip this step and use the [configuration file](#compose-file) which is provided at the end of this paragraph.
 
-First we need to start DockStation. If you are using DockStation version >1.5, you will be prompted to create an account (for free) or use it as guest. It is your choice, it will work fine in guest mode too. 
+First we need to start DockStation. If you are using DockStation version >1.5, you will be prompted to create an account (for free) or use it as guest. It is your choice, it will work fine in guest mode too.
 
 Add a new project:
 
@@ -400,13 +401,13 @@ services:
 
 If you don't want to use DockStation, you can start the container by:
 
-- opening a terminal (power shell) 
+- opening a terminal (power shell)
 - changing directory to the one which contains the `docker-compose.yml` file
-- typing the command `docker-compose up` 
+- typing the command `docker-compose up`
 
 ### Connect to Docker
 
-Now that docker is running, we shall go back to atom, open the `ftp-remote-edit tab` (`ctrl+space`) and click on julia-docker. 
+Now that docker is running, we shall go back to atom, open the `ftp-remote-edit tab` (`ctrl+space`) and click on julia-docker.
 
 ![image-center](/assets/images/2019/04/26/julia1.png){: .align-center}
 
@@ -432,6 +433,6 @@ Julia will download some initial packages and compile them, and after that you s
 
 You have successfully set up Julia to work with a Docker container. Now, when you want to start coding with Julia, you simply need start you containers either via DockStation or `docker-compose up` and connect to them using Atom and the Juno IDE.
 
-You can find all the code for this tutorial at <https://github.com/aurelio-amerio/techytok-examples/tree/master/julia-docker> and the docker hub repository at <https://cloud.docker.com/repository/docker/aureamerio/techytok-examples/general> 
+You can find all the code for this tutorial at <https://github.com/aurelio-amerio/techytok-examples/tree/master/julia-docker> and the docker hub repository at <https://cloud.docker.com/repository/docker/aureamerio/techytok-examples/general>
 
 Have fun exploring Julia! I hope you enjoyed this tutorial, if you liked it stay tuned for further guides here, at TechyTok!
