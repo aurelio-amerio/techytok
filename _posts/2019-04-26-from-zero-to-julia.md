@@ -1,8 +1,9 @@
 ---
 title: "From zero to Julia!"
 header:
-  image: /assets/images/2019/04/26/Docker-julia.png
-  teaser: /assets/images/2019/04/26/teaser.png
+  image: "/assets/images/2019/04/26/Docker-julia.png"
+  og_image: "/assets/images/2019/04/26/teaser.png"
+  teaser: "/assets/images/2019/04/26/teaser.png"
 excerpt: "A tutorial for the installation of Docker and Julia and the setup of the Juno IDE using a dockerized Julia container "
 permalink: /from-zero-to-julia/
 ---
