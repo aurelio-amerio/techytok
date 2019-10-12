@@ -1,0 +1,9 @@
+Aurelio Amerio:
+  name        : "Aurelio Amerio"
+  bio         : "Master student in Theoretical Physics at the University of Turin, he likes to experiment with new programming techniques"
+  avatar      : "/assets/images/avatar/foto_profilo.jpg"
+  location    : "Torino, TO"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:aure.amerio@gmail.com"
