@@ -2,7 +2,7 @@
 layout: single
 title: "From zero to Julia!"
 date: 2019-10-12
-permalink: /from-zero-to-julia/
+permalink: /testpage/
 excerpt: "New to Julia? This collection of tutorials will teach you all the basics!"
 ---
 This is a collection of tutorials and guides that will get you started with the Julia language!
