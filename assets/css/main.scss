@@ -6,3 +6,8 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+//cards
+@import "cards/abstracts/card_variables";
+@import "cards/abstracts/card_mixins";
+@import "cards/card";
