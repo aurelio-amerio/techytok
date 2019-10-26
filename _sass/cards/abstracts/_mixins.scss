@@ -1,0 +1,28 @@
+@mixin clearfix_card {
+  &::before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin container_card($breakpoint) {
+  margin: 0 auto;
+  @if ($breakpoint != 0) {
+    max-width: $breakpoint;
+  } @else {
+    max-width: 100%;
+  }
+}
+
+@mixin breakpoint_card($query) {
+  @media only screen and (min-width:#{$query}) {
+    @content;
+  }
+}

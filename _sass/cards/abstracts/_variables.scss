@@ -1,0 +1,33 @@
+$primary_card: #277cea !default;
+$secondary_card: #ff6161 !default;
+$border_card: #ededed !default;
+$primary-light_card: #68a4f1;
+$reverse_card: #3c3d41 !default;
+$success_card: #8fd896 !default;
+$error_card: #ff6161 !default;
+
+$bg-color_card: #fff !default;
+$light-bg-color_card: #f9f9f9;
+$text-color_card: #343851;
+$heading-color_card: #313237;
+$link-color_card: $primary_card;
+$button-dark_card: #222325;
+$dark-light_card: #313237;
+$outline_card: #dbdbdb;
+$grey_card: #838c8d;
+
+$font-stack_card: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+
+// Breakpoints
+$xs_card: 0;
+$sm_card: 36em; //576px
+$md_card: 48em; //768px
+$lg_card: 62em; //992px
+$xl_card: 75em; //1200px
+
+// Code
+$code-bg-color_card: #f6f8fa !default;
+$code-text-color_card: #25292e !default;
+
+// Borders
+$border-color_card: #dce6f0 !default;
