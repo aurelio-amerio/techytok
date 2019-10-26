@@ -188,42 +188,42 @@ As I promised in the introduction to this tutorial, we will deal with an example
 
 Sometimes you have defined a function which is really expensive to compute and you cannot afford to compute it at each every point or even worse, it is known only in certain points. In this circumstance what you do is create a table of the values of a function and when given an unknown x, interpolate linearly between two subsequent known x.
 
-Let's consider a highly difficult to compute and exotic function: the sine (I'm joking). Let's say we can compute it only at certain points. Let's create an interpolation table using multiprocessing to speed up the process!
+Let's consider a highly difficult to compute and exotic function: the sine (I'm joking). Let's say we can compute it only at certain points. In this example we will use yet another way to map a function over a series of values, which is `pmap`. `pmap` is useful when the function to be computed is expensive and will perform load balancing: while `@distributed`batches and assign each batch to a worker, `pmap` will compute each subsequent value on a different `worker`, which means that if the function execution time may vary considerably from value to value, `pmap` will require less computation time, even considering the time required to transfer data from the worker back to the main process. If we know that the execution time of each call is pretty much the same for similar `x`, we can specify the `batch_size` argument and set it to a greater value, so that each worker will compute more values before the data is moved back to the main process, reducing the data transfer time, at the price of less flexibility on load balancing.
+
+Let's now create an interpolation table using multiprocessing to speed up the process! 
 
 ```julia
+function sine_func(x)
+    sleep(22*1e-3)
+    return sin(x)
+end
+
 function create_interp()
     @info "create_interp"
     x = range(0, stop = 10, length = 1000)
 
-    y = SharedArray{Float64}(length(x))
     @info "Computing Interpolation..."
-    p = Progress(length(x), "Progress: ")
-    update!(p, 0)
-    @sync @distributed for i = 1:length(x)
-        #some really hard computations
-        sleep(0.01)
-        y[i] = sin(x[i])
-        next!(p)
-    end
+    y = @showprogress pmap(sine_func, x, batch_size=10)
 
 
     knots = (x,)
     itp = interpolate(knots, y, Gridded(Linear()))
 
     return itp
-endurn itp
 end
 ```
 
 This function may look scary at first, but let's break it down to understand what it does!
 
+`sine_func` is a wrapper around the `sin` function which adds a sleep time of `22ms`, to simulate an heavy computation.
+
 `@info` is just a fancy way to say `println`, but why not?
 
-At line 3 we define the array of points `x` at which the sine will be computed. At line 5 we create an array `y` which will contain the computed value of `sin(x)` . At line 7 we create a progress bar (useful to keep track of the table-generation process), at line 8 we initialize it and set the progress to 0.
+At line 8 we define the array of points `x` at which the sine will be computed. 
 
-We then start the loop (I added a 0.01s sleep time to simulate some heavy computations) and fill the `y` array with the value of `sin(x[i])`. We then update the progress bar (line 13).
+Line 11 is where all the magic happens: first we use the macro `@showprogress` to create a progress bar which will display the computation status of the parallel map, then we call `pmap` which will automatically map `sine_function` over `x`, taking care of the parallelization, using `batch_size=10`. 
 
-When the parallel computation of the `y` array is done,  we define the knots at line 17 (i.e. the points of the table at which we have computed the function `sin(x)`, and we create the interpolating function (`itp`) at line 18.
+When the parallel computation of the `y` array is done,  we define the knots at line 14 (i.e. the points of the table at which we have computed the function `sin(x)`, and we create the interpolating function (`itp`) at line 15.
 
 `create_interpolation` returns a function, which is the interpolating function, so that if we can assign it to a function name and reuse it inside our program. We can do it at compile or evaluation time, it depends on you. I have decided to create the interpolation at compile time, so in my module I add the following lines of code:
 
