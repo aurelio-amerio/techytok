@@ -1,6 +1,7 @@
 ---
 layout: home
 title: TechyTok! It's time to get busy!
+permalink: /
 header:
   og_image: "/assets/images/home.png"
   teaser: "/assets/images/home.png"
