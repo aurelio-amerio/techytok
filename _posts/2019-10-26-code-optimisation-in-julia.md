@@ -12,10 +12,11 @@ toc_label: "Table of Contents"
 toc_icon: "book"
 
 categories:
+    - "Tutorial"
     - "Guide"
 tags:
     - Julia
-	- Optimisation
+    - Optimisation
 
 comments: true
 ---
