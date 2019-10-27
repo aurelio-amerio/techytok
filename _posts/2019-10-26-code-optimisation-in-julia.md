@@ -27,7 +27,7 @@ Although it is not necessary, I suggest you to run this code inside the Juno IDE
 
 You can find all the code for this guide [here]( https://github.com/aurelio-amerio/techytok-examples/tree/master/julia-code-optimization). 
 
-# Julia is fast but she needs your help!
+# Julia is fast but it needs your help!
 
 Julia can be extraordinarily fast, but in order to achieve top speed you need to understand what makes Julia fast. 
 
@@ -78,11 +78,11 @@ end
 
 will not yield a performance gain over simply writing `x+y` directly and it is not even a good programming practice in Julia, as it would potentially limit the usage of the function with other types which may be supported indirectly. 
 
-Julia is pretty good at doing type inference at run-time and will compile the proper code to handle any type of `x` and `y` or die trying, in the sense that Julia will tell you that she doesn't know how to properly handle the type of `x` and `y`, so it is better to **write code as generic as possible** (i.e. without type annotations) and only use them when multiple dispatch is needed or we know that a function can work *only* with one peculiar input type. 
+Julia is pretty good at doing type inference at run-time and will compile the proper code to handle any type of `x` and `y` or die trying, in the sense that Julia will tell you that it doesn't know how to properly handle the type of `x` and `y`, so it is better to **write code as generic as possible** (i.e. without type annotations) and only use them when multiple dispatch is needed or we know that a function can work *only* with one peculiar input type. 
 
 When you are writing a function which expects a number as an input, it is advisable to use type annotations with [**Abstract Types**]( https://docs.julialang.org/en/v1/manual/types/index.html#Abstract-Types-1 ), for example using `function test(x::Real)` instead of writing a method for each concrete type. This way the code will be more readable and more generic, a win-win situation! What's more, an user who wants to implement a custom number type, if the type is properly defined, will find that your function will work also for their code!
 
-So if it's not type annotations, which is the first difference which you will spot when comparing for example c++ to python, what makes Julia fast? Roughly said, Julia can compile efficient machine code only if she can infer properly the type of the returned value, which means that your code must be **type stable** if you want to achieve the maximum possible speed.
+So if it's not type annotations, which is the first difference which you will spot when comparing for example c++ to python, what makes Julia fast? Roughly said, Julia can compile efficient machine code only if it can infer properly the type of the returned value, which means that your code must be **type stable** if you want to achieve the maximum possible speed.
 
 ## Type stability
 
