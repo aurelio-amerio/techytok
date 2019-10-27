@@ -5,6 +5,7 @@ header:
   image: "/assets/images/2019/10/26/header.jpg"
   og_image: "/assets/images/2019/10/26/thumbnail.jpg"
   teaser: "/assets/images/2019/10/26/teaser.jpg"
+  caption: "Photo by [**Cris Ovalle**](https://unsplash.com/@crisovalle) on [**Unsplash**](https://unsplash.com)"
 excerpt: "Tips and Tricks to optimise your Julia code and achieve the maximum possible speed"
 permalink: /code-optimisation-in-julia/
 toc: true
