@@ -34,7 +34,7 @@ Contrarily to what may seem at first glance, Julia doesn't draw its speed from *
 
 ## Type annotations
 
-Type annotation are a way to tell Julia the type that a function should expect and they are useful when you plan to write multiple methods (**multiple dispatch**) for a single function. With type annotations, you can tell a function how to behave accordingly to the type of the arguments that it is given.
+Type annotation are a way to tell Julia the type that a function should expect and they are useful when you plan to write multiple methods (**multiple dispatch**) for a single function. With type annotations, you can tell a function how to behave according to the type of the arguments that it is given.
 
 For example:
 
@@ -75,9 +75,9 @@ function test2(x::Float64, y::Float64)
 end
 ```
 
-Will not yield a performance gain over simply writing `x+y` directly and it is not even a good programming practice in Julia, as it would potentially limit the usage of the function with other types which may be supported indirectly. 
+will not yield a performance gain over simply writing `x+y` directly and it is not even a good programming practice in Julia, as it would potentially limit the usage of the function with other types which may be supported indirectly. 
 
-Julia is pretty good at doing type inference at run-time and will compile the proper code to handle any type of `x` and `y` or die trying, in the sense that Julia will tell you that she doesn't know how to properly handle the type of `x` and `y`, so it is better to write code as generic as possible (i.e. without type annotations) and only use them when multiple dispatch is needed or we know that a function can work *only* with one peculiar input type. 
+Julia is pretty good at doing type inference at run-time and will compile the proper code to handle any type of `x` and `y` or die trying, in the sense that Julia will tell you that she doesn't know how to properly handle the type of `x` and `y`, so it is better to **write code as generic as possible** (i.e. without type annotations) and only use them when multiple dispatch is needed or we know that a function can work *only* with one peculiar input type. 
 
 When you are writing a function which expects a number as an input, it is advisable to use type annotations with [**Abstract Types**]( https://docs.julialang.org/en/v1/manual/types/index.html#Abstract-Types-1 ), for example using `function test(x::Real)` instead of writing a method for each concrete type. This way the code will be more readable and more generic, a win-win situation! What's more, an user who wants to implement a custom number type, if the type is properly defined, will find that your function will work also for their code!
 
@@ -85,7 +85,7 @@ So if it's not type annotations, which is the first difference which you will sp
 
 ## Type stability
 
-What does type stability means? It means that **the type of the return value of a function must depend only on the type of the input of the function and not on the peculiar value it is given**. 
+What does type stability means? It means that **the type of the returned value of a function must depend only on the type of the input of the function and not on the peculiar value it is given**. 
 
 Take as an example this function:
 
@@ -140,9 +140,9 @@ test4(-1.0)
 >>> 0.00
 ```
 
-In this case it was "easy" to find the bit of code which lead to type instability, but often the code is more complex and so Julia comes in our help with your new best friend, the `@code_warntype` macro!
+In this case it was "easy" to find the bit of code which leads to type instability, but often the code is more complex and so Julia comes in our help with your new best friend, the `@code_warntype` macro!
 
-What it does is really precious: it tells us if the type of the returned value is unstable and, moreover, it will colour code the result in red if any type instability issue is found. Just call the function with a value taht you suspect that may be type unstable and it will do the rest!
+What it does is really precious: it tells us if the type of the returned value is unstable and, moreover, it will colour code the result in red if any type instability issue is found. Just call the function with a value which you suspect that may be type unstable and it will do the rest!
 
 ```julia
 @code_warntype test3(1.0)
@@ -213,7 +213,7 @@ As you probably already know, it is possible to measure the execution time of a 
 
 Luckily there are two exceptional packages which help us in profiling: `Profile` and `Juno` with the **Juno IDE**. Both of the tools will run the desired function once and will log the execution time of each line of code.
 
-`Profile` works completely in the REPL and will produce a log file, while `Juno` works only inside the Juno IDE, and will show display some information in a graph.
+`Profile` works completely in the REPL and will produce a log file, while `Juno` works only inside the Juno IDE, and will display some information in a graph.
 
 ## Profile
 
@@ -238,7 +238,7 @@ end
 
 We shall now profile `test8`:
 
-```Julia
+```julia
 using Profile
 test8()
 Profile.clear()
@@ -274,7 +274,7 @@ If everything goes right, you should see something like this:
 
 ![image-center](/assets/images/2019/10/26/profiler.png){: .align-center}
 
-As you can see there is a new panel on the right called "Profiler" which shows three smaller blocks: you can click on them and it will lead to the piece of code responsible for the relative call: the bigger the block, the longer it takes to run the piece of code. There will also be some bars on top of your code: they show which line of code has a greater impact on the run time (as you can see on the left in the picture), which is really useful to find with a glance which is the bottleneck!
+As you can see there is a new panel on the right called "Profiler" which shows three smaller blocks: you can click on them and it will lead to the piece of code responsible for the relative call: the bigger the block, the longer it takes to run the piece of code. There will also be some bars on top of your code: they show which line of code has a greater impact on the run time (as you can see on the left in the picture), which is really useful to find at a glance where is the bottleneck!
 
 # Tips and Tricks
 
@@ -301,9 +301,9 @@ On my PC the for loop starting at line 4 takes 197μs, while the one starting at
 
 ## Static Arrays
 
-When the dimension of an array is known beforehand and it will not change over time, static arrays become incredibly powerful as the allow the compiler to perform advanced optimisations.
+When the dimension of an array is known beforehand and it will not change over time, static arrays become incredibly powerful as they enable the compiler to perform advanced optimisations.
 
-They are particularly useful when you need to perform summations of the members of the array.
+They are particularly useful when you need to perform summations of the members of an array.
 
 ```julia
 using StaticArrays
@@ -346,7 +346,7 @@ end
 
 ## Keyword arguments
 
-When a function is in a critical inner loop, avoid keyword arguments and use only positional arguments, this will lead to lesser memory allocation and faster execution.
+When a function is in a critical inner loop, avoid keyword arguments and use only positional arguments, this will lead to better optimisation and faster execution.
 
 ```julia
 function foo1(x,y=2) ... # preferable
@@ -356,12 +356,12 @@ function foo2(x; y=2) ... # discouraged inside inner loops
 
 ## Avoid global scope variables
 
-As the title says, try to avoid global scope variables as much as you can because it is more difficult for Julia to optimise them. If possible, try to declare them as `const` as a global variable is most likely to be a constant, which is a good solution to in part alleviate the problem.  When possible, pass all the required data to the function by argument, this way the function will be more flexible and better optimised.  
+As the title says, try to avoid global scope variables as much as you can, as it is more difficult for Julia to optimise them. If possible, try to declare them as `const`: most of the times a global variable is likely to be a constant, which is a good solution to in part alleviate the problem.  When possible, pass all the required data to the function by argument, this way the function will be more flexible and better optimised.  
 
 # Conclusion
 
 These are some tips and tricks to make your Julia code run faster! The **take home message** for good performance is **keep your code as general as possible and as simple as possible** and focus on **type stability**. 
 
-Remember: speed in Julia comes from **type stability**  and **not type annotations**, which means that you should not use type annotations if not required and that the **returned value must depend only on the type of the arguments**.
+Remember: speed in Julia comes from **type stability** and **not type annotations**, which means that you should not use type annotations if not required and that the **returned value must depend only on the type of the arguments**.
 
 If you liked this guide please leave a comment and stay tuned for further guides and tutorials, here at techytok!
