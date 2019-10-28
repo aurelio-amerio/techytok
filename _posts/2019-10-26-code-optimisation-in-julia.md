@@ -78,7 +78,7 @@ end
 
 will not yield a performance gain over simply writing `x+y` directly and it is not even a good programming practice in Julia, as it would potentially limit the usage of the function with other types which may be supported indirectly. 
 
-Julia is pretty good at doing type inference at run-time and will compile the proper code to handle any type of `x` and `y` or die trying, in the sense that Julia will tell you that it doesn't know how to properly handle the type of `x` and `y`, so it is better to **write code as generic as possible** (i.e. without type annotations) and only use them when multiple dispatch is needed or we know that a function can work *only* with one peculiar input type. 
+Julia is pretty good at doing type inference at run-time and will compile the proper code to handle any type of `x` and `y` or die trying, in the sense that Julia will tell you that it doesn't know how to properly handle the type of `x` and `y`, so it is better to **write code as generic as possible** (i.e. without type annotations) and only use them when multiple dispatch is needed or we know that a function can work *only* with one particular input type. 
 
 When you are writing a function which expects a number as an input, it is advisable to use type annotations with [**Abstract Types**]( https://docs.julialang.org/en/v1/manual/types/index.html#Abstract-Types-1 ), for example using `function test(x::Real)` instead of writing a method for each concrete type. This way the code will be more readable and more generic, a win-win situation! What's more, an user who wants to implement a custom number type, if the type is properly defined, will find that your function will work also for their code!
 
@@ -86,7 +86,7 @@ So if it's not type annotations, which is the first difference which you will sp
 
 ## Type stability
 
-What does type stability means? It means that **the type of the returned value of a function must depend only on the type of the input of the function and not on the peculiar value it is given**. 
+What does type stability means? It means that **the type of the returned value of a function must depend only on the type of the input of the function and not on the particular value it is given**. 
 
 Take as an example this function:
 
@@ -304,19 +304,25 @@ On my PC the for loop starting at line 4 takes 197μs, while the one starting at
 
 When the dimension of an array is known beforehand and it will not change over time, static arrays become incredibly powerful as they enable the compiler to perform advanced optimisations.
 
-They are particularly useful when you need to perform summations of the members of an array.
+They are particularly useful when you need to perform operations (like the sum of the members of an array or matrix operations) on small vectors (<100 elements) or matrices.
 
-```julia
-using StaticArrays
+If we run the micro benchmark from the official [github repository](https://github.com/JuliaArrays/StaticArrays.jl/blob/master/perf/README_benchmarks.jl)  we get something like this:
 
-arr1 = [i for i in 1:1000]
-arr2 = @SVector [i for i in 1:1000]
-
-@btime sum($arr1)
->>> 77.169 ns
-
-@btime sum($arr2)
->>> 0.001 ns
+```
+============================================
+    Benchmarks for 3×3 Float64 matrices
+============================================
+Matrix multiplication               -> 7.4x speedup
+Matrix multiplication (mutating)    -> 2.4x speedup
+Matrix addition                     -> 31.5x speedup
+Matrix addition (mutating)          -> 2.5x speedup
+Matrix determinant                  -> 121.2x speedup
+Matrix inverse                      -> 70.3x speedup
+Matrix symmetric eigendecomposition -> 22.6x speedup
+Matrix Cholesky decomposition       -> 7.2x speedup
+Matrix LU decomposition             -> 8.4x speedup
+Matrix QR decomposition             -> 47.1x speedup
+============================================
 ```
 
 As you can see the performance gain is enormous! 
