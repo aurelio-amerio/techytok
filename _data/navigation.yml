@@ -6,6 +6,8 @@ main:
   #   url: /from-zero-to-julia/
   - title: "Archive"
     url: /categories/
+  - title: "Newsletter"
+    url: /newsletter/
 #   - title: "Quick-Start Guide"
 #     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
 #   - title: "About"
