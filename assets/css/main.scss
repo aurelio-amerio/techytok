@@ -8,6 +8,9 @@
 @import "minimal-mistakes"; // main partials
 
 //cards
-@import "cards/abstracts/card_variables";
-@import "cards/abstracts/card_mixins";
-@import "cards/card";
+// @import "cards/abstracts/card_variables";
+// @import "cards/abstracts/card_mixins";
+// @import "cards/card";
+
+//tinyletter
+@import "tinyletter/tinyletter"
