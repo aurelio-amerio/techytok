@@ -58,7 +58,7 @@ layout: default
         {% endif %}
       </footer>
 
-      {% if page.share %}{% include social-share.html %}{% endif %}
+      {% if page.share %}{% include social-share.html %}
 
       <!-- include newsletter -->
       <form style="margin:0; padding:0;" action="https://tinyletter.com/{{site.tinyletter.name}}" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/{{site.tinyletter.name}}', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
@@ -71,6 +71,7 @@ layout: default
           </li>
       </ul>
       </form>
+      {% endif %}
 
       {% include post_pagination.html %}
     </div>
