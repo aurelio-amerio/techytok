@@ -1,10 +1,10 @@
-#tinyletter @font-face {
-    font-family: 'Open Sans Regular';
-    src: url('//tinyletter.com/site/assets/fonts/opensans-regular-webfont.eot');
-    src: url('//tinyletter.com/site/assets/fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('//tinyletter.com/site/assets/fonts/opensans-regular-webfont.woff') format('woff'), url('//tinyletter.com/site/assets/fonts/opensans-regular-webfont.ttf') format('truetype'), url('//tinyletter.com/site/assets/fonts/opensans-regular-webfont.svg#opensans-regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+// @font-face {
+//     font-family: 'Open Sans Regular';
+//     src: url('//tinyletter.com/site/assets/fonts/opensans-regular-webfont.eot');
+//     src: url('//tinyletter.com/site/assets/fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('//tinyletter.com/site/assets/fonts/opensans-regular-webfont.woff') format('woff'), url('//tinyletter.com/site/assets/fonts/opensans-regular-webfont.ttf') format('truetype'), url('//tinyletter.com/site/assets/fonts/opensans-regular-webfont.svg#opensans-regular') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
 #tinyletter body {
     font: 15px/24px 'Helvetica Neue', Helvetica, Arial, Sans-serif;
     min-width: 400px;
