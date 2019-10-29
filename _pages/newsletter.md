@@ -43,4 +43,3 @@ If you would like to receive updates (no more than one email a week) on the arti
 
 </div>
 </div>
-</div>
