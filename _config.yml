@@ -82,6 +82,8 @@ yandex_site_verification :
 naver_site_verification  :
 
 # Social Sharing
+tinyletter:
+  name                   : techytok
 twitter:
   username               :
 facebook:
