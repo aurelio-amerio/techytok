@@ -1,3 +1,25 @@
+## [4.17.1](https://github.com/mmistakes/minimal-mistakes/releases/tag/4.17.1)
+
+### Enhancements
+
+- Add collection step to documentation about creating a portfolio page. [#2294](https://github.com/mmistakes/minimal-mistakes/pull/2294)
+- Replace sticky footer JavaScript with flexbox styles. [#2289](https://github.com/mmistakes/minimal-mistakes/pull/2289)
+
+### Bug Fixes
+
+- Fix sticky footer when using MozBar extension. [#2281](https://github.com/mmistakes/minimal-mistakes/issues/2281)
+
+## [4.17.1](https://github.com/mmistakes/minimal-mistakes/releases/tag/4.17.1)
+
+### Enhancements
+
+- Update Chinese (Simplified) localized UI text strings. [#2286](https://github.com/mmistakes/minimal-mistakes/pull/2286)
+- Update list of 3rd party JavaScript used and licenses. [#2276](https://github.com/mmistakes/minimal-mistakes/pull/2276)
+
+### Bug Fixes
+
+- Fix indention of nested GFM task lists. [#2283](https://github.com/mmistakes/minimal-mistakes/issues/2283)
+
 ## [4.17.0](https://github.com/mmistakes/minimal-mistakes/releases/tag/4.17.0)
 
 ### Enhancements
