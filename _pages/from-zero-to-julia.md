@@ -18,5 +18,3 @@ This guide, as well as this website, is a work in progress and is written by a s
 Although no prior programming background in Julia is necessary to follow this guide, basic familiarity with programming may be useful. For any clarification, don't hesitate to contact me!
 
 If you are ready to start, I encourage you to read the first guide on how to install Julia and the Juno IDE and then move on to the first lesson!
-
-{% include post_collection.html filename="from_zero_to_julia" %}
