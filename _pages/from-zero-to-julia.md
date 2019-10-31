@@ -19,4 +19,4 @@ Although no prior programming background in Julia is necessary to follow this gu
 
 If you are ready to start, I encourage you to read the first guide on how to install Julia and the Juno IDE and then move on to the first lesson!
 
-{% include post_collections.html filename="from_zero_to_julia" %}
+{% include post_collection.html filename="from_zero_to_julia" %}
