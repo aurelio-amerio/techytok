@@ -26,6 +26,7 @@ repository               : aurelio-amerio/aurelio-amerio.github.io # GitHub user
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/logo.png"
 masthead_title           : "TechyTok!"
+slapform-mail            : "aure.amerio@gmail.com"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
