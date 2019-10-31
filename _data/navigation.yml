@@ -2,8 +2,8 @@
 main:
   - title: "About Me"
     url: /about/
-  # - title: "From zero to Julia!"
-  #   url: /from-zero-to-julia/
+  - title: "From zero to Julia!"
+    url: /from-zero-to-julia/
   - title: "Archive"
     url: /categories/
   - title: "Newsletter"
