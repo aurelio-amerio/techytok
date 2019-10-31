@@ -4,11 +4,11 @@ classes: wide
 title: "From zero to Julia!"
 permalink: /from-zero-to-julia/
 ---
-**From zero to Julia** is a small series of introductory lessons to the Julia language. The aim of this course is to give you the basics to be able to start coding in Julia on your own. 
+**From zero to Julia** is a small series of introductory lessons to the Julia language. The aim of this course is to give you the basics to be able to start coding in Julia on your own.
 
-During this series of lessons you will become acquainted with some of the types available in Julia and you will learn how to define new types to fit your needs.  We will then discuss data structures such as arrays, tuples and dictionaries, as well as DataFrames and how to efficiently store your data using hdf5 files and JLD. 
+During this series of lessons you will become acquainted with some of the types available in Julia and you will learn how to define new types to fit your needs.  We will then discuss data structures such as arrays, tuples and dictionaries, as well as DataFrames and how to efficiently store your data using hdf5 files and JLD.
 
-You will learn how to define new functions, how to work with modules and one of the most important features of Julia: the **multiple dispatch**. 
+You will learn how to define new functions, how to work with modules and one of the most important features of Julia: the **multiple dispatch**.
 
 In the last part of the course, we will focus on how to write computationally efficient code and we will deal with multi-threading and multi-processing.
 
@@ -19,7 +19,4 @@ Although no prior programming background in Julia is necessary to follow this gu
 
 If you are ready to start, I encourage you to read the first guide on how to install Julia and the Juno IDE and then move on to the first lesson!
 
-{% include post_colelction.html filename="from_zero_to_julia" %}
-
-
-
+{% include post_collection.html filename="from_zero_to_julia" %}
