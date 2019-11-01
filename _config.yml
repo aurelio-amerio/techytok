@@ -103,7 +103,7 @@ social:
 analytics:
   provider               : false
   google:
-    tracking_id          : UA-40944210-2
+    tracking_id          : UA-40944210-3
     anonymize_ip         : false #true , false (default)
 
 
