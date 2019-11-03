@@ -20,3 +20,28 @@ main:
 #     url: /collection-archive/
 #   - title: "Sitemap"
 #     url: /sitemap/
+
+# From zero to Julia!
+
+zero-to-julia:
+  - title: From zero to Julia
+    children:
+      - title: "Lesson 1 - Variables and Types"
+        url: /variables-and-types/
+      - title: "Functions"
+        url: /functions/
+
+
+  # - title: Customization
+  #   children:
+  #     - title: "Configuration"
+  #       url: /docs/configuration/
+  #     - title: "Navigation"
+  #       url: /docs/navigation/
+  #     - title: "UI Text"
+  #       url: /docs/ui-text/
+  #     - title: "Authors"
+  #       url: /docs/authors/
+  #     - title: "Layouts"
+  #       url: /docs/layouts/
+#
