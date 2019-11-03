@@ -1,13 +1,13 @@
 ---
-title: "Introduction to the REPL"
-date: 2019-11-01
+title: "Functions"
+date: 2019-11-03
 header:
-  caption: "Photo by [Sushobhan Badhai](https://unsplash.com/@sushobhan) on [Unsplash](https://unsplash.com)"
-  image: "/assets/images/2019/11/01/header.jpg"
-  og_image: "/assets/images/2019/11/01/teaser.jpg"
-  teaser: "/assets/images/2019/11/01/teaser.jpg"
-excerpt: "From zero to Julia Lesson 1. An introduction to variables and Types"
-permalink: /introduction-to-the-repl/
+  caption: "Photo by [Filip Varga](https://unsplash.com/@vargafilip123) on [Unsplash](https://unsplash.com)"
+  image: "/assets/images/2019/11/03/header.jpg"
+  og_image: "/assets/images/2019/11/03/teaser.jpg"
+  teaser: "/assets/images/2019/11/03/teaser.jpg"
+excerpt: "From zero to Julia Lesson 2. An introduction to functions"
+permalink: /lesson-funcitons/
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "book"
@@ -23,3 +23,4 @@ comments: true
 sidebar:
   nav: "zero-to-julia"
 ---
+

@@ -22,10 +22,7 @@ comments: true
 
 sidebar:
   nav: "zero-to-julia"
-
 ---
-
- Photo by [Michael Niessl](https://unsplash.com/@antipodos) on [Unsplash](https://unsplash.com) 
 
 In this lesson you will learn what are variables and how to perform simple mathematical operations. Furthermore we will deal with the concept of "types" and their role in Julia.
 

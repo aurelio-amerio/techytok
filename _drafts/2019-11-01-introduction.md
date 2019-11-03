@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2019/11/01/header.jpg"
   og_image: "/assets/images/2019/11/01/teaser.jpg"
   teaser: "/assets/images/2019/11/01/teaser.jpg"
-excerpt: "From zero to Julia Lesson 1. An introduction to variables and Types"
+excerpt: "An introduction to the Julia REPL and Juno IDE usage"
 permalink: /introduction-to-the-repl/
 toc: true
 toc_label: "Table of Contents"
