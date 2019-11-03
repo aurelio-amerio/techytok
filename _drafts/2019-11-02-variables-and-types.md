@@ -1,12 +1,13 @@
 ---
 title: "Variables and Types"
-date: 2019-11-01
+date: 2019-11-02
 header:
-  image: "/assets/images/2019/06/03/---"
-  og_image: "/assets/images/2019/06/03/---"
-  teaser: "/assets/images/2019/06/03/---"
+  caption: "Photo by [Michael Niessl](https://unsplash.com/@antipodos) on [Unsplash](https://unsplash.com) "
+  image: "/assets/images/2019/11/02/header.jpg"
+  og_image: "/assets/images/2019/11/02/teaser.jpg"
+  teaser: "/assets/images/2019/11/02/teaser.jpg"
 excerpt: "From zero to Julia Lesson 1. An introduction to variables and Types"
-permalink: /variables-and-types/
+permalink: /lesson-variables-and-types/
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "book"
@@ -18,7 +19,13 @@ tags:
     - Julia
 
 comments: true
+
+sidebar:
+  nav: "zero-to-julia"
+
 ---
+
+ Photo by [Michael Niessl](https://unsplash.com/@antipodos) on [Unsplash](https://unsplash.com) 
 
 In this lesson you will learn what are variables and how to perform simple mathematical operations. Furthermore we will deal with the concept of "types" and their role in Julia.
 

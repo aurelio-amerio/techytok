@@ -26,10 +26,12 @@ main:
 zero-to-julia:
   - title: From zero to Julia
     children:
+      - title: "How to install Julia"
+        url: /atom-and-juno-setup-for-julia/
       - title: "Lesson 1 - Variables and Types"
-        url: /variables-and-types/
+        url: /lesson-variables-and-types/
       - title: "Functions"
-        url: /functions/
+        url: /lesson-functions/
 
 
   # - title: Customization

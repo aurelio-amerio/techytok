@@ -21,6 +21,9 @@ tags:
 
 
 comments: true
+
+sidebar:
+  nav: "zero-to-julia"
 ---
 
 In this tutorial you will learn how to setup a working development environment for Julia.
@@ -57,15 +60,15 @@ To install Juno, open atom, click on `file > settings > install` and type `uber-
 
 ![image-center](/assets/images/2019/04/26/install-juno.png){: .align-center}
 
-Once the setup is done, we need to tell Juno where to find the Julia binary: go to `file > settings > packages` and type `julia-client` 
+Once the setup is done, we need to tell Juno where to find the Julia binary: go to `file > settings > packages` and type `julia-client`
 
 ![image-center](/assets/images/2019/04/26/juno-setup-1.png){: .align-center}
 
-You should now click on `settings` and navigate to the `Settings`section: you will find a field called `Julia Path`: you should type the path to the Julia executable in there. 
+You should now click on `settings` and navigate to the `Settings`section: you will find a field called `Julia Path`: you should type the path to the Julia executable in there.
 
 ![image-center](/assets/images/2019/10/11/fig1_julia_path.png){: .align-center}
 
-In my case, the path to my Julia executable is `D:\Users\Aure\Julia-1.2.0\bin\julia.exe` 
+In my case, the path to my Julia executable is `D:\Users\Aure\Julia-1.2.0\bin\julia.exe`
 
 ![image-left](/assets/images/2019/10/11/fig2_start_julia.png){: .align-left}
 
@@ -81,15 +84,12 @@ I suggest that you type the following code to check whether your setup is succes
 println("Hello World! This is TechyTok!")
 ```
 
-# Conclusions 
+# Conclusions
 
-That's it, you have successfully installed Julia and setup the Juno IDE: easy, isn't it? You can now start coding and start you journey in the wonderful world of the Julia Language! 
+That's it, you have successfully installed Julia and setup the Juno IDE: easy, isn't it? You can now start coding and start you journey in the wonderful world of the Julia Language!
 
 If you are new to Julia, I suggest that you take a look at the wonderful JuliaComputing introductory tutorials available [here](#https://github.com/JuliaComputing/JuliaBoxTutorials/tree/master/introductory-tutorials/intro-to-julia): they will give you a taste of what Julia can do and you will have a chance to explore the basics of this wonderful language!
 
-I hope you enjoyed this tutorial, if you liked it or for any questions please leave a comment bellow! 
+I hope you enjoyed this tutorial, if you liked it or for any questions please leave a comment bellow!
 
 Stay tuned for further guides and tutorials here, at TechyTok!
-
- 
-
