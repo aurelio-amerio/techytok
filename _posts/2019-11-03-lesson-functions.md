@@ -26,7 +26,7 @@ sidebar:
 
 Functions are the main building blocks in Julia. Every operation on variables and other elements is performed through functions, even the mathematical operators that we have seen in the chapter before are functions in an infix form.
 
-If we want to simplify what a function is, we can imagine it as a box which can optionally take an input, perform some operations and returns an output of some sort. 
+If we want to simplify what a function is, we can picture it as a box which can optionally take an input, performs some operations and returns an output of some sort. 
 
 # Defining functions
 
@@ -53,12 +53,14 @@ It is also possible to create anonymous functions (like lambdas in Python) using
 plus_two = x -> x+2
 ```
 
-Although it is not recommended to use anonymous functions unless they are really simple. It is generally better to write functions in the first or second way unless you need to write a small wrapper to another function and pass it to a third function. 
+It is **not recommended** to use anonymous functions unless they are really simple. It is generally better to write functions in the first or second way unless you need to write a small wrapper around another function and pass it to a third function. 
 
-The following example is a bit more advanced and it requires that you already know what integrals are and how to install and use an external package, you can always come back later as this is not fundamental. The take home message is **never use anonymous functions unless you know what you are doing**.
+The following example is a bit more advanced and it includes topics which we have not yet studied, like integrals and how to install and use an external package. You can always come back later to read this example as it is not fundamental at this point of the course but you may find it useful one day. The take home message is **never use anonymous functions unless you know what you are doing**.
 {: .notice--info}
 
-For example, let's consider a function `f` of three variables `x`, `y` and `z`. Let's suppose we want to fix two variables (`y` and `z`) and integrate it over `x`, we could do so with:
+## More on anonymous functions
+
+For example, let's consider a function `f` of three variables `x`, `y` and `z`. Let's suppose we want to fix two variables (`y` and `z`) and integrate `f` over `x`, we could do it with:
 
 ```julia
 using Pkg
@@ -83,7 +85,7 @@ arg(x) = f(x,42,4)
 quadgk(arg, 3, 4)
 ```
 
-and the result would have been the same, furthermore, in my opinion, this is a cleaner way to write integrals, especially if we wrap everything inside another function:
+and the result would have been the same, furthermore, in my opinion, the latter is a cleaner way to write integrals, especially if we wrap everything inside another function:
 
 ```julia
 f(x,y,z) = (x^2 + 2y)*z
@@ -97,6 +99,8 @@ end
 
 Functions can be defined inside other functions, which is really useful to make the code more readable. Avoid writing long functions inside other functions, but use small lightweight functions if needed (think of them as if they were aliases to make the code more readable and simple to maintain). When we define a function inside another function, we can use simpler and shorter names (like `arg` or `f`) without the risk of having overlapping functions and unexpected behaviour.
 {: .notice--info}
+
+## Void functions
 
 Functions may also take no arguments and return no value, if needed, for example we can create a function which prints a string:
 
@@ -120,7 +124,7 @@ function myWeight(weightOnEarth, g=9.81)
 end
 ```
 
-If the user types `myWeight(60)` and doesn't specify `g`, he or she will get his/her weight as measured on Earth
+If the user types `myWeight(60)` and doesn't specify `g`, he or she will get his/her weight as measured on Earth:
 
 ```julia
 myWeight(60)
@@ -130,25 +134,27 @@ myWeight(60)
 If I specify the gravitational acceleration `g` on another planet (let's say Mars) 
 
 ```julia
-myWeight(60, 3.72)
+myWeight(60, 3.72) # https://en.wikipedia.org/wiki/Gravity_of_Mars
 >>> 22.75
 ```
 
-Pretty light, isn't it?
+I get my weight on Mars! Pretty light, isn't it?
 
-As the name suggests **positional arguments** must be used in the right order, we cannot specify `g` before `weightOnEarth` and as opposed to other languages like Python, in Julia we cannot change the order of the arguments even if we specify the name of the parameter. If we want optional arguments with no fixed position, we need to use **keyword arguments**.
+As the name suggests **positional arguments** must be used in the right order, we cannot specify `g` before `weightOnEarth` and, as opposed to other languages like Python, in Julia we cannot change the order of the arguments even if we specify the name of the parameter. If we want optional arguments with no fixed position, we need to use **keyword arguments**.
 
 # Keyword arguments
 
 Let's say we have a function which takes many optional parameters, it might become cumbersome for the user to remember the right order. That's the case where keyword arguments come in handy!
 
-Keyword arguments are separated from positional arguments by a semicolon `;` and must always be addressed by their name, although their order is irrelevant. They can be both optional and not, but usually we use keyword arguments for optional parameters.
+Keyword arguments are separated from positional arguments by a semicolon `;` and must always be addressed by their name, although their order is irrelevant. They can be both optional and not, though usually we use keyword arguments for optional parameters.
 
 ```julia
 function my_long_function(a, b=2; c, d=3)
     return a + b + c + d
 end
 ```
+
+Here `a` and `b` are positional arguments, while `c` and `d` are keyword arguments. 
 
 ```julia
 my_long_function(1, c=3)
@@ -164,7 +170,8 @@ my_long_function(1, 2, d=5)
 >>> ERROR: UndefKeywordError: keyword argument c not assigned
 ```
 
-As you can see, even if `c` is a keyword argument, it must always be specified.
+As you can see, even if `c` is a keyword argument, it must always be specified!
+{: .notice--warning}
 
 ## Performance tip
 

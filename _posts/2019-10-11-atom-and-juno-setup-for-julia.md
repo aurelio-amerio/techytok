@@ -21,6 +21,8 @@ tags:
 
 
 comments: true
+sidebar:
+  nav: "zero-to-julia"
 ---
 
 In this tutorial you will learn how to setup a working development environment for Julia.

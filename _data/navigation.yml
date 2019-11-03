@@ -24,13 +24,15 @@ main:
 # From zero to Julia!
 
 zero-to-julia:
-  - title: From zero to Julia
+  - title: From zero to Julia!
     children:
       - title: "How to install Julia"
         url: /atom-and-juno-setup-for-julia/
+      - title: "Introduction to the REPL"
+        url: /introduction-to-the-repl/
       - title: "Lesson 1 - Variables and Types"
         url: /lesson-variables-and-types/
-      - title: "Functions"
+      - title: "Lesson 2 - Functions"
         url: /lesson-functions/
 
 

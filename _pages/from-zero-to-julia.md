@@ -3,6 +3,8 @@ layout: single
 classes: wide
 title: "From zero to Julia!"
 permalink: /from-zero-to-julia/
+sidebar:
+  nav: "zero-to-julia"
 ---
 **From zero to Julia** is a small series of introductory lessons to the Julia language. The aim of this course is to give you the basics to be able to start coding in Julia on your own.
 

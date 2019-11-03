@@ -54,7 +54,7 @@ Although you can copy paste the code, I encourage you to type it yourself as it 
 
 # Juno IDE
 
-Sometimes, especially when your code starts to become pretty lengthy, it is useful to organise it in scripts, i.e. files ending with the ".jl" extension. The Juno IDE lets you edit such files and run them directly line by line from the editor. 
+Sometimes, especially when your code starts to become pretty lengthy, it is useful to organise it in scripts, i.e. files ending with the `.jl` extension. The Juno IDE lets you edit such files and run them directly line by line from the editor. 
 
 To run a line of code, simply click on the line and press `Ctrl+Enter`. 
 
