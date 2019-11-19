@@ -1,8 +1,8 @@
 # Program
 
-- variables, types and operations
-- functions
-- control flows
+- variables, types and operations OK
+- functions OK
+- control flows Oki [aggiungere link a scope]
 - scope of variables
 - collections
 - modules

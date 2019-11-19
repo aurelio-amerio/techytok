@@ -96,7 +96,7 @@ convert(Float64, 2)
 >>> 2.0
 ```
 
-# Conclusion 
+# Conclusion
 
 We have learned what variables are, how to perform basic operations and we have talked about types. 
 
