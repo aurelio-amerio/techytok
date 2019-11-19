@@ -117,7 +117,7 @@ end
 
 Here instead of a range, we iterate over the elements of `persons` (i.e. the names of the persons that I want to greet) and in this case `person` will hold the name of a single person, which changes at each iteration step.
 
-For more informations on arrays and collection types, please refer to [this](https://techytok.com/lesson-data-structures) lesson. 
+For more informations on arrays and collection types, please refer to [this](/lesson-data-structures) lesson. 
 {: .notice--info}
 
 ## Break
