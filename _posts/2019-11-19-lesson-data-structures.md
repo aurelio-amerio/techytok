@@ -1,11 +1,11 @@
 ---
 title: "Data structures" 
-date: 2019-11-20
+date: 2019-11-19
 header:
   caption: "Photo by [Mr Cup / Fabien Barral](https://unsplash.com/@iammrcupt) on [Unsplash](https://unsplash.com/)"
-  image: "/assets/images/2019/11/20/header.jpg"
-  og_image: "/assets/images/2019/11/20/teaser.jpg"
-  teaser: "/assets/images/2019/11/20/teaser.jpg"
+  image: "/assets/images/2019/11/19/header.jpg"
+  og_image: "/assets/images/2019/11/19/teaser.jpg"
+  teaser: "/assets/images/2019/11/19/teaser.jpg"
 excerpt: "From zero to Julia Lesson 3. Data Structures"
 permalink: /lesson-data-structures/
 toc: true
