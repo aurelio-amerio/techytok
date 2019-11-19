@@ -1,5 +1,5 @@
 ---
-title: "Control Flow" 
+title: "Control Flow"
 date: 2019-11-19
 header:
   caption: "Photo by [Rock'n Roll Monkey](https://unsplash.com/@rocknrollmonkey) on [Unsplash](https://unsplash.com/)"
@@ -42,7 +42,7 @@ function absolute(x)
 end
 ```
 
-As you can see, an `if ... else` block is closed with the word `end`, like a function. 
+As you can see, an `if ... else` block is closed with the word `end`, like a function.
 
 If we need to check more than one condition, we can bind together conditions using:
 
@@ -57,7 +57,7 @@ if 1 < 3 & 3 < 4
 end
 ```
 
-If we want to check if a value satisfies one of several different conditions, we can use the `elseif` statement: Julia will check if the first condition specified in the `if` is satisfied, if it is not met it moves on to the first `elseif` and so on. 
+If we want to check if a value satisfies one of several different conditions, we can use the `elseif` statement: Julia will check if the first condition specified in the `if` is satisfied, if it is not met it moves on to the first `elseif` and so on.
 
 ```julia
 x = 42
@@ -82,13 +82,13 @@ name2 = "techytok"
 print("Welcome $name1, this is $name2 :)")
 ```
 
-# Loops 
+# Loops
 
 A loop is the operation of repeating the same set of instructions several times. Loops are useful when we want to compute the value of a function over several points, we need to perform some operations on the elements of an array or we need to print the elements of a list.
 
 ## For loops
 
-Sometimes we want to iterate over a list of values and perform some operation on each element. 
+Sometimes we want to iterate over a list of values and perform some operation on each element.
 
 For example let's suppose we want to print all the squares of the numbers comprised between 1 and 10, we can do so using a `for` loop:
 
@@ -98,7 +98,7 @@ for i in 1:10
 end
 ```
 
-`i` is the variable which contains the data which gets updated at each new cycle (in this case `i` holds the numbers from 1 to 10 respectively), while `1:10` is a **range**. A range is an iterable object which does exactly what its name suggests: it specifies the range on which the loop has to be performed (in this case 1 to 10). 
+`i` is the variable which contains the data which gets updated at each new cycle (in this case `i` holds the numbers from 1 to 10 respectively), while `1:10` is a **range**. A range is an iterable object which does exactly what its name suggests: it specifies the range on which the loop has to be performed (in this case 1 to 10).
 
 It is also possible to use the alternative notation `for i = 1:10` which is completely equivalent.
 {: .notice--info}
@@ -117,7 +117,7 @@ end
 
 Here instead of a range, we iterate over the elements of `persons` (i.e. the names of the persons that I want to greet) and in this case `person` will hold the name of a single person, which changes at each iteration step.
 
-For more informations on arrays and collection types, please refer to [this](https://techytok.com/lesson-collections) lesson. 
+For more informations on arrays and collection types, please refer to [this](https://techytok.com/lesson-data-structures) lesson. 
 {: .notice--info}
 
 ## Break
@@ -142,7 +142,7 @@ This is the opposite of `break`, `continue` will forcefully skip the current ite
 
 ```julia
 for i in 1:30
-    if i % 3 == 0 
+    if i % 3 == 0
         continue
     else
         println(i)
@@ -171,7 +171,7 @@ While blocks can access and change the values of variables in the scope of the b
 
 # Enumerate
 
-`enumerate` is a function which comes in handy when we need to iterate on an array (or similar) and we need to keep track of the number of iterations we have already performed. 
+`enumerate` is a function which comes in handy when we need to iterate on an array (or similar) and we need to keep track of the number of iterations we have already performed.
 
 Let's say we want to read the elements from an array, square them and store them in another array, we can do it in this way:
 
@@ -190,9 +190,6 @@ print(my_array2)
 
 In this lesson we have learned how to let a program take "decisions" using `if ... elseif ... else` blocks, how to perform loops using `for `and `while` and how to have control on such loops using `break` and `continue`. We have then given an example of how `enumerate` can be used to help the process of filling an array.
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion bellow**! 
+If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion bellow**!
 
 Thank you for reading this lesson and see you soon on TechyTok!
-
-
-
