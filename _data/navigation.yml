@@ -34,6 +34,10 @@ zero-to-julia:
         url: /lesson-variables-and-types/
       - title: "Lesson 2 - Functions"
         url: /lesson-functions/
+      - title: "Lesson 3 - Data Structures"
+        url: /lesson-data-structures/
+      - title: "Lesson 4 - Control Flow"
+        url: /lesson-control-flow/
 
 
   # - title: Customization
