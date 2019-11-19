@@ -1,5 +1,9 @@
 ---
 layout: single
+header:
+  og_image: "/assets/images/home.png"
+  teaser: "/assets/images/home.png"
+excerpt: "From zero to Julia is a small series of introductory lessons to the Julia language. The aim of this course is to give you the basics to be able to start coding in Julia on your own."
 classes: wide
 title: "From zero to Julia!"
 permalink: /from-zero-to-julia/
