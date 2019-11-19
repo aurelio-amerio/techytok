@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2019/11/18/header.jpg"
   og_image: "/assets/images/2019/11/18/teaser.jpg"
   teaser: "/assets/images/2019/11/18/teaser.jpg"
-excerpt: ""
+excerpt: "From zero to Julia Lesson 4. Control Flow"
 permalink: /lesson-control-flow/
 toc: true
 toc_label: "Table of Contents"

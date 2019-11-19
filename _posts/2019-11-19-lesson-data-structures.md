@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2019/11/20/header.jpg"
   og_image: "/assets/images/2019/11/20/teaser.jpg"
   teaser: "/assets/images/2019/11/20/teaser.jpg"
-excerpt: ""
+excerpt: "From zero to Julia Lesson 3. Data Structures"
 permalink: /lesson-data-structures/
 toc: true
 toc_label: "Table of Contents"
