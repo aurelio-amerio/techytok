@@ -11,6 +11,7 @@ permalink: /code-optimisation-in-julia/
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "book"
+line_number: true
 
 categories:
     - "Tutorial"
@@ -25,11 +26,11 @@ In this guide we will deal with some key points to write efficient Julia code an
 
 Although it is not necessary, I suggest you to run this code inside the Juno IDE. If you don't know what Juno is, I suggest you to take a look at [this]( https://techytok.ml/atom-and-juno-setup-for-julia/ ) guide on how to install and use it!
 
-You can find all the code for this guide [here]( https://github.com/aurelio-amerio/techytok-examples/tree/master/julia-code-optimization). 
+You can find all the code for this guide [here]( https://github.com/aurelio-amerio/techytok-examples/tree/master/julia-code-optimization).
 
 # Julia is fast but it needs your help!
 
-Julia can be extraordinarily fast, but in order to achieve top speed you need to understand what makes Julia fast. 
+Julia can be extraordinarily fast, but in order to achieve top speed you need to understand what makes Julia fast.
 
 Contrarily to what may seem at first glance, Julia doesn't draw its speed from **type annotations** but from **type stability**. But what are type annotations and what is type stability?
 
@@ -76,9 +77,9 @@ function test2(x::Float64, y::Float64)
 end
 ```
 
-will not yield a performance gain over simply writing `x+y` directly and it is not even a good programming practice in Julia, as it would potentially limit the usage of the function with other types which may be supported indirectly. 
+will not yield a performance gain over simply writing `x+y` directly and it is not even a good programming practice in Julia, as it would potentially limit the usage of the function with other types which may be supported indirectly.
 
-Julia is pretty good at doing type inference at run-time and will compile the proper code to handle any type of `x` and `y` or die trying, in the sense that Julia will tell you that it doesn't know how to properly handle the type of `x` and `y`, so it is better to **write code as generic as possible** (i.e. without type annotations) and only use them when multiple dispatch is needed or we know that a function can work *only* with one particular input type. 
+Julia is pretty good at doing type inference at run-time and will compile the proper code to handle any type of `x` and `y` or die trying, in the sense that Julia will tell you that it doesn't know how to properly handle the type of `x` and `y`, so it is better to **write code as generic as possible** (i.e. without type annotations) and only use them when multiple dispatch is needed or we know that a function can work *only* with one particular input type.
 
 When you are writing a function which expects a number as an input, it is advisable to use type annotations with [**Abstract Types**]( https://docs.julialang.org/en/v1/manual/types/index.html#Abstract-Types-1 ), for example using `function test(x::Real)` instead of writing a method for each concrete type. This way the code will be more readable and more generic, a win-win situation! What's more, an user who wants to implement a custom number type, if the type is properly defined, will find that your function will work also for their code!
 
@@ -86,7 +87,7 @@ So if it's not type annotations, which is the first difference which you will sp
 
 ## Type stability
 
-What does type stability means? It means that **the type of the returned value of a function must depend only on the type of the input of the function and not on the particular value it is given**. 
+What does type stability means? It means that **the type of the returned value of a function must depend only on the type of the input of the function and not on the particular value it is given**.
 
 Take as an example this function:
 
@@ -162,7 +163,7 @@ What it does is really precious: it tells us if the type of the returned value i
     └──      return %4
 ```
 
-As you can see, in the first case the output is either `Float64` or `Int`, which is not good, and in the second case the output can only be a `Float64` (which is good). 
+As you can see, in the first case the output is either `Float64` or `Int`, which is not good, and in the second case the output can only be a `Float64` (which is good).
 
 In this case Julia may still be able to "recover" from this type instability issue, but if by any chance you see somewhere an `::Any` (which will always be marked in red) you will know that there is some serious type instability issue which needs to be fixed. Sometimes fixing type instability is easy, sometimes it is not, you will have to deal with it case by case, but the reward is always great, in my programming experience I have seen a **performance gain of a thousand times** by fixing type stability issues in my code!
 
@@ -208,7 +209,7 @@ As you can see `r` at the beginning is an `Int64` and then is converted into a `
 
 # Function profiling
 
-In this section we will learn how to find the bottlenecks in the execution of a function, so that we know which parts of the function should be optimised. 
+In this section we will learn how to find the bottlenecks in the execution of a function, so that we know which parts of the function should be optimised.
 
 As you probably already know, it is possible to measure the execution time of a function using the `@time` macro or preferably  `@btime` (which is included in the package `BenchmarkTools`). They are useful when we want to measure a single function call, but they give no information on what is making a function slow. For this reason we need a tool that enables us to identify which line of code is responsible for the bottleneck.
 
@@ -254,9 +255,9 @@ You should see something like:
 
 ![image-center](/assets/images/2019/10/26/profiler_log.png){: .align-center}
 
-The number 8 (which may vary) is an indication of how long a function runs. We also have a 1 and a 4, so probably this block is the one responsible for the bottleneck. Profile thus gives you a hint that at line 101 (line 8 of the code snippet) there is a bottleneck: who would have imagined that sleeping for 22ms would have been a slow down? 
+The number 8 (which may vary) is an indication of how long a function runs. We also have a 1 and a 4, so probably this block is the one responsible for the bottleneck. Profile thus gives you a hint that at line 101 (line 8 of the code snippet) there is a bottleneck: who would have imagined that sleeping for 22ms would have been a slow down?
 
-Unfortunately using `Profile.print()` is not really user friendly and for this reason Juno comes in our help! 
+Unfortunately using `Profile.print()` is not really user friendly and for this reason Juno comes in our help!
 
 Before trying the next steps please restart the Julia RELP as I have found that sometimes the Juno profiler doesn't work properly if you have already imported `Profile`.
 {: .notice--warning}
@@ -281,7 +282,7 @@ As you can see there is a new panel on the right called "Profiler" which shows t
 
 Now that we have found how to identify type instability issues and how to profile your code, I will give you some tips on how you can make your code faster by changing some little details.
 
-## `@inbounds` 
+## `@inbounds`
 
 When you are working with **for loops** and you are sure that the loop condition will not lead to out of bound errors, you can use the `@inbounds` macro to skip bound checking and gain a speed boost
 
@@ -325,7 +326,7 @@ Matrix QR decomposition             -> 47.1x speedup
 ============================================
 ```
 
-As you can see the performance gain is enormous! 
+As you can see the performance gain is enormous!
 
 ## Matrix indices
 
@@ -367,7 +368,7 @@ As the title says, try to avoid global scope variables as much as you can, as it
 
 # Conclusion
 
-These are some tips and tricks to make your Julia code run faster! The **take home message** for good performance is **keep your code as general as possible and as simple as possible** and focus on **type stability**. 
+These are some tips and tricks to make your Julia code run faster! The **take home message** for good performance is **keep your code as general as possible and as simple as possible** and focus on **type stability**.
 
 Remember: speed in Julia comes from **type stability** and **not type annotations**, which means that you should not use type annotations if not required and that the **returned value must depend only on the type of the arguments**.
 
