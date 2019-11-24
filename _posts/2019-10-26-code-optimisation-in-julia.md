@@ -11,7 +11,6 @@ permalink: /code-optimisation-in-julia/
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "book"
-line_number: true
 
 categories:
     - "Tutorial"
