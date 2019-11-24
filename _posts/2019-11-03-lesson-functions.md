@@ -7,7 +7,7 @@ header:
   og_image: "/assets/images/2019/11/03/teaser.jpg"
   teaser: "/assets/images/2019/11/03/teaser.jpg"
 excerpt: "From zero to Julia Lesson 2. An introduction to functions"
-permalink: /lesson-funcitons/
+permalink: /lesson-functions/
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "book"
