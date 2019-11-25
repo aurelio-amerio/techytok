@@ -55,21 +55,21 @@ ERROR: MethodError: no method matching *(::Array{Int64,1}, ::Array{Int64,1})
 c = [4 5 6] # is a row vector
 
 >>> a*c
-	3×3 Array{Int64,2}:
-  	4   5   6
-  	8  10  12
- 	12  15  18
+    3×3 Array{Int64,2}:
+     4   5   6
+     8  10  12
+     12  15  18
 
 >>> c*a
-	1-element Array{Int64,1}:
- 	32
+    1-element Array{Int64,1}:
+     32
 
 d = reshape(collect(1:9),3,3)
 >>> d*a
-	3-element Array{Int64,1}:
- 	30
- 	36
- 	42
+    3-element Array{Int64,1}:
+     30
+     36
+     42
 ```
 
 This makes perfectly sense from a mathematical point of view and operators behave how we would mathematically expect. Nonetheless, in programming it is often useful to write operations which work on an element by element basis, and for this reason **broadcasting** comes to our help.
@@ -84,22 +84,22 @@ Considering the example we get:
 
 ```julia
 >>> a .* c
-	3×3 Array{Int64,2}:
-  	 4   5   6
-  	 8  10  12
- 	 12  15  18
+    3×3 Array{Int64,2}:
+     4   5   6
+     8  10  12
+     12  15  18
 
 >>> c .* a
-	3×3 Array{Int64,2}:
-  	 4   5   6
-  	 8  10  12
- 	 12  15  18
+    3×3 Array{Int64,2}:
+     4   5   6
+     8  10  12
+     12  15  18
 
->>> a.*d
-	3×3 Array{Int64,2}:
-	 1   4   7
- 	 4  10  16
- 	 9  18  27
+>>> a .* d
+    3×3 Array{Int64,2}:
+     1   4   7
+     4  10  16
+     9  18  27
 ```
 
 Notice that when we broadcast the multiplication with a matrix and an array, the array gets multiplied "in the same direction" as it is written, in the sense that if a vector is a column it gets applied column by column etc. 
