@@ -17,6 +17,9 @@
     },
     {
       "title": "Control Flow"
+    },
+    {
+      "title": "Working with arrays: broadcasting"
     }
   ]
 }
