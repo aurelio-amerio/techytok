@@ -56,8 +56,8 @@ c = [4 5 6] # is a row vector
 
 >>> a*c
     3×3 Array{Int64,2}:
-     4   5   6
-     8  10  12
+      4   5   6
+      8  10  12
      12  15  18
 
 >>> c*a
@@ -85,14 +85,14 @@ Considering the example we get:
 ```julia
 >>> a .* c
     3×3 Array{Int64,2}:
-     4   5   6
-     8  10  12
+      4   5   6
+      8  10  12
      12  15  18
 
 >>> c .* a
     3×3 Array{Int64,2}:
-     4   5   6
-     8  10  12
+      4   5   6
+      8  10  12
      12  15  18
 
 >>> a .* d
