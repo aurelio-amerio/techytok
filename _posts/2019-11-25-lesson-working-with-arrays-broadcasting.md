@@ -7,7 +7,7 @@ header:
   og_image: "/assets/images/2019/11/25/teaser.jpg"
   teaser: "/assets/images/2019/11/25/teaser.jpg"
 excerpt: "From zero to Julia Lesson 5. Working with arrays: broadcasting"
-permalink: /lesson-working-woth-arrays/
+permalink: /lesson-working-with-arrays/
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "book"

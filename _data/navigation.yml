@@ -38,6 +38,8 @@ zero-to-julia:
         url: /lesson-data-structures/
       - title: "Lesson 4 - Control Flow"
         url: /lesson-control-flow/
+      - title: "Lesson 5 - Broadcasting"
+        url: /lesson-working-with-arrays/
 
 
   # - title: Customization
