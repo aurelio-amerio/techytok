@@ -4,7 +4,8 @@
 - functions OK
 - control flows Oki [aggiungere link a scope]
 - scope of variables
-- collections
+- collections OK
+- broadcasting OK
 - modules
 - working with packages
 - in depth type annotations and multiple dispatch
