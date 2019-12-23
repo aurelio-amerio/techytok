@@ -1,12 +1,13 @@
 # Program
 
 - variables, types and operations OK
-- functions OK
-- control flows Oki [aggiungere link a scope]
-- scope of variables
+- functions OK add paragraph about help
+- control flows Ok
+- scope of variables OK
 - collections OK
 - broadcasting OK
 - modules
+- structures
 - working with packages
 - in depth type annotations and multiple dispatch
 - numerical operations: integration

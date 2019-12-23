@@ -201,8 +201,6 @@ cannot assign variables in other modules
 
 At line 9-10 we can see that the `a1` variable, which is exported by the module, can be accessed directly without specifying the scope of the variable, while on line 12-13 and 15-16 we can see that `b1` can only be accessed by specifying where the variable lives (i.e. inside `ScopeTestModule`). At line 18-19 we can see that it is not possible to directly modify a variable which is defined inside another module.
 
-
-
 # Conclusions
 
 When you are writing some quick computations in the REPL or you are writing a simple script, you don't need to care about what goes in the global scope and what not, but if you are writing a piece of code that has to be reusable (like a library for example) and needs to be fast, there are some guidelines which should be followed:

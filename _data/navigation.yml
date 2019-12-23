@@ -42,6 +42,8 @@ zero-to-julia:
         url: /lesson-working-with-arrays/
       - title: "Lesson 6 - Variable Scope"
         url: /lesson-variable-scope/
+      - title: "Lesson 7 - Modules"
+        url: /lesson-modules/
 
 
   # - title: Customization

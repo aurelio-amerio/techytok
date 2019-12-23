@@ -166,7 +166,7 @@ function while_test()
 end
 ```
 
-While blocks can access and change the values of variables in the scope of the block in which they are defined.
+While blocks can access and change the values of variables in the scope of the block in which they are defined. For more info on variable scope, see [this](https://techytok.com/lesson-variable-scope/) lesson.
 {: .notice--info}
 
 # Enumerate
