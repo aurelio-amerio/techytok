@@ -177,6 +177,27 @@ As you can see, even if `c` is a keyword argument, it must always be specified!
 
 It is preferable to use positional arguments whenever high performance is required (for example when writing functions which need to be called many times), it is always possible to write a wrapper to a function (or a method of the function) which uses keyword arguments, if needed, as we will see later on when we talk about **multiple dispatch**.
 
+# Function documentation
+
+It is possible to get information on a function by typing in the REPL `? functionName`, this will fetch the documentation for that function, if available, or it will print some information which the compiler is able to infer. 
+
+For example if we query the documentation of the `sin` function with `? sin` we get this output:
+
+![image-center](/assets/images/2019/11/03/fig1-help.png){: .align-center}
+
+It is also possible to write the documentation of your functions in the following way:
+
+```julia
+"""
+Description of the function
+"""
+function foo(x)
+    #... function implementation
+end
+```
+
+You can find more information on how to write the code documentation in the [lesson on modules](https://techytok.com/lesson-modules/#code-documentation) and at the [official documentation](https://docs.julialang.org/en/v1/manual/documentation/index.html).
+
 # Conclusions
 
 In this lesson we have learned how to define functions and use positional and keyword arguments. 

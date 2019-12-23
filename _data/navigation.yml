@@ -44,6 +44,8 @@ zero-to-julia:
         url: /lesson-variable-scope/
       - title: "Lesson 7 - Modules"
         url: /lesson-modules/
+      - title: "Lesson 8 - Types"
+        url: /lesson-types/
 
 
   # - title: Customization

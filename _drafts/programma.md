@@ -6,7 +6,7 @@
 - scope of variables OK
 - collections OK
 - broadcasting OK
-- modules
+- modules OK
 - structures
 - working with packages
 - in depth type annotations and multiple dispatch
