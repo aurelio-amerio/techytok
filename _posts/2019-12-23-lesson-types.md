@@ -24,11 +24,11 @@ sidebar:
   nav: "zero-to-julia"
 ---
 
-In this lesson we will learn what types are and how it is possible to define functions that work on types. We will learn which are the difference between **abstract** and **concrete types**, how to define **immutable** and **mutable types** and how to create a **type constructor**. We will give a brief introduction to **multiple dispatch** and see how types have a role in it. 
+In this lesson we will learn what types are and how it is possible to define functions that work on types. We will learn which are the difference between **abstract** and **concrete types**, how to define **immutable** and **mutable types** and how to create a **type constructor**. We will give a brief introduction to **multiple dispatch** and see how types have a role in it.
 
-You can find the code for this lesson at 
+You can find the code for this lesson at
 
-We can think of types as containers for data only. What's more, it is possible to define a type hierarchy so that functions that work for parent type work also for the children (if they are written properly). A parent type can only be an `AbstractType` (like `Number`) while a child can be both an abstract or concrete type. 
+We can think of types as containers for data only. What's more, it is possible to define a type hierarchy so that functions that work for parent type work also for the children (if they are written properly). A parent type can only be an `AbstractType` (like `Number`) while a child can be both an abstract or concrete type.
 
 ![image-center](/assets/images/2019/12/23b/fig1-types.jpg){: .align-center}
 
@@ -36,7 +36,7 @@ In the graphic, types in round bubbles are *abstract types* while the ones on sq
 
 # Implementation
 
-To declare a Type we use either the `type` or `struct` keyword. 
+To declare a Type we use either the `type` or `struct` keyword.
 
 To declare an abstract type we use:
 
@@ -64,7 +64,7 @@ struct ClassicMusician <: Musician
 end
 ```
 
-Notably rock-stars love to change the colour of their headband, so we have made `Rockstar` a `mutable struct`, which is a concrete type whose elements value can be modified. On the contrary classic musicians are know for their everlasting love for their instrument, which will never change, so we have made `ClassicMusician` an immutable concrete type. 
+Notably rock-stars love to change the colour of their headband, so we have made `Rockstar` a `mutable struct`, which is a concrete type whose elements value can be modified. On the contrary classic musicians are know for their everlasting love for their instrument, which will never change, so we have made `ClassicMusician` an immutable concrete type.
 
 We can define another subtype of `Person`, `Physcist`, as I am a physicist and I was getting envious of rock-stars:
 
@@ -104,7 +104,7 @@ As you can see, I love violin and I just can't change my instrument, as `Classic
 
 I am not a rock-star, but my friend Ricky is one, so we'll define:
 
-```Julia
+```julia
 riky = Rockstar("Riccardo", "Voice", "Black Lotus", "red", 2)
 >>>riky.bandanaColor
 red
@@ -147,7 +147,7 @@ Hello, my name is Riccardo and I sing
 My band name is Black Lotus and my favourite bandana colour is red!
 ```
 
-The `::SomeType` notation indicates to Julia that `person` has to be of the said type or a sub-type. Only the most strict requirement is considered, for example Riky is a `Person`, but "more importantly" he is a `Rockstar`, thus `introduceMe(person::Rockstar)` is called. In other words, the function with a closer type signature will be called. 
+The `::SomeType` notation indicates to Julia that `person` has to be of the said type or a sub-type. Only the most strict requirement is considered, for example Riky is a `Person`, but "more importantly" he is a `Rockstar`, thus `introduceMe(person::Rockstar)` is called. In other words, the function with a closer type signature will be called.
 
 This is an example of multiple dispatch, which means that we have written a single function with different methods depending on the type of the variable. We will come back again to multiple dispatch in another lesson, as it is one of the most important features of Julia and is considered a more advanced topic, together with type annotations. As an anticipation `::Rockstar` is a type annotation, the compiler will check if `person` is a `Rockstar` (or a sub-type of it) and if that is true it will execute the function.
 
@@ -267,15 +267,15 @@ circle1.area
 printCircleEquation(2, 3, circle1)
 ```
 
-This is a simple module which implements a `Circle` type which contains the radius, perimeter and area of the circle. There are three functions which respectively compute the perimeter and area of the circle and store them inside the`Circle` structure. The third function prints the equation of a circle with a given centre and the radius stored inside a `Circle` structure. 
+This is a simple module which implements a `Circle` type which contains the radius, perimeter and area of the circle. There are three functions which respectively compute the perimeter and area of the circle and store them inside the`Circle` structure. The third function prints the equation of a circle with a given centre and the radius stored inside a `Circle` structure.
 
-Notice that we could have simply computed the perimeter and area inside the type constructor, but I have chosen not to do so for educative purposes. 
+Notice that we could have simply computed the perimeter and area inside the type constructor, but I have chosen not to do so for educative purposes.
 
 # Conclusions
 
 This lesson has been a little bit more conceptually difficult than the previous ones, but you don't need to remember everything right now! We will use types in the future lessons, so you will naturally get accustomed to how they works over time.
 
-We have learned how to define abstract and concrete type, and how to define mutable and immutable structures. We have then learned how it is possible to define functions that work on custom types and we have introduced multiple dispatch. Furthermore we have seen how to define an inner constructor, to aid the user create an instance of a composite type. Lastly we have seen an example of a module which uses a custom type (`Circle`) to perform and store some specific computations. 
+We have learned how to define abstract and concrete type, and how to define mutable and immutable structures. We have then learned how it is possible to define functions that work on custom types and we have introduced multiple dispatch. Furthermore we have seen how to define an inner constructor, to aid the user create an instance of a composite type. Lastly we have seen an example of a module which uses a custom type (`Circle`) to perform and store some specific computations.
 
 If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion bellow**!
 
