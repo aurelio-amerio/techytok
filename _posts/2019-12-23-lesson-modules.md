@@ -30,7 +30,7 @@ You can find the code snippets from this lesson [here](https://github.com/aureli
 
 # Working with modules
 
-Libraries in Julia come in the form of module which can be loaded via the `using` notation. A module is a separate environment with its sets of variables and functions, some of which are exported in the calling scope, which means that you can call exported functions by simply typing their name as if they where defined in the same scope, while others are accessible only through the `ModuleName.functionName` notation. 
+Libraries in Julia come in the form of module which can be loaded via the `using` notation. A module is a separate environment with its sets of variables and functions, some of which are exported in the calling scope, which means that you can call exported functions by simply typing their name as if they where defined in the same scope, while others are accessible only through the `ModuleName.functionName` notation.
 
 In order to use an existing official module, we need first to install it and then import it, you can do it using the package manager. For this example we will use the [Special Functions](https://juliamath.github.io/SpecialFunctions.jl/latest/) package, which contains functions such as the gamma function and the Bessel functions.
 
@@ -90,7 +90,7 @@ I am another 'gamma' function
 
 ```
 
-As you can see at line 7, a warning is shown to let us know that the `gamma` function exported by `SpecialFunctions` is in conflict with the `gamma` function which we have defined at line 1. 
+As you can see at line 7, a warning is shown to let us know that the `gamma` function exported by `SpecialFunctions` is in conflict with the `gamma` function which we have defined at line 1.
 
 At line 9 we call the `gamma` function and as we can see the first definition of the function is what is used (i.e. the user defined function), if we want to call the gamma function inside `SpecialFunctions` we need to specify the module which contains it (as done in line 13).
 
@@ -119,13 +119,13 @@ At line 4 we see that `gamma` is not defined if we simply  type `import SpecialF
 
 # User defined modules
 
-It is possible to think of modules as compact blocks of variables and functions which can be easily imported in another program. One should not think of a module as something similar to what is a class in object oriented languages such as C++ and Python, but instead as a separate global scope with its own set of variables and functions which can be called from another program. One difference with a class is that it is not possible to import a module several times to have different sets of "global variables", while it is usual in OOP languages to have different instances of the same class. 
+It is possible to think of modules as compact blocks of variables and functions which can be easily imported in another program. One should not think of a module as something similar to what is a class in object oriented languages such as C++ and Python, but instead as a separate global scope with its own set of variables and functions which can be called from another program. One difference with a class is that it is not possible to import a module several times to have different sets of "global variables", while it is usual in OOP languages to have different instances of the same class.
 
 In Julia the **functions** inside a module **should thus depend only on their input** (and eventually some global variables or other functions defined inside the module which will be shared). We will see in the next lesson how all the data which should be passed to a function and which has to be eventually modified by the function can be conveniently wrapped into a structure. As an anticipation, what may look like `object.foo(x)` in Python/C++,  in Julia will look like `foo(x, dataStructure)`. Although it may seem a trivial difference, we will see that this difference is at the base of **multiple dispatch**, which is one of the main strength of Julia!
 
 In the following example we will define a simple module which performs some operations and exports a function .
 
-```Julia
+```julia
 module MyModule
 export func2
 
@@ -156,7 +156,7 @@ UndefVarError: func1 not defined
 
 A module starts with the `module` keyword and should end with `end`. Contrarily to functions and other blocks, one should not add indentation to a module block.
 
-We define a variable, `a`, and two functions, `func1` and `func2`, but we export only `func2` (see line 2), which means that only `func2` will be accessible in the outer scope if we don't specify the module to which it belongs. 
+We define a variable, `a`, and two functions, `func1` and `func2`, but we export only `func2` (see line 2), which means that only `func2` will be accessible in the outer scope if we don't specify the module to which it belongs.
 
 At line 17 we import `MyModule`, notice the `.` before the module name, this is needed as `MyModule` is not an "official" package and ultimately because `MyModule` is defined in the Main scope (the `.Name` notation is an abbreviation of `Main.Name`). At line 19 we call `func2` and at line 22 `func1`, notice that an error is thrown when we call `func1` as it is not exported. If we want to access it we need to type `MyModule.func1(3)` as shown in line 25.
 
@@ -214,22 +214,22 @@ using .MyBigModule
 Depending on your folder structure and if you have downloaded/cloned the [techytok-examples](https://github.com/aurelio-amerio/techytok-examples) repository, you may need to change the current working directory to the one which contains the files described above (in my case "lesson-modules") using the command `cd("lesson-modules")` for this example to work.
 {: .notice--warning}
 
-Although one should give meaningful names to the files which make up a module (and not part1, part2, etc.) this was an example of how one can structure a module: 
+Although one should give meaningful names to the files which make up a module (and not part1, part2, etc.) this was an example of how one can structure a module:
 
-- make a main "module file" which contains the module, imports all of the other files using `include` and exports the desired functions. 
+- make a main "module file" which contains the module, imports all of the other files using `include` and exports the desired functions.
 - make several files with meaningful names which perform a group of operations with a common topic.
 
 This structure lets you easily extend the module (simply add new files) and makes the code more maintainable, if functions which perform similar tasks are grouped in the same file.
 
-Notice that in Julia it is not important the order in which you include the files in the main module, but in my opinion it is a good practice to include the files in a sort of chronological order, in our example the function `func2big` depends on `func1big` which is defined inside `big-module-part-1.jl`, so we should import it before we include`big-module-part-2.jl`. 
+Notice that in Julia it is not important the order in which you include the files in the main module, but in my opinion it is a good practice to include the files in a sort of chronological order, in our example the function `func2big` depends on `func1big` which is defined inside `big-module-part-1.jl`, so we should import it before we include`big-module-part-2.jl`.
 
 Remember that when we call `include()` the code gets "pasted" inside the file where `include` is called, so it is not necessary to call `include` inside `big-module-part-2.jl` as the compiler will see part1, part2 and the main module as an unique file (furthermore using `include` inside a file which gets included by another file may lead to errors).
 
 # Code reusability
 
-The goal of a module is to write a set of functions, define a series of variables or types which can be easily reused in other programs (*your* other programs for example), so one should give meaningful names to the functions (not like `func1` and `func2`) and make them as general and stand-alone as possible. 
+The goal of a module is to write a set of functions, define a series of variables or types which can be easily reused in other programs (*your* other programs for example), so one should give meaningful names to the functions (not like `func1` and `func2`) and make them as general and stand-alone as possible.
 
-Since you will likely come back to a module you have written once every few months, you may not remember what a specific function does, it is thus a good idea to add annotations to your code through `# comment` and write a small description of the function. 
+Since you will likely come back to a module you have written once every few months, you may not remember what a specific function does, it is thus a good idea to add annotations to your code through `# comment` and write a small description of the function.
 
 When you type `? functionName` in the REPL you get a description of said function and usually an example of how it can be used. We will now learn how to write such description for our functions.
 
@@ -242,13 +242,13 @@ One can write the description of a function in the following way:
 Description of the function
 """
 function foo(x)
-    #... function implementation 
+    #... function implementation
 end
 ```
 
 There is a set of rules for writing documentation listed in the [official documentation](https://docs.julialang.org/en/v1/manual/documentation/index.html). Here is a summary:
 
-- Start with the function signature (i.e. function name and arguments) indented by 4 spaces 
+- Start with the function signature (i.e. function name and arguments) indented by 4 spaces
 - Write a small summary of what the function does
 - If necessary explain what the arguments mean/do
 - Optionally give an example of usage of the function
@@ -286,11 +286,11 @@ Or, if you are using the Juno IDE, we can look up the documentation for `func2bi
 
 Pretty neat, don't you think?
 
-It is good practice to write the documentation with at least the function signature and a short description for each function you define: this will make navigating through the code much easier and you can keep open the documentation tab in Juno to look for the signature of a specific function you wrote. 
+It is good practice to write the documentation with at least the function signature and a short description for each function you define: this will make navigating through the code much easier and you can keep open the documentation tab in Juno to look for the signature of a specific function you wrote.
 
 # Conclusions
 
-We have learned how to import an existing "official" module and how to write our own. We have learned how it is possible to split a piece of code between multiple files and how code reusability can be improved by module usage. Finally we have learned how to write proper code documentation in order to make it easier to find out and remember what a function does. 
+We have learned how to import an existing "official" module and how to write our own. We have learned how it is possible to split a piece of code between multiple files and how code reusability can be improved by module usage. Finally we have learned how to write proper code documentation in order to make it easier to find out and remember what a function does.
 
 If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion bellow**!
 
