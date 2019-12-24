@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2019/12/24b/header.jpg"
   og_image: "/assets/images/2019/12/24b/teaser.jpg"
   teaser: "/assets/images/2019/12/24b/teaser.jpg"
-excerpt: "From zero to Julia Lesson 10. Plotting"
+excerpt: "From zero to Julia Lesson 10. Introduction to plotting"
 permalink: /lesson-plotting/
 toc: true
 toc_label: "Table of Contents"
