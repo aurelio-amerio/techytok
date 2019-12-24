@@ -48,6 +48,8 @@ zero-to-julia:
         url: /lesson-types/
       - title: "Lesson 9 - Packages"
         url: /lesson-packages/
+      - title: "Lesson 10 - Plotting"
+        url: /lesson-plotting/
 
 
   # - title: Customization

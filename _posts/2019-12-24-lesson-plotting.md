@@ -2,7 +2,7 @@
 title: "Introduction to Plotting"
 date: 2019-12-24
 header:
-  caption: ""
+  caption: "Photo by [Nina Ž.](https://unsplash.com/@ninaz) on [Unsplash](https://unsplash.com/)"
   image: "/assets/images/2019/12/24b/header.jpg"
   og_image: "/assets/images/2019/12/24b/teaser.jpg"
   teaser: "/assets/images/2019/12/24b/teaser.jpg"
@@ -23,10 +23,9 @@ comments: true
 sidebar:
   nav: "zero-to-julia"
 ---
-
 In this lesson we will learn how to make beautiful plots using `Plots.jl`.
 
-In Julia there are many different libraries for plotting, for example [`PyPlot.jl`](https://github.com/JuliaPy/PyPlot.jl), [`GR.jl`](https://github.com/jheinen/GR.jl) and [`Plotly.jl`](https://github.com/sglyon/PlotlyJS.jl). [`Plots.jl`](https://github.com/JuliaPlots/Plots.jl) is a wrapper around all those library and exposes a clean and simple API for plotting. You can find all the back-ends available for `Plots.jl` [here](https://docs.juliaplots.org/latest/backends/). 
+In Julia there are many different libraries for plotting, for example [`PyPlot.jl`](https://github.com/JuliaPy/PyPlot.jl), [`GR.jl`](https://github.com/jheinen/GR.jl) and [`Plotly.jl`](https://github.com/sglyon/PlotlyJS.jl). [`Plots.jl`](https://github.com/JuliaPlots/Plots.jl) is a wrapper around all those library and exposes a clean and simple API for plotting. You can find all the back-ends available for `Plots.jl` [here](https://docs.juliaplots.org/latest/backends/).
 
 # Installing `Plots.jl`
 
@@ -39,7 +38,7 @@ Pkg.add("Plots")
 using Plots
 ```
 
-The first time it will take a while to download and compile `Plots`. The default back-end is `GR`, but if you desire you can change it, you can do so with a specific function for each back-end (see [the documentation](https://docs.juliaplots.org/latest/backends/)). For example if we desire to use `Plotly` we can call `plotly()` (which has a very nice interactive interface). 
+The first time it will take a while to download and compile `Plots`. The default back-end is `GR`, but if you desire you can change it, you can do so with a specific function for each back-end (see [the documentation](https://docs.juliaplots.org/latest/backends/)). For example if we desire to use `Plotly` we can call `plotly()` (which has a very nice interactive interface).
 
 ```julia
 using Plots
@@ -81,7 +80,7 @@ y2=sin.(x).^2
 plot!(x, y2, label="sin(x)^2", color=:red, line=:dash)
 ```
 
-On line 2 you can see that we have specified the colour of the line and the linestyle (which is dashed in this case). You can find more information on the possible parameters at the [official documentation](http://docs.juliaplots.org/latest/attributes/). 
+On line 2 you can see that we have specified the colour of the line and the linestyle (which is dashed in this case). You can find more information on the possible parameters at the [official documentation](http://docs.juliaplots.org/latest/attributes/).
 
 ![image-center](/assets/images/2019/12/24b/img1b.png){: .align-center}
 
@@ -100,11 +99,11 @@ Furthermore on line 4 we can see how it is possible to save the current plot as 
 
 # Working with different back-ends
 
-Different back-ends have different features, we have already seen `GR` and in this section we will deal with `Plotly` and  `PyPlot`. 
+Different back-ends have different features. Up to now we have worked with `GR`, which is fast and has almost everything you may need. Since `GR` is a relatively new back-end, you may need to look at other back-ends for more customisation options. In this section we will deal with `Plotly` and  `PyPlot`.
 
 ## Plotly
 
-`Plotly` is a good solution if you want to have nice interactive plots. 
+`Plotly` is a good solution if you want to have nice interactive plots.
 
 To make a plot with `Plotly` select the `plotly()` back-end  and create a plot:
 
@@ -125,7 +124,6 @@ savefig("img2")
 In this case the figure will be interactive and the saved figure will be an `html` page. Since `Plotly` is web-based it is possible to embed interactive plots in your website like the previous one:
 
 <iframe width="100%" height="450px" frameborder="0" scrolling="no" src="/assets/images/2019/12/24b/img2.html"></iframe>
-
 This online interactive plot is obtained through the following code:
 
 ```html
@@ -145,20 +143,50 @@ savefig("img2.png")
 
 ## PyPlot
 
-PyPlot is a python library for plotting. It has many customisation capabilities with the downside that you need to first install and configure Julia to interact with Python. In order to configure and install `PyCall`, the package required to interact with python, please refer to [this guide].
+PyPlot is a Python library for plotting. It has many customisation capabilities with the downside that you need to first install python and configure Julia to interact with Python. In order to configure and install `PyCall`, the package required to interact with Python, please refer to this guide [not yet available].
 
 In order to use the `PyCall` back-end, type:
 
 ```julia
 using Plots
-pycall()
+pyplot()
+
+x=0:0.1:2*π
+y=sin.(x).^2
+
+plot(x, y, label="sin(x)^2")
+savefig("img3.png")
 ```
 
+![image-center](/assets/images/2019/12/24b/img3.png){: .align-center}
 
+With the `PyPlot` back-end it is possible to use LaTeX in the labels (and axis labels) adding the `LaTeXStrings` package:
+
+```julia
+Pkg.add("LaTeXStrings")
+using LaTeXStrings
+
+plot(x, y, label=L"$\sin(x)^2$")
+savefig("img3b.png")
+```
+
+To create a LaTeX string, we have to write `L` before the string and put the LaTeX code inside `$`, like what is written at line 4.
+
+![image-center](/assets/images/2019/12/24b/img3b.png){: .align-center}
+
+You can find more about matplotlib [here](https://matplotlib.org/). Every function or property for matplotlib is available through `PyPlot.function_name`. If you are interested take a look also to the [`PyPlot.jl`](https://github.com/JuliaPy/PyPlot.jl) package.
 
 # Conclusions
 
-{TODO}
+We have learned how to make some nice plots using three different back-ends, each one has its pros and cons.  To summarise:
+
+- Use `GR` for fast "default" plotting.
+
+- Use `Plotly` for interactive plotting.
+
+- Use `PyPlot` if you need some of its customisation options.
+
+
 
 If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
