@@ -46,6 +46,8 @@ zero-to-julia:
         url: /lesson-modules/
       - title: "Lesson 8 - Types"
         url: /lesson-types/
+      - title: "Lesson 9 - Packages"
+        url: /lesson-packages/
 
 
   # - title: Customization

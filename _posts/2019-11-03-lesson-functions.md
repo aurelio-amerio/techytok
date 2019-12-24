@@ -92,7 +92,7 @@ f(x,y,z) = (x^2 + 2y)*z
 
 function integral_of_f(y,z)
     arg(x) = f(x,y,z)
-	result = quadgk(arg, 3, 4)
+    result = quadgk(arg, 3, 4)
     return result
 end
 ```
@@ -106,12 +106,12 @@ Functions may also take no arguments and return no value, if needed, for example
 
 ```julia
 function say_hi()
-	println("Hello from TechyTok!")
+    println("Hello from TechyTok!")
     return
 end
 ```
 
-If the function returns no value the `return` can be omitted. In general it is also possible to omit the `return` statement even in regular functions and Julia will return the last computed value, but in this case it is better (in my opinion) to return explicitly a value, for clarity's sake.
+If the function returns no value the `return` can be omitted. In general it is also possible to omit the `return` statement even in regular functions and Julia will return the last computed value. However, in my opinion, in this case it is better to return explicitly a value, for clarity's sake.
 {: .notice--info}
 
 # Optional positional arguments
@@ -175,7 +175,7 @@ As you can see, even if `c` is a keyword argument, it must always be specified!
 
 ## Performance tip
 
-It is preferable to use positional arguments whenever high performance is required (for example when writing functions which need to be called many times), it is always possible to write a wrapper to a function (or a method of the function) which uses keyword arguments, if needed, as we will see later on when we talk about **multiple dispatch**.
+It is preferable to use positional arguments whenever high performance is required (for example when writing functions which need to be called many times), it is always possible to write a wrapper to a function (or a method of the function) which uses keyword arguments, if needed, as we will see later on when we deal with **multiple dispatch**.
 
 # Function documentation
 
@@ -200,7 +200,7 @@ You can find more information on how to write the code documentation in the [les
 
 # Conclusions
 
-In this lesson we have learned how to define functions and use positional and keyword arguments. 
+In this lesson we learned how to define functions and use positional as well as keyword arguments. 
 
 If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**! 
 

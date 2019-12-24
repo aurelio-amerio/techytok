@@ -26,7 +26,7 @@ sidebar:
 
 In this lesson we will learn what types are and how it is possible to define functions that work on types. We will learn which are the difference between **abstract** and **concrete types**, how to define **immutable** and **mutable types** and how to create a **type constructor**. We will give a brief introduction to **multiple dispatch** and see how types have a role in it.
 
-You can find the code for this lesson at
+You can find the code for this lesson [here](https://github.com/aurelio-amerio/techytok-examples/tree/master/lesson-types).
 
 We can think of types as containers for data only. What's more, it is possible to define a type hierarchy so that functions that work for parent type work also for the children (if they are written properly). A parent type can only be an `AbstractType` (like `Number`) while a child can be both an abstract or concrete type.
 
