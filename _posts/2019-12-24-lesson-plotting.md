@@ -23,7 +23,7 @@ comments: true
 sidebar:
   nav: "zero-to-julia"
 ---
-In this lesson we will learn how to make beautiful plots using `Plots.jl`.
+In this lesson we will learn how to make beautiful plots using `Plots.jl`. You can find the code used in this lesson [here](https://github.com/aurelio-amerio/techytok-examples/tree/master/lesson-plots)
 
 In Julia there are many different libraries for plotting, for example [`PyPlot.jl`](https://github.com/JuliaPy/PyPlot.jl), [`GR.jl`](https://github.com/jheinen/GR.jl) and [`Plotly.jl`](https://github.com/sglyon/PlotlyJS.jl). [`Plots.jl`](https://github.com/JuliaPlots/Plots.jl) is a wrapper around all those library and exposes a clean and simple API for plotting. You can find all the back-ends available for `Plots.jl` [here](https://docs.juliaplots.org/latest/backends/).
 
