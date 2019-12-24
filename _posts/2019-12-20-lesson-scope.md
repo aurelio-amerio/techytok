@@ -1,6 +1,5 @@
 ---
-- units: `Unitful`
-- working with JLDtitle: "Variable Scope"
+title: "Variable Scope"
 date: 2019-12-20
 header:
   caption: "Photo by [Luca Bravo](https://unsplash.com/@lucabravo) on [Unsplash](https://unsplash.com/)"
