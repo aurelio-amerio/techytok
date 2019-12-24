@@ -102,6 +102,12 @@ convert(Float64, 2)
 
 a = 2
 b = convert(Float64, a)
+
+>>>a
+2
+
+>>>b
+2.00
 ```
 
 # Conclusion
