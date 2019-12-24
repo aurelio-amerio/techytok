@@ -90,7 +90,7 @@ A loop is the operation of repeating the same set of instructions several times.
 
 Sometimes we want to iterate over a list of values and perform some operation on each element.
 
-For example let's suppose we want to print all the squares of the numbers comprised between 1 and 10, we can do so using a `for` loop:
+For example let's suppose we want to print all the squares of the numbers comprised between 1 and 10, we can do it using a `for` loop:
 
 ```julia
 for i in 1:10
@@ -105,7 +105,7 @@ It is also possible to use the alternative notation `for i = 1:10` which is comp
 
 Please notice that it is possible to loop not only over ranges (which can also be specified using the [`range`]( https://docs.julialang.org/en/v1/base/math/#Base.range ) function) but also lists (i.e. arrays, tuples, etc).
 
-For example, let's suppose we have a list of persons and we want to greet all of them, we can do so with the `for` statement:
+For example, let's suppose we have a list of persons and we want to greet all of them, we can do it with the `for` statement:
 
 ```julia
 persons = ["Alice", "Bob", "Carla", "Daniel"]
@@ -129,7 +129,7 @@ for i in 1:100
     if i>10
         break
     else
-   		println(i^2)
+   	    println(i^2)
     end
 end
 ```

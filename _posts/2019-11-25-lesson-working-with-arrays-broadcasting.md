@@ -37,13 +37,13 @@ If you are new to programming or you come from a compiled language (like C++), s
 
 Many languages (such as Python with **numpy** and **Matlab**) make extensive use of optimised C or Fortran routines under the hood to perform fast mathematical operations, as such the user is encouraged to write **vectorised code**, so that these routines can perform faster for loops, as a big part of the CPU time is spent on calling the underlying compiled routine, and not computing the actual result. More or less what happens is that the user writes vectorised code which communicates to C code that can run fast for loops and the result is then returned to the user in the form of an array (or matrix).
 
-In **Julia**, since for loops are already as fast as they can be (close to the speed of C) there is **no need to write vectorised code**, as the interpreter will directly compile your code in optimised machine code which will run as fast as possible on you machine. In Julia **nothing happens under the hood** (beside the compilation of the functions) and almost all of the functions in Julia are written in Julia, just like all the functions in C are written in C. 
+In **Julia**, since for loops are already as fast as they can be (close to the speed of C) there is **no need to write vectorised code**, as the interpreter will directly compile your code in optimised machine code which will run as fast as possible on your machine. In Julia **nothing happens under the hood** (beside the compilation of the functions) and almost all the functions in Julia are written in Julia, just like all the functions in C are written in C. 
 
 ## Operations with arrays
 
 Julia by default deals with operations on arrays and matrices as one would do in mathematics.
 
-Let's start with an example: from a mathematical point of view, we don't know how to compute the `sin` of an array, as the sine function is defined only single (dimensionless) values. At the same time the `exp` can work both on single values and matrices (as the exponential of a matrix has a well defined geometrical meaning). For the same reason, you cannot multiply two arrays together, unless their size is matching correctly (i.e. one array is a row array and the other one is a column array) and in this case the multiplication of two arrays becomes the well defined geometrical product of two arrays (which can be a scalar or a matrix, depending on the order of the multiplication):
+Let's start with an example: from a mathematical point of view, we don't know how to compute the `sin` of an array, as the sine function is defined only on single (dimensionless) values. At the same time the `exp` can work both on single values and matrices (as the exponential of a matrix has a well-defined geometrical meaning). For the same reason, you cannot multiply two arrays together, unless their size is matching correctly (i.e. one array is a row array and the other one is a column array) and in this case the multiplication of two arrays becomes the well-defined geometrical product of two arrays (which can be a scalar or a matrix, depending on the order of the multiplication):
 
 ```julia
 a = [1,2,3] # is a column vector
@@ -104,7 +104,7 @@ Considering the example we get:
 
 Notice that when we broadcast the multiplication with a matrix and an array, the array gets multiplied "in the same direction" as it is written, in the sense that if a vector is a column it gets applied column by column etc. 
 
-We can use the **broadcasting notation** also to **map a function over an n-dimensional array**. There is no speed gain in doing so, at is will be exactly equivalent to writing a for loop, but its conciseness may be useful sometimes. So the core idea in Julia is to **write functions that take single values** and use broadcasting when needed, **unless the functions must explicitly work on arrays** (for example to compute the mean of a series of values, perform matrix operations, vector multiplications, etc). 
+We can use the **broadcasting notation** also to **map a function over an n-dimensional array**. There is no speed gain in doing so, as it will be exactly equivalent to writing a for loop, but its conciseness may be useful sometimes. So the core idea in Julia is to **write functions that take single values** and use broadcasting when needed, **unless the functions must explicitly work on arrays** (for example to compute the mean of a series of values, perform matrix operations, vector multiplications, etc). 
 
 To broadcast a function over an array it is sufficient to put a dot before the brackets `.()` 
 

@@ -8,8 +8,8 @@
 - broadcasting OK
 - modules OK
 - structures OK
-- working with packages
-- plotting
+- working with packages OK
+- plotting [add ref to calling python]
 - numerical operations: integration
 - calling python
 - units: `Unitful`
