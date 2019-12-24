@@ -110,17 +110,49 @@ To make a plot with `Plotly` select the `plotly()` back-end  and create a plot:
 
 ```julia
 plotly()
-x=1:0.01:3*π
-y=exp.(x)
+x=1:0.1:3*π
+y=1:0.1:3*π
 
-plot(x,y, label="e^x")
-plot!(xlab="x", ylab="f(x)", yscale=:log10)
+xx = reshape([xi for xi in x for yj in y],  length(x), length(y))
+yy = reshape([yj for xi in x for yj in y],  length(x), length(y))
+zz = sin.(xx).*cos.(yy)
+plot3d(xx,yy,zz, label=:none, st = :surface)
+plot!(xlab="x", ylab="y", zlab="sin(x)*cos(y)")
 savefig("img2")
+
 ```
 
 In this case the figure will be interactive and the saved figure will be an `html` page. Since `Plotly` is web-based it is possible to embed interactive plots in your website like the previous one:
 
-<iframe width=100% frameborder="0" scrolling="no" src="/img2.html"></iframe>
+<iframe width="100%" height="450px" frameborder="0" scrolling="no" src="/assets/images/2019/12/24b/img2.html"></iframe>
+
+This online interactive plot is obtained through the following code:
+
+```html
+<iframe width="100%" height="450px" frameborder="0" scrolling="no" src="/assets/images/2019/12/24b/img2.html"></iframe>
+```
+
+If you want to save a plot made with `Plotly` as an image, you need to install the `ORCA` package:
+
+```julia
+Pkg.add("ORCA")
+using ORCA
+
+savefig("img2.png")
+```
+
+![image-center](/assets/images/2019/12/24b/img2.png){: .align-center}
+
+## PyPlot
+
+PyPlot is a python library for plotting. It has many customisation capabilities with the downside that you need to first install and configure Julia to interact with Python. In order to configure and install `PyCall`, the package required to interact with python, please refer to [this guide].
+
+In order to use the `PyCall` back-end, type:
+
+```julia
+using Plots
+pycall()
+```
 
 
 
