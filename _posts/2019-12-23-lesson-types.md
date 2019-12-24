@@ -277,6 +277,6 @@ This lesson has been a little bit more conceptually difficult than the previous 
 
 We have learned how to define abstract and concrete type, and how to define mutable and immutable structures. We have then learned how it is possible to define functions that work on custom types and we have introduced multiple dispatch. Furthermore we have seen how to define an inner constructor, to aid the user create an instance of a composite type. Lastly we have seen an example of a module which uses a custom type (`Circle`) to perform and store some specific computations.
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion bellow**!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!

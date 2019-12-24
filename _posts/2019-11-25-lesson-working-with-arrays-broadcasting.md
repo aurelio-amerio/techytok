@@ -135,6 +135,6 @@ We have also pointed out how Julia does not gain in performance by using "vector
 As a disclaimer, this guide in not meant to incite programming language elitism and criticise languages relying on other compiled routines to be efficient (I'm a Python user myself and in the end Julia is basically a really sophisticated wrapper around the LLVM, which is coded in C++). It is meant to point out the differences with other interpreted languages (like Python and Matlab) and show the capabilities of a language which is both compiled just in time and has an interpreter responsible for type inference. Thus **Julia solves the two languages problem** by being a programming language both easy to write and highly efficient (with speed comparable to C).
 {: .notice--info}
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion bellow**! 
+If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**! 
 
 Thank you for reading this lesson and see you soon on TechyTok!

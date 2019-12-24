@@ -202,6 +202,6 @@ You can find more information on how to write the code documentation in the [les
 
 In this lesson we have learned how to define functions and use positional and keyword arguments. 
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion bellow**! 
+If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**! 
 
 Thank you for reading this lesson and see you soon on TechyTok!

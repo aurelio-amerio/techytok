@@ -85,23 +85,31 @@ typeof("TechyTok")
 >>> String
 ```
 
-Although it is possible to change the value of a variable inside a program (it is a *variable*, after all) it is good programming practice and is also critical for performance that inside a program a variable is "type stable". This means that if we have assigned `a = 42`  it is better **not** to assign a new value to `a` which cannot be converted into an `Int` without losing information, like a `Float64` `a = 0.42` (if we convert a `Float64` to an `Int`,the decimal part gets truncated).
+Although it is possible to change the value of a variable inside a program (it is a *variable*, after all) it is good programming practice and is also critical for performance that inside a program a variable is "type stable". This means that if we have assigned `a = 42`  it is better **not** to assign a new value to `a` which cannot be converted into an `Int` without losing information, like a `Float64` `a = 0.42` (if we convert a `Float64` to an `Int`, the decimal part gets truncated).
 
 If we know that a variable (such as `a`) will have to contain values of type `Float64` it is better to initialise it with a value that is already of that type. 
+
+```julia
+a = 2 # if we need to operate with ints
+b = 2.0 # if we need to operate with floats
+```
 
 It is possible, if needed, to convert a value from a type to another using the function `convert`, for example:
 
 ```julia
 convert(Float64, 2)
->>> 2.0
+>>> 2.00
+
+a = 2
+b = convert(Float64, a)
 ```
 
 # Conclusion
 
-We have learned what variables are, how to perform basic operations and we have talked about types. 
+We have learned what variables are, how to perform basic operations and we have dealt about types. 
 
 In the next lesson we will try to understand what **functions** are and how they can be used to write versatile and reusable code!
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion bellow**! 
+If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**! 
 
 Thank you for reading this lesson and see you soon on TechyTok!

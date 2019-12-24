@@ -74,4 +74,4 @@ I encourage you to take a look at the [official documentation]( https://docs.jun
 
 # Conclusions
 
-You should now be able to run Julia code either in the REPL or inside the Juno IDE and you are now ready yo move on to the first real lesson on Julia!
+You should now be able to run Julia code either in the REPL or inside the Juno IDE and you are now ready to move on to the first real lesson on Julia!

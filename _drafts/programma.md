@@ -1,20 +1,20 @@
 # Program
 
 - variables, types and operations OK
-- functions OK add paragraph about help
+- functions OK 
 - control flows Ok
 - scope of variables OK
 - collections OK
 - broadcasting OK
 - modules OK
-- structures
+- structures OK
 - working with packages
-- in depth type annotations and multiple dispatch
+- plotting
 - numerical operations: integration
 - calling python
-- plotting
 - units: `Unitful`
 - working with JLD
+- in depth type annotations and multiple dispatch
 - multi-threading
 - multi-processing
 - code optimisation

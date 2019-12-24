@@ -292,6 +292,6 @@ It is good practice to write the documentation with at least the function signat
 
 We have learned how to import an existing "official" module and how to write our own. We have learned how it is possible to split a piece of code between multiple files and how code reusability can be improved by module usage. Finally we have learned how to write proper code documentation in order to make it easier to find out and remember what a function does.
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion bellow**!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!

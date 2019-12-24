@@ -89,6 +89,6 @@ That's it, you have successfully installed Julia and setup the Juno IDE: easy, i
 
 If you are new to Julia, I suggest that you take a look at the wonderful JuliaComputing introductory tutorials available [here](#https://github.com/JuliaComputing/JuliaBoxTutorials/tree/master/introductory-tutorials/intro-to-julia): they will give you a taste of what Julia can do and you will have a chance to explore the basics of this wonderful language!
 
-I hope you enjoyed this tutorial, if you liked it or for any questions please leave a comment bellow!
+I hope you enjoyed this tutorial, if you liked it or for any questions please leave a comment below!
 
 Stay tuned for further guides and tutorials here, at TechyTok!

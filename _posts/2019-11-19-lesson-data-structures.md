@@ -288,7 +288,7 @@ print(addressBook)
 
 In this lesson we have learned how to operate on arrays, tuples and dictionaries. Those structures are the basics of in memory storage for any data. Arrays are lightweight and useful solutions to pass blocks of data, so use them whenever needed! Contrarily to C++, Julia has a built in garbage collector, so you don't have to care about freeing memory and deleting pointers, as Julia will take care of it!
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion bellow**! 
+If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**! 
 
 Thank you for reading this lesson and see you soon on TechyTok! 
 
