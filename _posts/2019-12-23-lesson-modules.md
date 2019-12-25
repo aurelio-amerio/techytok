@@ -92,7 +92,7 @@ I am another 'gamma' function
 
 As you can see at line 7, a warning is shown to let us know that the `gamma` function exported by `SpecialFunctions` is in conflict with the `gamma` function which we have defined at line 1.
 
-At line 9 we call the `gamma` function and as we can see the first definition of the function is what is used (i.e. the user defined function), if we want to call the gamma function inside `SpecialFunctions` we need to specify the module which contains it (as done in line 13).
+At line 9 we call the `gamma` function and as we can see the first definition of the function is what is used (i.e. the user defined function), if we want to call the gamma function inside `SpecialFunctions` we need to specify the module which contains it (as done on line 13).
 
 In the case where a conflict like this may arise, it is better to avoid the `using` notations and instead use `import`, which "imports" the desired module all the same but without exporting any function in the calling scope.
 
@@ -158,7 +158,7 @@ A module starts with the `module` keyword and should end with `end`. Contrarily 
 
 We define a variable, `a`, and two functions, `func1` and `func2`, but we export only `func2` (see line 2), which means that only `func2` will be accessible in the outer scope if we don't specify the module to which it belongs.
 
-At line 17 we import `MyModule`, notice the `.` before the module name, this is needed as `MyModule` is not an "official" package and ultimately because `MyModule` is defined in the Main scope (the `.Name` notation is an abbreviation of `Main.Name`). At line 19 we call `func2` and at line 22 `func1`, notice that an error is thrown when we call `func1` as it is not exported. If we want to access it we need to type `MyModule.func1(3)` as shown in line 25.
+At line 17 we import `MyModule`, notice the `.` before the module name, this is needed as `MyModule` is not an "official" package and ultimately because `MyModule` is defined in the Main scope (the `.Name` notation is an abbreviation of `Main.Name`). At line 19 we call `func2` and at line 22 `func1`, notice that an error is thrown when we call `func1` as it is not exported. If we want to access it we need to type `MyModule.func1(3)` as shown at line 25.
 
 # Code inclusion
 
@@ -221,17 +221,17 @@ Although one should give meaningful names to the files which make up a module (a
 
 This structure lets you easily extend the module (simply add new files) and makes the code more maintainable, if functions which perform similar tasks are grouped in the same file.
 
-Notice that in Julia it is not important the order in which you include the files in the main module, but in my opinion it is a good practice to include the files in a sort of chronological order, in our example the function `func2big` depends on `func1big` which is defined inside `big-module-part-1.jl`, so we should import it before we include`big-module-part-2.jl`.
+Notice that in Julia it is not important the order in which you include the files in the main module, but in my opinion it is a good practice to include the files in a sort of chronological order. In our example the function `func2big` depends on `func1big` which is defined inside `big-module-part-1.jl`, so we should import it before we include`big-module-part-2.jl`.
 
-Remember that when we call `include()` the code gets "pasted" inside the file where `include` is called, so it is not necessary to call `include` inside `big-module-part-2.jl` as the compiler will see part1, part2 and the main module as an unique file (furthermore using `include` inside a file which gets included by another file may lead to errors).
+Remember that when we call `include()` the code gets "pasted" inside the file where `include` is called, so it is not necessary to call `include` inside `big-module-part-2.jl` as the compiler will see part1, part2 and the main module as a unique file (furthermore, using `include` inside a file which gets included by another file may lead to errors).
 
 # Code reusability
 
 The goal of a module is to write a set of functions, define a series of variables or types which can be easily reused in other programs (*your* other programs for example), so one should give meaningful names to the functions (not like `func1` and `func2`) and make them as general and stand-alone as possible.
 
-Since you will likely come back to a module you have written once every few months, you may not remember what a specific function does, it is thus a good idea to add annotations to your code through `# comment` and write a small description of the function.
+Since you will likely come back to a module you have written once every few months, you may not remember what a specific function does: it is thus a good idea to add annotations to your code through `# comment` and write a small description of the function.
 
-When you type `? functionName` in the REPL you get a description of said function and usually an example of how it can be used. We will now learn how to write such description for our functions.
+When you type `? functionName` in the REPL you get a description of that function and usually an example of how it can be used. We will now learn how to write such description for our functions.
 
 ## Code documentation
 
@@ -255,7 +255,7 @@ There is a set of rules for writing documentation listed in the [official docume
 
 It is advisable to prepend `@doc raw"""...`, in this way you will be able to write markdown code inside the description string without the need to escape special characters.
 
-Let's see how we can document, for example `func2big`:
+Let's see how we can document, for example, `func2big`:
 
 ```julia
 @doc raw"""
@@ -286,11 +286,11 @@ Or, if you are using the Juno IDE, we can look up the documentation for `func2bi
 
 Pretty neat, don't you think?
 
-It is good practice to write the documentation with at least the function signature and a short description for each function you define: this will make navigating through the code much easier and you can keep open the documentation tab in Juno to look for the signature of a specific function you wrote.
+It is good practice to write the documentation with at least the function signature and a short description for each function you define: this will make navigating through the code much easier and you can keep open the documentation tab in Juno to look for the signature (i.e. the arguments) of a specific function you wrote.
 
 # Conclusions
 
-We have learned how to import an existing "official" module and how to write our own. We have learned how it is possible to split a piece of code between multiple files and how code reusability can be improved by module usage. Finally we have learned how to write proper code documentation in order to make it easier to find out and remember what a function does.
+We have learned how to import an existing "official" module and how to write our own. We have learned how it is possible to split a piece of code between multiple files and how code reusability can be improved by module usage. Finally, we have learned how to write proper code documentation in order to make it easier to find out and remember what a function does.
 
 If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
 

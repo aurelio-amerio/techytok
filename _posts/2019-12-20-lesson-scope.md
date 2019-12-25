@@ -34,7 +34,7 @@ A variable in the **global scope** is accessible everywhere in the program and c
 
 A variable in a **local scope** is only accessible in that scope and in other scopes eventually defined inside it.
 
-In Julia there are several constructs which introduce a scope:
+In Julia there are several constructs which introduces a scope:
 
 | Construct                                                    | Scope type | Scope blocks it may be nested in |
 | :----------------------------------------------------------- | :--------- | :------------------------------- |
@@ -51,9 +51,9 @@ Let's now see in more details how to work with scopes and in which scope it is b
 
 ## Local Scope
 
-Let's start with a construct we are already familiar with: a function. A function declaration introduce a scope, which means that each variable declared inside a function lives inside the function: it can be accessed freely inside the function but cannot be accessed outside of the function, which is good! Thanks to this property we can use the names most suitable for our variables (x, y, z, etc.) without the risk of clashing with the declaration of other functions.
+Let's start with a construct we are already familiar with: a function. A function declaration introduce a scope, which means that each variable declared inside a function lives inside the function: it can be accessed freely inside the function but cannot be accessed outside the function, which is good! Thanks to this property we can use the names most suitable for our variables (x, y, z, etc.) without the risk of clashing with the declaration of other functions.
 
-If a value computed inside a function is needed outside of the function it is a good idea to return that value instead of modifying a global constant external to the function. As a rule of thumb, a function should rely only on its input parameters and return only the variable which may be useful for further computations.
+If a value computed inside a function is needed outside the function it is a good idea to return that value instead of modifying a global constant external to the function. As a rule of thumb, a function should rely only on its input parameters and return only the variable which may be useful for further computations.
 
 Let's see an example of a variable which exist inside a function (local scope) but doesn't exist in the global scope:
 
@@ -80,7 +80,7 @@ end
 42
 ```
 
-A better approach is to instead return z and let the user to perform the allocation of z
+A better approach is instead to return z and let the user perform the allocation of z:
 
 ```julia
 function example3()
@@ -99,7 +99,7 @@ In the case where it is necessary to distinguish between a variable which exists
 
 The `let` construct can be used to introduce a new local scope. It is useful, for example, when you want to perform some computations but you don't want the intermediate results/variables to pollute your current scope.
 
-The let block will be able to access all of the local (or global) variables available in its parent scope and will have its own set of local variables. It is also possible to specify some initial values to mimic the execution of a function once.
+The let block will be able to access all the local (or global) variables available in its parent scope and will have its own set of local variables. It is also possible to specify some initial values to mimic the execution of a function once.
 
 ```julia
 a = let

@@ -9,8 +9,8 @@
 - modules OK
 - structures OK
 - working with packages OK
-- plotting [add ref to calling python]
-- numerical operations: integration
+- plotting [add ref to calling python] OK
+- numerical operations: integration OK
 - calling python
 - units: `Unitful`
 - working with JLD

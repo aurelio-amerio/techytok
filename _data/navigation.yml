@@ -50,6 +50,10 @@ zero-to-julia:
         url: /lesson-packages/
       - title: "Lesson 10 - Plotting"
         url: /lesson-plotting/
+      - title: "Lesson 11 - Numerical Integration"
+        url: /lesson-numerical-integration/
+      - title: "Lesson 12 - Unit of measurement"
+        url: /lesson-unitful/
 
 
   # - title: Customization
