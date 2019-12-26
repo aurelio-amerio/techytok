@@ -59,7 +59,7 @@ b = uconvert(u"km", one_meter)
 1 m
 ```
 
-As you can see on line 3 and 6, `uconvert` won't change the unit of the 
+As you can see on line 3 and 6, `uconvert` won't change the unit of the argument variable 
 
 
 # Conclusions

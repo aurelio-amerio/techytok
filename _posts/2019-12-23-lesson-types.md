@@ -116,7 +116,7 @@ It is possible to write functions that operate on both abstract and concrete typ
 
 ```julia
 function introduceMe(person::Person)
-    println("Hello, my name is $(person.name)")
+    println("Hello, my name is $(person.name).")
 end
 
 >>>introduceMe(aure)
@@ -127,7 +127,7 @@ While only musicians play instruments, so we can define the following function:
 
 ```julia
 function introduceMe(person::Musician)
-    println("Hello, my name is $(person.name) and I play $(person.instrument)")
+    println("Hello, my name is $(person.name) and I play $(person.instrument).")
 end
 
 >>>introduceMe(aure_musician)
@@ -139,9 +139,9 @@ and for a rock-star we can write:
 ```julia
 function introduceMe(person::Rockstar)
 	if person.instrument == "Voice"
-		println("Hello, my name is $(person.name) and I sing")
+		println("Hello, my name is $(person.name) and I sing.")
 	else
-		println("Hello, my name is $(person.name) and I play $(person.instrument)")
+		println("Hello, my name is $(person.name) and I play $(person.instrument).")
 	end
 
 	println("My band name is $(person.bandName) and my favourite headband colour is $(person.headbandColor)!")
