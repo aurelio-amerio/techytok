@@ -28,7 +28,38 @@ In this lesson we will learn how to use units of measurement in Julia. We will l
 
 # `Unitful.jl`
 
-The package used to deal with units of measurement in Julia is `Unitful.jl`, let's start  
+The package used to deal with units of measurement in Julia is `Unitful.jl`. First of all we need to install `Unitful`:
+
+```julia
+using Pkg
+Pkg.add("Unitful")
+using Unitful
+```
+
+In order to add units of measurement to numbers we use the notation `u"unit"`:
+
+```julia
+one_meter = 1u"m"
+```
+
+or 
+
+```julia
+one_meter = 1*u"m"
+```
+
+It is possible to convert from one unit to another using `uconvert`:
+
+```julia
+b = uconvert(u"km", one_meter)
+>>> b 
+1//1000 km
+
+>>>one_meter
+1 m
+```
+
+As you can see on line 3 and 6, `uconvert` won't change the unit of the 
 
 
 # Conclusions

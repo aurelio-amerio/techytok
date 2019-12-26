@@ -24,15 +24,15 @@ sidebar:
   nav: "zero-to-julia"
 ---
 
-In this lesson we will learn what types are and how it is possible to define functions that work on types. We will learn which are the difference between **abstract** and **concrete types**, how to define **immutable** and **mutable types** and how to create a **type constructor**. We will give a brief introduction to **multiple dispatch** and see how types have a role in it.
+In this lesson we will learn what types are and how it is possible to define functions that work on types. We will learn which are the differences between **abstract** and **concrete types**, how to define **immutable** and **mutable types** and how to create a **type constructor**. We will give a brief introduction to **multiple dispatch** and see how types have a role in it.
 
 You can find the code for this lesson [here](https://github.com/aurelio-amerio/techytok-examples/tree/master/lesson-types).
 
-We can think of types as containers for data only. What's more, it is possible to define a type hierarchy so that functions that work for parent type work also for the children (if they are written properly). A parent type can only be an `AbstractType` (like `Number`) while a child can be both an abstract or concrete type.
+We can think of types as containers for data only. Moreover, it is possible to define a type hierarchy so that functions that work for parent type work also for the children (if they are written properly). A parent type can only be an `AbstractType` (like `Number`), while a child can be both an abstract or concrete type.
 
 ![image-center](/assets/images/2019/12/23b/fig1-types.jpg){: .align-center}
 
-In the graphic, types in round bubbles are *abstract types* while the ones on square bubbles are *concrete types*.
+In the tree diagram, types in round bubbles are *abstract types*, while the ones in square bubbles are *concrete types*.
 
 # Implementation
 
@@ -47,7 +47,7 @@ end
 abstract type Musician <: Person
 end
 ```
-You may find it surprising, but apparently musicians are people, so `Musician` is a sub-type of `Person`. There are many kind of musicians, for example *rock-stars*  and *classic musicians*, so we define two new concrete type (in particular this kind of type is called a composite type):
+You may find it surprising, but apparently musicians are people, so `Musician` is a sub-type of `Person`. There are many kind of musicians, for example *rock-stars*  and *classic musicians*, so we define two new concrete types (in particular this kind of type is called a composite type):
 
 ```julia
 mutable struct Rockstar <: Musician
@@ -64,9 +64,9 @@ struct ClassicMusician <: Musician
 end
 ```
 
-Notably rock-stars love to change the colour of their headband, so we have made `Rockstar` a `mutable struct`, which is a concrete type whose elements value can be modified. On the contrary classic musicians are know for their everlasting love for their instrument, which will never change, so we have made `ClassicMusician` an immutable concrete type.
+Notably rock-stars love to change the colour of their headband, so we have made `Rockstar` a `mutable struct`, which is a concrete type whose elements value can be modified. On the contrary, classic musicians are known for their everlasting love for their instrument, which will never change, so we have made `ClassicMusician` an **immutable concrete type**.
 
-We can define another subtype of `Person`, `Physcist`, as I am a physicist and I was getting envious of rock-stars:
+We can define another sub-type of `Person`, `Physicist`, as I am a physicist and I was getting envious of rock-stars:
 
 ```julia
 mutable struct Physicist <: Person
@@ -86,7 +86,7 @@ Aurelio
 "Julia"
 ```
 
-Luckily my exam session is finished now and I finally have a little bit more time to sleep, so I'll adjust my sleeping schedule to sleep eight hours:
+Luckily my exam session is over now and I finally have a little bit more time to sleep, so I'll adjust my sleeping schedule to sleep eight hours:
 ```julia
 aure.sleepHours = 8
 ```
@@ -100,19 +100,19 @@ aure_musician = ClassicMusician("Aurelio", "Violin")
 setfield! immutable struct of type ClassicMusician cannot be changed
 ```
 
-As you can see, I love violin and I just can't change my instrument, as `ClassicMusician` is an immutable struct.
+As you can see, I love violin and I just can't change my instrument, as `ClassicMusician` is an **immutable struct**.
 
 I am not a rock-star, but my friend Ricky is one, so we'll define:
 
 ```julia
-riky = Rockstar("Riccardo", "Voice", "Black Lotus", "red", 2)
->>>riky.bandanaColor
+ricky = Rockstar("Riccardo", "Voice", "Black Lotus", "red", 2)
+>>>ricky.headbandColor
 red
 ```
 
-# Function and types: multiple dispatch
+# Functions and types: multiple dispatch
 
-It is possible to write functions that operate on both abstract and concrete type. For example, every person is likely to have a name, so we can define the following function:
+It is possible to write functions that operate on both abstract and concrete types. For example, every person is likely to have a name, so we can define the following function:
 
 ```julia
 function introduceMe(person::Person)
@@ -138,16 +138,17 @@ and for a rock-star we can write:
 
 ```julia
 function introduceMe(person::Rockstar)
-    println("Hello, my name is $(person.name) and I play $(person.instrument)")
-	println("My band name is $(person.bandName) and my favourite bandana colour is $(person.bandanaColor)!")
-end
+	if person.instrument == "Voice"
+		println("Hello, my name is $(person.name) and I sing")
+	else
+		println("Hello, my name is $(person.name) and I play $(person.instrument)")
+	end
 
->>>introduceMe(riky)
-Hello, my name is Riccardo and I sing
-My band name is Black Lotus and my favourite bandana colour is red!
+	println("My band name is $(person.bandName) and my favourite headband colour is $(person.headbandColor)!")
+end
 ```
 
-The `::SomeType` notation indicates to Julia that `person` has to be of the said type or a sub-type. Only the most strict requirement is considered, for example Riky is a `Person`, but "more importantly" he is a `Rockstar`, thus `introduceMe(person::Rockstar)` is called. In other words, the function with a closer type signature will be called.
+The `::SomeType` notation indicates to Julia that `person` has to be of the said type or a sub-type. Only the most strict requirement is considered, for example ricky is a `Person`, but "more importantly" he is a `Rockstar`, thus `introduceMe(person::Rockstar)` is called. In other words, the function with a closer type signature will be called.
 
 This is an example of multiple dispatch, which means that we have written a single function with different methods depending on the type of the variable. We will come back again to multiple dispatch in another lesson, as it is one of the most important features of Julia and is considered a more advanced topic, together with type annotations. As an anticipation `::Rockstar` is a type annotation, the compiler will check if `person` is a `Rockstar` (or a sub-type of it) and if that is true it will execute the function.
 
