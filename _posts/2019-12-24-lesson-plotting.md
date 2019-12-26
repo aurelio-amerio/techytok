@@ -59,13 +59,13 @@ Let's make our first plot! We need to compute `x` and `y = f(x)`, for example le
 using Plots
 
 x = 1:0.01:10*π
-y  =sin.(x)
+y = sin.(x)
 
 plot(x, y, label="sin(x)")
 plot!(xlab="x", ylab="f(x)")
 ```
 
-On line 3 we define `x` and at line 4 we compute `y = sin.(x)`. I want to remind you that the `.(x)` notation is called broadcasting and it is used to indicate to Julia that the function `sin` has to be computed for each element of `x`.  
+On line 3 we define `x` (a range from 1 to 10π with step 0.01) and at line 4 we compute `y = sin.(x)`. I want to remind you that the `.(x)` notation is called broadcasting and it is used to indicate to Julia that the function `sin` has to be computed for each element of `x`.  
 
 Line 6 is where all the magic happens: we `plot` `x` and `y=f(x)` and we assign a label to this plot, i.e.`sin(x)`. At line 7 we add some elements to the plot, using `plot!`, remember that in Julia the `!` is appended to the name of functions which perform some modification (in this case `plot!` modifies the current plot). In particular we add a label to the x axis and the y axis.
 
