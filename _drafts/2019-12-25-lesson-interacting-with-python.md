@@ -1,12 +1,12 @@
 ---
 title: "Interacting with Python"
-date: 2019-12-25
+date: 2019-12-26
 header:
   caption: ""
-  image: "/assets/images/2019/12/25b/header.jpg"
-  og_image: "/assets/images/2019/12/25b/teaser.jpg"
-  teaser: "/assets/images/2019/12/25b/teaser.jpg"
-excerpt: "From zero to Julia Lesson 12. Interacting with Python"
+  image: "/assets/images/2019/12/26b/header.jpg"
+  og_image: "/assets/images/2019/12/26b/teaser.jpg"
+  teaser: "/assets/images/2019/12/26b/teaser.jpg"
+excerpt: "From zero to Julia Lesson 13. Interacting with Python"
 permalink: /lesson-interacting-with-python/
 toc: true
 toc_label: "Table of Contents"
@@ -24,7 +24,7 @@ sidebar:
   nav: "zero-to-julia"
 ---
 
-
+In 
 
 
 # Conclusions

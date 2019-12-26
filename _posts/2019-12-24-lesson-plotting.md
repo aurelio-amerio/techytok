@@ -67,9 +67,9 @@ plot!(xlab="x", ylab="f(x)")
 
 On line 3 we define `x` (a range from 1 to 10π with step 0.01) and at line 4 we compute `y = sin.(x)`. I want to remind you that the `.(x)` notation is called broadcasting and it is used to indicate to Julia that the function `sin` has to be computed for each element of `x`.  
 
-Line 6 is where all the magic happens: we `plot` `x` and `y=f(x)` and we assign a label to this plot, i.e.`sin(x)`. At line 7 we add some elements to the plot, using `plot!`, remember that in Julia the `!` is appended to the name of functions which perform some modification (in this case `plot!` modifies the current plot). In particular we add a label to the x axis and the y axis.
+Line 6 is where all the magic happens: we `plot` `x` and `y=f(x)` and we assign a label to this plot, i.e.`sin(x)`. At line 7 we add some elements to the plot, using `plot!`. Remember that in Julia the `!` is appended to the name of functions which perform some modification: in this case `plot!` modifies the current plot. In particular, we add a label to the x-axis and the y-axis.
 
-If you are using the REPL a windows should popup, or if you are using the Juno IDE a plot like this one should appear in the Plot window:
+If you are using the REPL a windows should popup, on the contrary if you are using the Juno IDE a plot like the following should appear in the Plot window:
 
 ![image-center](/assets/images/2019/12/24b/img1a.png){: .align-center}
 
@@ -84,7 +84,7 @@ On line 2 you can see that we have specified the colour of the line and the line
 
 ![image-center](/assets/images/2019/12/24b/img1b.png){: .align-center}
 
-Now we can set the scale of the x axis to be logarithmic and change the position of the legend, if we like:
+Now we can set the scale of the x-axis to be logarithmic and change the position of the legend, if we like:
 
 ```julia
 xaxis!(:log10)
@@ -99,21 +99,21 @@ Furthermore on line 4 we can see how it is possible to save the current plot as 
 
 # Working with different back-ends
 
-Different back-ends have different features. Up to now we have worked with `GR`, which is fast and has almost everything you may need. Since `GR` is a relatively new back-end, you may need to look at other back-ends for more customisation options. In this section we will deal with `Plotly` and  `PyPlot`.
+Different back-ends have different features. Up to now we have worked with `GR`, which is fast and has almost everything you may need. Since `GR` is a relatively new back-end, you may need to look at other back-ends for more customisation options. In this section, we will deal with `Plotly` and  `PyPlot`.
 
 ## Plotly
 
 `Plotly` is a good solution if you want to have nice interactive plots.
 
-To make a plot with `Plotly` select the `plotly()` back-end  and create a plot:
+To make a plot with `Plotly`, select the `plotly()` back-end and create a plot:
 
 ```julia
 plotly()
 x=1:0.1:3*π
 y=1:0.1:3*π
 
-xx = reshape([xi for xi in x for yj in y],  length(x), length(y))
-yy = reshape([yj for xi in x for yj in y],  length(x), length(y))
+xx = reshape([xi for xi in x for yj in y],  length(y), length(x))
+yy = reshape([yj for xi in x for yj in y],  length(y), length(x))
 zz = sin.(xx).*cos.(yy)
 plot3d(xx,yy,zz, label=:none, st = :surface)
 plot!(xlab="x", ylab="y", zlab="sin(x)*cos(y)")
