@@ -143,7 +143,7 @@ savefig("img2.png")
 
 ## PyPlot
 
-PyPlot is a Python library for plotting. It has many customisation capabilities with the downside that you need to first install python and configure Julia to interact with Python. In order to configure and install `PyCall`, the package required to interact with Python, please refer to this guide [not yet available].
+PyPlot is a Python library for plotting. It has many customisation capabilities with the downside that you need to first install python and configure Julia to interact with Python. In order to configure and install `PyCall`, the package required to interact with Python, please refer to [this guide](https://techytok.com/lesson-interacting-with-python/).
 
 In order to use the `PyCall` back-end, please type the following code:
 
