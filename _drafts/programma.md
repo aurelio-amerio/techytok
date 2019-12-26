@@ -12,7 +12,7 @@
 - plotting [add ref to calling python] OK
 - numerical operations: integration OK
 - calling python
-- units: `Unitful`
+- units: `Unitful` OK
 - working with JLD
 - in depth type annotations and multiple dispatch
 - multi-threading

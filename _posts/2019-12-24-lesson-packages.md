@@ -31,7 +31,7 @@ In this lesson we will learn how to create a Julia package. A Julia package usua
 To create a package please type `]` in the REPL to access the package manager and type
 
 ```julia
-generate TestModule1
+generate TestPackage1
 ```
 
 You should see something similar in the REPL:
@@ -56,7 +56,7 @@ This is the skeleton of the package, we can modify the module according to our n
 
 # Using a user defined package
 
-In order to use an user defined package, we need to activate said package. First of all make sure that your current working directory is the same as the directory where the package has been created.  To check your project working directory, please type `pwd()`. If the directory is different (it shouldn't be), you can change the current working directory with `cd("/path/to/directory")`.
+In order to use an user defined package, we need to activate that package. First of all, make sure that your current working directory is the same as the directory where the package has been created.  To check your project working directory, please type `pwd()`. If the directory is different (it shouldn't be), you can change the current working directory with `cd("/path/to/directory")`.
 
 To summarise, if the package is found at `/lesson-packages/TestModule1`, the working directory should be `/lesson-packages`. 
 
@@ -135,7 +135,7 @@ You can find more information on how to write and use packages at the [official 
 
 # Conclusions
 
-In this lesson we have learnt how to create a package and how to import it inside our project. Furthermore we have learnt how to add dependencies to a package an how to automatically install the dependencies required for a package.
+In this lesson we have learnt how to create a package and how to import it inside our project. Furthermore, we have learnt how to add dependencies to a package and how to automatically install the dependencies required for a package.
 
 If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
 

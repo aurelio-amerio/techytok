@@ -52,7 +52,7 @@ zero-to-julia:
         url: /lesson-plotting/
       - title: "Lesson 11 - Numerical Integration"
         url: /lesson-numerical-integration/
-      - title: "Lesson 12 - Unit of measurement"
+      - title: "Lesson 12 - Units of measurement"
         url: /lesson-unitful/
 
 

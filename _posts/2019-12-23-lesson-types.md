@@ -148,7 +148,7 @@ function introduceMe(person::Rockstar)
 end
 ```
 
-The `::SomeType` notation indicates to Julia that `person` has to be of the said type or a sub-type. Only the most strict requirement is considered, for example ricky is a `Person`, but "more importantly" he is a `Rockstar`, thus `introduceMe(person::Rockstar)` is called. In other words, the function with a closer type signature will be called.
+The `::SomeType` notation indicates to Julia that `person` has to be of the aforementioned type or a sub-type. Only the most strict type requirement is considered (which is the lowest type in the type tree), for example `ricky` is a `Person`, but "more importantly" he is a `Rockstar` (`Rockstar` is placed lower in the type tree), thus `introduceMe(person::Rockstar)` is called. In other words, the function with the closest type signature will be called.
 
 This is an example of multiple dispatch, which means that we have written a single function with different methods depending on the type of the variable. We will come back again to multiple dispatch in another lesson, as it is one of the most important features of Julia and is considered a more advanced topic, together with type annotations. As an anticipation `::Rockstar` is a type annotation, the compiler will check if `person` is a `Rockstar` (or a sub-type of it) and if that is true it will execute the function.
 
@@ -197,14 +197,14 @@ MyData2{Float64}(2.0, 4.0, 3.0, 0.6569865987187891)
 MyData2{Int64}(2, 4, 3, 0.6569865987187891)
 ```
 
-It is crucial for performance that you use concrete types inside a composite type (like `Float64` or `Int` instead of `Real`, which is an abstract type), thus parametric types are a good option to maintain type flexibility while also defining all of the types of the variables inside a composite type.
+It is crucial for performance that you use concrete types inside a composite type (like `Float64` or `Int` instead of `Real`, which is an abstract type), thus parametric types are a good option to maintain type flexibility while also defining all the types of the variables inside a composite type.
 {: .notice--warning}
 
 For more information on constructors see [this article](https://docs.julialang.org/en/v1/manual/constructors/index.html).
 
 # Example
 
-Mutable types are particularly useful when it comes to storing data that need to be shared between some functions inside a module. It is not uncommon to define custom types in a module to store all the data which needs to be shared between functions and which is not constant.
+Mutable types are particularly useful when it comes to storing data that needs to be shared between some functions inside a module. It is not uncommon to define custom types in a module to store all the data which needs to be shared between functions and which is not constant.
 
 ```julia
 module TestModuleTypes
@@ -276,7 +276,7 @@ Notice that we could have simply computed the perimeter and area inside the type
 
 This lesson has been a little bit more conceptually difficult than the previous ones, but you don't need to remember everything right now! We will use types in the future lessons, so you will naturally get accustomed to how they works over time.
 
-We have learned how to define abstract and concrete type, and how to define mutable and immutable structures. We have then learned how it is possible to define functions that work on custom types and we have introduced multiple dispatch. Furthermore we have seen how to define an inner constructor, to aid the user create an instance of a composite type. Lastly we have seen an example of a module which uses a custom type (`Circle`) to perform and store some specific computations.
+We have learnt how to define abstract and concrete types, and how to define mutable and immutable structures. We have then learnt how it is possible to define functions that work on custom types and we have introduced multiple dispatch. Furthermore, we have seen how to define an inner constructor, to aid the user create an instance of a composite type. Lastly, we have seen an example of a module which uses a custom type (`Circle`) to perform and store some specific computations.
 
 If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
 

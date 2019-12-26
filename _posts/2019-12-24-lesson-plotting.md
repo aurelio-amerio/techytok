@@ -25,7 +25,7 @@ sidebar:
 ---
 In this lesson we will learn how to make beautiful plots using `Plots.jl`. You can find the code used in this lesson [here](https://github.com/aurelio-amerio/techytok-examples/tree/master/lesson-plots)
 
-In Julia there are many different libraries for plotting, for example [`PyPlot.jl`](https://github.com/JuliaPy/PyPlot.jl), [`GR.jl`](https://github.com/jheinen/GR.jl) and [`Plotly.jl`](https://github.com/sglyon/PlotlyJS.jl). [`Plots.jl`](https://github.com/JuliaPlots/Plots.jl) is a wrapper around all those library and exposes a clean and simple API for plotting. You can find all the back-ends available for `Plots.jl` [here](https://docs.juliaplots.org/latest/backends/).
+In Julia there are many different libraries for plotting, for example [`PyPlot.jl`](https://github.com/JuliaPy/PyPlot.jl), [`GR.jl`](https://github.com/jheinen/GR.jl) and [`Plotly.jl`](https://github.com/sglyon/PlotlyJS.jl). [`Plots.jl`](https://github.com/JuliaPlots/Plots.jl) is a wrapper around all those library and exposes a clean and simple [API](https://en.wikipedia.org/wiki/Application_programming_interface) for plotting. You can find all the back-ends available for `Plots.jl` [here](https://docs.juliaplots.org/latest/backends/).
 
 # Installing `Plots.jl`
 
@@ -38,7 +38,7 @@ Pkg.add("Plots")
 using Plots
 ```
 
-The first time it will take a while to download and compile `Plots`. The default back-end is `GR`, but if you desire you can change it, you can do so with a specific function for each back-end (see [the documentation](https://docs.juliaplots.org/latest/backends/)). For example if we desire to use `Plotly` we can call `plotly()` (which has a very nice interactive interface).
+The first time it will take a while to download and compile `Plots`. The default back-end is `GR`, but if you desire you can change it, you can do so with a specific function for each back-end (see [the documentation](https://docs.juliaplots.org/latest/backends/)). For example, if we desire to use `Plotly` we can call `plotly()` (which has a very nice interactive interface).
 
 ```julia
 using Plots
@@ -148,6 +148,8 @@ PyPlot is a Python library for plotting. It has many customisation capabilities 
 In order to use the `PyCall` back-end, type:
 
 ```julia
+using Pkg
+Pkg.add("PyPlot")
 using Plots
 pyplot()
 
