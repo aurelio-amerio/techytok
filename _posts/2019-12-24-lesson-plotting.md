@@ -145,7 +145,7 @@ savefig("img2.png")
 
 PyPlot is a Python library for plotting. It has many customisation capabilities with the downside that you need to first install python and configure Julia to interact with Python. In order to configure and install `PyCall`, the package required to interact with Python, please refer to this guide [not yet available].
 
-In order to use the `PyCall` back-end, type:
+In order to use the `PyCall` back-end, please type the following code:
 
 ```julia
 using Pkg
@@ -172,11 +172,11 @@ plot(x, y, label=L"$\sin(x)^2$")
 savefig("img3b.png")
 ```
 
-To create a LaTeX string, we have to write `L` before the string and put the LaTeX code inside `$`, like what is written at line 4.
+To create a LaTeX string, we have to write `L` before the string and put the LaTeX code inside `$`, as shown at line 4.
 
 ![image-center](/assets/images/2019/12/24b/img3b.png){: .align-center}
 
-You can find more about matplotlib [here](https://matplotlib.org/). Every function or property for matplotlib is available through `PyPlot.function_name`. If you are interested take a look also to the [`PyPlot.jl`](https://github.com/JuliaPy/PyPlot.jl) package.
+You can find more about matplotlib [here](https://matplotlib.org/). Every function or property for matplotlib is available through `PyPlot.function_name`. If you are interested, take a look also to the [`PyPlot.jl`](https://github.com/JuliaPy/PyPlot.jl) package.
 
 # Conclusions
 
