@@ -54,6 +54,8 @@ zero-to-julia:
         url: /lesson-numerical-integration/
       - title: "Lesson 12 - Units of measurement"
         url: /lesson-unitful/
+      - title: "Lesson 13 - Interacting with Python"
+        url: /lesson-interacting-with-python/
 
 
   # - title: Customization

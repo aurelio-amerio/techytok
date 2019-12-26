@@ -23,7 +23,7 @@ comments: true
 sidebar:
   nav: "zero-to-julia"
 ---
-In this lesson we will learn how to use `QuadGK` to perform numerical integration of uni-dimensional integrals.  `QuadGK` perform an adaptive Gauss-Kronrod quadrature. You can find more information on the package [here](https://github.com/JuliaMath/QuadGK.jl).
+In this lesson we will learn how to use `QuadGK` to perform numerical integration of uni-dimensional integrals.  `QuadGK` performs an adaptive Gauss-Kronrod quadrature. You can find more information on the package [here](https://github.com/JuliaMath/QuadGK.jl).
 
 First of all we need to install `QuadGK`, to do it type in the REPL:
 
@@ -63,7 +63,7 @@ res, err = quadgk(func1, -Inf, Inf, rtol=1e-15)
 2.51e-16
 ```
 
-The [Gauss-Kronrod formula]([https://en.wikipedia.org/wiki/Gauss%E2%80%93Kronrod_quadrature_formula](https://en.wikipedia.org/wiki/Gauss–Kronrod_quadrature_formula)) is a modified version of the [Gaussian quadrature](https://en.wikipedia.org/wiki/Gaussian_quadrature). This kind of algorithms have a parameter called the **order** of the quadrature rule which is tied to how complex the integral approximation scheme is. With a higher order integration rule it is possible to integrate "exactly" polynomials of higher degree, so if we expect the argument of the integral to be pretty complex, a higher order of the integration rule may help achieving a better accuracy. That being said, the default order is 7 and it is generally enough to compute almost all of the integrals you will face. In case you are having difficulty in achieving convergence, try increasing the order of the integration rule. 
+The [Gauss-Kronrod formula]([https://en.wikipedia.org/wiki/Gauss%E2%80%93Kronrod_quadrature_formula](https://en.wikipedia.org/wiki/Gauss–Kronrod_quadrature_formula)) is a modified version of the [Gaussian quadrature](https://en.wikipedia.org/wiki/Gaussian_quadrature). This kind of algorithms have a parameter called the **order** of the quadrature rule which is linked to how complex the integral approximation scheme is. With a higher order integration rule, it is possible to integrate "exactly" polynomials of higher degree, so if we expect the argument of the integral to be pretty complex, a higher order of the integration rule may help achieving a better accuracy. That being said, the default order is 7 and it is generally enough to compute almost all the integrals you will face. In case you are having difficulty in achieving convergence, try increasing the order of the integration rule. 
 
 In our case, if we increase the order of the quadrature we can achieve a result coinciding with the analytical solution (with double-precision):
 
