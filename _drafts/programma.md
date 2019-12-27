@@ -13,9 +13,9 @@
 - numerical operations: integration OK
 - calling python OK
 - units: `Unitful` OK
-- working with JLD
-- in depth type annotations and multiple dispatch
-- multi-threading
-- multi-processing
-- code optimisation
+- working with JLD ok
+- in depth type annotations and multiple dispatch [TODO]
+- multi-threading OK
+- multi-processing OK
+- code optimisation OK
 
