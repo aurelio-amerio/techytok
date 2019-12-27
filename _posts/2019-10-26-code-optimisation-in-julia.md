@@ -20,7 +20,11 @@ tags:
     - Optimisation
 
 comments: true
+
+sidebar:
+  nav: "zero-to-julia"
 ---
+
 In this guide we will deal with some key points to write efficient Julia code and I will give you some suggestion on how to identify and deal with code bottlenecks.
 
 Although it is not necessary, I suggest you to run this code inside the Juno IDE. If you don't know what Juno is, I suggest you to take a look at [this]( https://techytok.ml/atom-and-juno-setup-for-julia/ ) guide on how to install and use it!
@@ -371,4 +375,6 @@ These are some tips and tricks to make your Julia code run faster! The **take ho
 
 Remember: speed in Julia comes from **type stability** and **not type annotations**, which means that you should not use type annotations if not required and that the **returned value must depend only on the type of the arguments**.
 
-If you liked this guide please leave a comment and stay tuned for further guides and tutorials, here at techytok!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
+
+Thank you for reading this lesson and see you soon on TechyTok!

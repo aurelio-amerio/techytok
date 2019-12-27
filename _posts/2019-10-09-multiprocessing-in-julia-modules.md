@@ -21,6 +21,9 @@ tags:
     - Interpolation
 
 comments: true
+
+sidebar:
+  nav: "zero-to-julia"
 ---
 In this tutorial I will show you an example of how you can create a module in Julia which implements multiprocessing. We will then see a case example where multiprocessing can be used to speed up physical computations.
 
@@ -278,6 +281,6 @@ To wrap things up, from this tutorial you have to remember that:
 
 
 
-That's all! If you have found this tutorial useful please leave a comment and let me know if there is something that needs further explanation or if there is something that you find interesting and that you would like to see featured in a future guide!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
-I hope you enjoyed this tutorial, if you liked it stay tuned for further guides here, at TechyTok!
+Thank you for reading this lesson and see you soon on TechyTok!
