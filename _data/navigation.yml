@@ -58,6 +58,12 @@ zero-to-julia:
         url: /lesson-interacting-with-python/
       - title: "Lesson 14 - Data storage: HDF5"
         url: /lesson-jld/
+      - title: "Lesson 16 - Parallel computing"
+        url: /lesson-parallel-computing/
+      - title: "Lesson 17 - Modules and multi-processing"
+        url: /multiprocessing-in-julia-module/
+      - title: "Lesson 18 - Code optimisation"
+        url: /code-optimisation-in-julia/
 
 
   # - title: Customization

@@ -47,6 +47,15 @@
     },
     {
       "title": "Data storage: HDF5"
+    },
+    {
+      "title": "Parallel computing"
+    },
+    {
+      "title": "Multiprocessing in Julia: writing a module"
+    },
+    {
+      "title": "Code optimisation in Julia"
     }
   ]
 }
