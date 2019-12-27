@@ -56,6 +56,8 @@ zero-to-julia:
         url: /lesson-unitful/
       - title: "Lesson 13 - Interacting with Python"
         url: /lesson-interacting-with-python/
+      - title: "Lesson 14 - Data storage: HDF5"
+        url: /lesson-jld/
 
 
   # - title: Customization

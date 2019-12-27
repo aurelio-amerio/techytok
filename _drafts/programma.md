@@ -9,7 +9,7 @@
 - modules OK
 - structures OK
 - working with packages OK
-- plotting [add ref to calling python] OK
+- plotting OK
 - numerical operations: integration OK
 - calling python OK
 - units: `Unitful` OK
