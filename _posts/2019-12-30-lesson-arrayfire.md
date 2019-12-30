@@ -138,6 +138,7 @@ Since `sum`, `rand` and the matrix operations `+` and `/` are able to work on `A
 The Mandelbrot fractal is one of the most famous fractals. For the mathematical definition of the Mandelbrot set, please refer to [this Wikipedia article](https://en.wikipedia.org/wiki/Mandelbrot_set). 
 
 In order to numerically compute an image of the Mandelbrot fractal, we take the complex coordinates of each pixels and we compute 
+
 $$
 z_{n+1} = z_{n}^2 + c
 $$
