@@ -66,6 +66,8 @@ zero-to-julia:
         url: /multiprocessing-in-julia-module/
       - title: "Lesson 17 - Code optimisation"
         url: /code-optimisation-in-julia/
+      - title: "Lesson 18 - GPU computations"
+        url: /lesson-arrayfire/
 
 
   # - title: Customization
