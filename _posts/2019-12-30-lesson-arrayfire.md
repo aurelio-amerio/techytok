@@ -89,11 +89,9 @@ For further information on the functions available for `AFArray`, please take a 
 # Example: computing π
 
 An example of how it is possible to compute the π is to perform a simple Monte Carlo simulation. In this case we know that the area of a circle is 
-
 $$
 A=πr^2
 $$
-
 
 If we throw coins at random in a 1x1 square, the probability for a coin to fall inside the inscribed circle is proportional to the area of the circle. Since r=0.5, π is given by:
 
