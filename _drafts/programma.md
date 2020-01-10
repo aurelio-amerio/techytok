@@ -17,10 +17,10 @@
 - multi-threading OK
 - multi-processing OK
 - code optimisation OK
-- arrayfire
-- GPU computations using ArrayFire
+- GPU computations using ArrayFire OK
 - Calling other programming languages (other than python) from Julia
 - Computing Mandelbrot fractals using multi-threading and GPU acceleration (code already available [here](https://github.com/aurelio-amerio/Mandelbrot.jl))
 - In-depth lesson on type annotations and multiple-dispatch
 - working with computer clusters
+- linear algebra
 
