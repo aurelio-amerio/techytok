@@ -51,8 +51,8 @@ If you want to append an element to an array, we can do it by using the `append!
 Previously I have said that vector elements must share the same type, if we try to append (or add) a value to an array with a different type it will result into an error:
 
 ```julia
-append!(a, 3.14)
->>> ERROR: InexactError: Int64(2.3)
+>>>append!(a, 3.14)
+ERROR: InexactError: Int64(2.3)
 Stacktrace:
  [1] Type at .\float.jl:703 [inlined]
  [2] convert at .\number.jl:7 [inlined]
@@ -67,8 +67,8 @@ In this case, we cannot convert a `Float64` to an `Int64` without losing precisi
 To check the type of an array we can type:
 
 ```julia
-typeof(a)
->>> Array{Int64, 1}
+>>>typeof(a)
+Array{Int64, 1}
 ```
 
 As we can see, `a` can only store `Int64` values or values that can be safely converted to `Int64` (such as `Int32` for example).
@@ -109,23 +109,23 @@ for k in 1:4
     end
 end
 
-table 
->>> 2×3×4 Array{Float64,3}:
-    [:, :, 1] =
-     1.0  2.0  3.0
-     2.0  4.0  6.0
+>>>table 
+2×3×4 Array{Float64,3}:
+ [:, :, 1] =
+  1.0  2.0  3.0
+  2.0  4.0  6.0
 
-    [:, :, 2] =
-     2.0  4.0   6.0
-     4.0  8.0  12.0
+ [:, :, 2] =
+  2.0  4.0   6.0
+  4.0  8.0  12.0
 
-    [:, :, 3] =
-     3.0   6.0   9.0
-     6.0  12.0  18.0
+ [:, :, 3] =
+  3.0   6.0   9.0
+  6.0  12.0  18.0
 
-    [:, :, 4] =
-     4.0   8.0  12.0
-     8.0  16.0  24.0
+ [:, :, 4] =
+  4.0   8.0  12.0
+  8.0  16.0  24.0
 
 ```
 
@@ -146,17 +146,17 @@ We can also use this notation to access a subset of a matrix, for example:
 mat1 = reshape([i for i in 1:16],4,4)
 mat2 = mat1[2:3, 2:3]
 
-mat1
->>> 4×4 Array{Int64,2}:
-    1  5   9  13
-    2  6  10  14
-    3  7  11  15
-    4  8  12  16
+>>>mat1
+4×4 Array{Int64,2}:
+ 1  5   9  13
+ 2  6  10  14
+ 3  7  11  15
+ 4  8  12  16
 
-mat2
->>> 2×2 Array{Int64,2}:
-    6  10
-    7  11
+>>>mat2
+2×2 Array{Int64,2}:
+ 6  10
+ 7  11
 ```
 
 On line 1 we have used a handy notation called **list comprehension**. `[i for i in 1:16]` means "create an array containing each `i` comprised from 1 to 16". We then reshape it to have a size of 4x4 and store the result in `mat1`.
@@ -189,11 +189,11 @@ a=[1,2,3]
 b=copy(a)
 b[2] = 42
 
-print(a)
->>> [1,v2v,3]
+>>>print(a)
+[1,v2v,3]
 
-print(b)
->>> [1, 42, 3]
+>>>print(b)
+[1, 42, 3]
 ```
 
 In some cases, when there are arrays containing other arrays, if we want to make a full copy of all the contents we need to use `deepcopy` instead.
@@ -214,8 +214,9 @@ So tuples can be created by using regular brackets or no brackets at all! Tuples
 ```julia
 tuple1 = (1, 2, 3)
 a, b, c = tuple1
-print("$a $b $c")
->>> 1 2 3
+
+>>>print("$a $b $c")
+1 2 3
 ```
 
 It is also possible to use tuples to emulate multiple return values from functions:
@@ -226,8 +227,9 @@ function return_multiple()
 end
 
 a, b, c = return_multiple()
-print("$a $b $c")
->>> 42 43 44
+
+>>>print("$a $b $c")
+42 43 44
 ```
 
 ## Splatting
@@ -240,8 +242,9 @@ function splat_me(a, b, c)
 end
 
 tuple1 = (1,2,3)
-splat_me(tuple1...)
->>> 6
+
+>>>splat_me(tuple1...)
+6
 ```
 
 So the `...` after a tuple will unpack it! This is useful but addictive, use it only if needed as it is better for clarity (and to avoid multiple dispatch errors) to call a function with its single parameters.
@@ -251,16 +254,26 @@ So the `...` after a tuple will unpack it! This is useful but addictive, use it 
 Named tuples are like tuples but with a name identifier for a single value, for example:
 
 ```julia
-namedTuple1 = NamedTuple{(:a, :b)}((1,""))
->>> (a = 1, b = "")
+>>>namedTuple1 = (a = 1, b = "hello")
+(a = 1, b = "hello")
 
-namedTuple1[:a]
->>> 1
+>>>namedTuple1[:a]
+1
+```
+
+or in alternative:
+
+```julia
+>>>namedTuple2 = NamedTuple{(:a, :b)}((2,"hello2"))
+(a = 2, b = "hello2")
+
+>>>namedTuple2[:b]
+hello2
 ```
 
 # Dictionaries
 
-A dictionary is a collection of keys and values. They are unordered (which means that the order of the keys is random) and are really useful when you need to organize, for example, a dataset.
+A dictionary is a collection of keys and values. They are unordered (which means that the order of the keys is random) and are really useful when you need to organise, for example, a dataset.
 
 Let's suppose we want to create an address book. A single entry should be able to store all the fundamental characteristics needed  to identify a friend: the name of the contact, the phone number and the shoe size!
 

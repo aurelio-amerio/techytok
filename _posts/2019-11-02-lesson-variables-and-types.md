@@ -43,8 +43,8 @@ Here `my_name` contains a *string*, which is a piece of text, while `my_favourit
 If we want to print the value of a variable, we use `print`:
 
 ```julia
-print(my_name)
->>> Aurelio
+>>>print(my_name)
+Aurelio
 ```
 
 It is possible to perform mathematical operations on numbers and variables and assign the results to new variables:
@@ -75,14 +75,14 @@ We will deal with types again later, for now what we need to remember is that si
 To determine the type of a variable, we can use the `typeof` function:
 
 ```julia
-typeof(0.1)
->>> Float64
+>>>typeof(0.1)
+Float64
 
-typeof(42)
->>> Int64
+>>>typeof(42)
+Int64
 
-typeof("TechyTok")
->>> String
+>>>typeof("TechyTok")
+String
 ```
 
 Although it is possible to change the value of a variable inside a program (it is a *variable*, after all) it is good programming practice and is also critical for performance that inside a program a variable is "type stable". This means that if we have assigned `a = 42`  it is better **not** to assign a new value to `a` which cannot be converted into an `Int` without losing information, like a `Float64` `a = 0.42` (if we convert a `Float64` to an `Int`, the decimal part gets truncated).
@@ -97,8 +97,8 @@ b = 2.0 # if we need to operate with floats
 It is possible, if needed, to convert a value from a type to another using the function `convert`, for example:
 
 ```julia
-convert(Float64, 2)
->>> 2.00
+>>>convert(Float64, 2)
+2.00
 
 a = 2
 b = convert(Float64, a)

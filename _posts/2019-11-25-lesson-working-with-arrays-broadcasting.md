@@ -64,7 +64,7 @@ c = [4 5 6] # is a row vector
     1-element Array{Int64,1}:
      32
 
-d = reshape(collect(1:9),3,3)
+d = reshape([1,2,3,4,5,6,7,8,9],3,3)
 >>> d*a
     3-element Array{Int64,1}:
      30

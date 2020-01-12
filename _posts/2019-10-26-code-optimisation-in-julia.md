@@ -58,14 +58,14 @@ end
 ```
 
 ```julia
-test1(1)
->>> 1 is an Int
+>>>test1(1)
+1 is an Int
 
-test1(1.0)
->>> 1.0 is a Float64
+>>>test1(1.0)
+1.0 is a Float64
 
-test1("techytok")
->>> techytok is neither an Int nor a Float64
+>>>test1("techytok")
+techytok is neither an Int nor a Float64
 ```
 
 But writing a function like:
@@ -110,19 +110,19 @@ end
 Let's type the following code in the REPL:
 
 ```julia
-test3(2)
->>> 2
+>>>test3(2)
+2
 
-test3(-1)
->>> 0
+>>>test3(-1)
+0
 ```
 
 ```julia
-test3(2.0)
->>> 2.0
+>>>test3(2.0)
+2.0
 
-test3(-1.0)
->>> 0
+>>>test3(-1.0)
+0
 ```
 
 Which is a huge problem: as you can see when the input is an `Int` the return output is always and `Int`, but when the input is a `Float64` (like 2.0 or -1.0), the output may either be a `Float64` or an `Int`. In this case Julia cannot determine beforehand whether the returned value will be a `Float64` or an `Int`, which will ultimately lead to a slower code. In this case the problem may be solved by changing line 6 and writing `zero(x)` which returns a "zero" of the same type of x.
@@ -141,8 +141,8 @@ end
 ```
 
 ```julia
-test4(-1.0)
->>> 0.00
+>>>test4(-1.0)
+0.00
 ```
 
 In this case it was "easy" to find the bit of code which leads to type instability, but often the code is more complex and so Julia comes in our help with your new best friend, the `@code_warntype` macro!
@@ -150,20 +150,20 @@ In this case it was "easy" to find the bit of code which leads to type instabili
 What it does is really precious: it tells us if the type of the returned value is unstable and, moreover, it will colour code the result in red if any type instability issue is found. Just call the function with a value which you suspect that may be type unstable and it will do the rest!
 
 ```julia
-@code_warntype test3(1.0)
->>> Body::Union{Float64, Int64} #in red in the REPL
-    1 ─ %1 = (x > 0)::Bool
-    └──      goto #3 if not %1
-    2 ─      return x
-    3 ─      return 0
+>>>@code_warntype test3(1.0)
+Body::Union{Float64, Int64} #in red in the REPL
+ 1 ─ %1 = (x > 0)::Bool
+ └──      goto #3 if not %1
+ 2 ─      return x
+ 3 ─      return 0
 
-@code_warntype test4(1.0)
->>> Body::Float64 #in blue in the REPL
-    1 ─ %1 = (x > 0)::Bool
-    └──      goto #3 if not %1
-    2 ─      return x
-    3 ─ %4 = Main.zero(x)::Core.Compiler.Const(0.0, false)
-    └──      return %4
+>>>@code_warntype test4(1.0)
+Body::Float64 #in blue in the REPL
+ 1 ─ %1 = (x > 0)::Bool
+ └──      goto #3 if not %1
+ 2 ─      return x
+ 3 ─ %4 = Main.zero(x)::Core.Compiler.Const(0.0, false)
+ └──      return %4
 ```
 
 As you can see, in the first case the output is either `Float64` or `Int`, which is not good, and in the second case the output can only be a `Float64` (which is good).
@@ -181,31 +181,31 @@ function test5()
     return r
 end
 
-@code_warntype test5()
->>> Variables
-      #self#::Core.Compiler.Const(test5, false)
-      r::Union{Float64, Int64}
-      @_3::Union{Nothing, Tuple{Int64,Int64}}
-      i::Int64
+>>>@code_warntype test5()
+Variables
+ #self#::Core.Compiler.Const(test5, false)
+ r::Union{Float64, Int64}
+ @_3::Union{Nothing, Tuple{Int64,Int64}}
+ i::Int64
 
-    Body::Float64
-    1 ─       (r = 0)
-    │   %2  = (1:10)::Core.Compiler.Const(1:10, false)
-    │         (@_3 = Base.iterate(%2))
-    │   %4  = (@_3::Core.Compiler.Const((1, 1), false) === nothing)::Core.Compiler.Const(false, false)
-    │   %5  = Base.not_int(%4)::Core.Compiler.Const(true, false)
-    └──       goto #4 if not %5
-    │         (i = Core.getfield(%7, 1))
-    │   %9  = Core.getfield(%7, 2)::Int64
-    │   %10 = r::Union{Float64, Int64}
-    │   %11 = Main.sin(i)::Float64
-    │         (r = %10 + %11)
-    │         (@_3 = Base.iterate(%2, %9))
-    │   %14 = (@_3 === nothing)::Bool
-    │   %15 = Base.not_int(%14)::Bool
-    └──       goto #4 if not %15
-    3 ─       goto #2
-    4 ┄       return r::Float64
+ Body::Float64
+ 1 ─       (r = 0)
+ │   %2  = (1:10)::Core.Compiler.Const(1:10, false)
+ │         (@_3 = Base.iterate(%2))
+ │   %4  = (@_3::Core.Compiler.Const((1, 1), false) === nothing)::Core.Compiler.Const(false, false)
+ │   %5  = Base.not_int(%4)::Core.Compiler.Const(true, false)
+ └──       goto #4 if not %5
+ │         (i = Core.getfield(%7, 1))
+ │   %9  = Core.getfield(%7, 2)::Int64
+ │   %10 = r::Union{Float64, Int64}
+ │   %11 = Main.sin(i)::Float64
+ │         (r = %10 + %11)
+ │         (@_3 = Base.iterate(%2, %9))
+ │   %14 = (@_3 === nothing)::Bool
+ │   %15 = Base.not_int(%14)::Bool
+ └──       goto #4 if not %15
+ 3 ─       goto #2
+ 4 ┄       return r::Float64
 ```
 
 As you can see `r` at the beginning is an `Int64` and then is converted into a `Float64`, which slows down the function. In this case it is enough to declare `r=0.00` to solve the problem.
@@ -345,14 +345,14 @@ arr1 = zeros(100, 200)
         arr1[i,j] = 1
     end
 end
->>> 386.600 μs
+# 386.600 μs
 
 @btime for j in 1:200
     for i in 1:100
         arr1[i,j] = 1
     end
 end
->>> 380.800 μs
+# 380.800 μs
 ```
 
 ## Keyword arguments

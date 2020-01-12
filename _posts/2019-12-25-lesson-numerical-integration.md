@@ -70,7 +70,7 @@ In our case, if we increase the order of the quadrature we can achieve a result 
 ```julia
 res, err = quadgk(func1, -Inf, Inf, order=12)
 
->>> abs(res-sqrt(π))/sqrt(π)
+>>>abs(res-sqrt(π))/sqrt(π)
 0.00
 ```
 

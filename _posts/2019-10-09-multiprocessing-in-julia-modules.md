@@ -143,13 +143,13 @@ We need to define the functions/modules which we need to use `@everywhere` so th
 Aaaand we are ready, let's call the two functions which we have written and test whether they work as intended!
 
 ```julia
-print_nprocs()
->>> 2
+>>>print_nprocs()
+2
 ```
 
 ```julia
-func1()
->>> 2.6666866667e15
+>>>func1()
+2.6666866667e15
 ```
 
 If you follow this work-flow you have to simply write your functions as you would do for "standard" programs and add `@distributed` where needed to parallelize your loops. You don't need to focus on which function is defined where, as every function inside the module will be loaded `@everywhere`.

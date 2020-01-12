@@ -39,7 +39,14 @@ function plus_two(x)
 end
 ```
 
-A `function` start with the word `function` and ends with `end`. In Julia the indentation matters, so pay attention not to mix tabs and spaces, and every block of code usually ends with an `end`, this way you can always know when something starts and ends.
+A `function` starts with the word `function` and ends with `end`. 
+
+Please notice the **indentation** of the body of the function (lines 2 and 3):  the body of a function (and many other constructs in Julia) must be indented. Although the number of indentation spaces is not strictly fixed, it is a conventional rule to **indent by four spaces**. 
+
+In Julia the indentation rules are not as strict as in Python, nonetheless it is recommended that you don't mix tabs and spaces while indenting you code, and tabs are usually discouraged as they may lead to problems when switching from one operating system to another.  
+{: .notice--info}
+
+Please notice that every "block" of code ends with an `end`, this way you can always know when something starts and ends.
 
 Although this is the most common way to write functions, it is sometimes convenient to use the inline version:
 
@@ -127,15 +134,15 @@ end
 If the user types `myWeight(60)` and doesn't specify `g`, he or she will get his/her weight as measured on Earth:
 
 ```julia
-myWeight(60)
->>> 60
+>>>myWeight(60)
+60
 ```
 
 If I specify the gravitational acceleration `g` on another planet (let's say Mars) 
 
 ```julia
-myWeight(60, 3.72) # https://en.wikipedia.org/wiki/Gravity_of_Mars
->>> 22.75
+>>>myWeight(60, 3.72) # https://en.wikipedia.org/wiki/Gravity_of_Mars
+22.75
 ```
 
 I get my weight on Mars! Pretty light, isn't it?
@@ -157,17 +164,17 @@ end
 Here `a` and `b` are positional arguments, while `c` and `d` are keyword arguments. 
 
 ```julia
-my_long_function(1, c=3)
->>> 9
+>>>my_long_function(1, c=3)
+9
 
-my_long_function(1, 2, c=3)
->>> 9
+>>>my_long_function(1, 2, c=3)
+9
 
-my_long_function(1, 2, d=5, c=3)
->>> 11
+>>>my_long_function(1, 2, d=5, c=3)
+11
 
-my_long_function(1, 2, d=5)
->>> ERROR: UndefKeywordError: keyword argument c not assigned
+>>>my_long_function(1, 2, d=5)
+ERROR: UndefKeywordError: keyword argument c not assigned
 ```
 
 As you can see, even if `c` is a keyword argument, it must always be specified!

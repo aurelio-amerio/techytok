@@ -182,8 +182,8 @@ for (i, element) in enumerate(my_array1)
     my_array2[i] = element^2
 end
 
-print(my_array2)
->>> [1.0, 4.0, 9.0, 16.0, 25.0, 36.0, 49.0, 64.0, 81.0, 100.0]
+>>>print(my_array2)
+[1.0, 4.0, 9.0, 16.0, 25.0, 36.0, 49.0, 64.0, 81.0, 100.0]
 ```
 
 # Conclusion

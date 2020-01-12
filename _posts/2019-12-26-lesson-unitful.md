@@ -52,7 +52,7 @@ It is possible to convert from one unit to another using [`uconvert`](https://pa
 
 ```julia
 b = uconvert(u"km", one_meter)
->>> b 
+>>>b 
 1//1000 km
 
 >>>one_meter

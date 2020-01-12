@@ -114,7 +114,7 @@ Pkg.activate("TestPackage1")
 
 using TestPackage1
 
-TestPackage1.greet()
+TestPackage1.mySpecialFunction(42)
 ```
 
 When you change something inside a package, remember to restart the REPL for the changes to take place.
