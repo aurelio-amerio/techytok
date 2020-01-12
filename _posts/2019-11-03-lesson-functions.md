@@ -153,7 +153,7 @@ As the name suggests **positional arguments** must be used in the right order, w
 
 Let's say we have a function which takes many optional parameters, it might become cumbersome for the user to remember the right order. That's the case where keyword arguments come in handy!
 
-Keyword arguments are separated from positional arguments by a semicolon `;` and must always be addressed by their name, although their order is irrelevant. They can be both optional and not, though usually we use keyword arguments for optional parameters.
+Keyword arguments are separated from positional arguments by a semicolon `;` and must always be addressed by their name, although their order is irrelevant. They can be either optional and not, but usually we use keyword arguments for optional parameters.
 
 ```julia
 function my_long_function(a, b=2; c, d=3)
