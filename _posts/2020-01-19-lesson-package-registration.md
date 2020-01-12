@@ -63,7 +63,7 @@ Test Passed
 >>>@test sin(3)>5
 Test Failed at ---:1
   Expression: sin(3) > 5
-   Evaluated: 0.1411200080598672 > 5
+  Evaluated: 0.1411200080598672 > 5
 ```
 
 It is possible to write a set of tests for a common field, for example we can write a series of tests for a function. In the case of `MultiQuad` I have written three test tests, one for each function, which test all the possible arguments for the functions.
@@ -97,7 +97,10 @@ In the case of `MultiQuad` we want to check if the result of an integration is c
 end
 ```
 
-At line 1 we choose the relative tolerance at which the integration routine should stop (which is proportional to the error on the final result). At line 7 we define the analytical result and at line 8 we compute the integral and store the result and the error estimation on the result. At line 9 I use the function `isapprox` which tests whether the two arguments are equal within the given tolerance, which equals to checking whether $$ |a-b| < tollerance$$ .
+At line 1 we choose the relative tolerance at which the integration routine should stop (which is proportional to the error on the final result). At line 7 we define the analytical result and at line 8 we compute the integral and store the result and the error estimation on the result. At line 9 I use the function `isapprox` which tests whether the two arguments are equal within the given tolerance, which equals to checking whether 
+$$
+|a-b| < tollerance
+$$
 
 Next we need to write many more tests to check all the options available. I will not deal with all the tests for this package, but I want to focus on two: checking whether units of measurement are handled properly and checking that an error is thrown when I pass an unavailable integration method.
 
@@ -299,7 +302,7 @@ If you would like to let Julia automatically create releases and tags once your 
 ## Register your package
 
 The following steps are for educational purposes only, please don't try to register a package if it is not ready to be shared with the public yet.
-{: .notice--error}
+{: .notice--warning}
 
 We shall now go to the package registration page: [pkg.julialang.org/registrator](https://pkg.julialang.org/registrator/)
 
