@@ -49,7 +49,7 @@ layout: default
       {% if page.acknowledgements %}
       <section class="page__content" itemprop="text">
       <h1>Acknowledgements</h1>
-      {{ page.acknowledgements }}
+      {{ page.acknowledgements | markdownify }}
       </section>
       {% endif %}
 
