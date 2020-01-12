@@ -59,6 +59,9 @@
     },
     {
       "title": "GPU computations"
+    },
+    {
+      "title": "Package Registration and Tests"
     }
   ]
 }

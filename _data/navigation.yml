@@ -68,6 +68,8 @@ zero-to-julia:
         url: /code-optimisation-in-julia/
       - title: "Lesson 18 - GPU computations"
         url: /lesson-arrayfire/
+      - title: "Lesson 19 - Package Registration and Tests"
+        url: /lesson-package-registration/
 
 
   # - title: Customization
