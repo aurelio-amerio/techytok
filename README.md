@@ -1,2 +1,2 @@
 # TechyTok!
-Repository containing the website https://techytok.ml
+Repository containing the website https://techytok.com
