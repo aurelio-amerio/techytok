@@ -97,9 +97,9 @@ In the case of `MultiQuad` we want to check if the result of an integration is c
 end
 ```
 
-At line 1 we choose the relative tolerance at which the integration routine should stop (which is proportional to the error on the final result). At line 7 we define the analytical result and at line 8 we compute the integral and store the result and the error estimation on the result. At line 9 I use the function `isapprox` which tests whether the two arguments are equal within the given tolerance, which equals to checking whether 
+At line 1 we choose the relative tolerance at which the integration routine should stop (which is proportional to the error on the final result). At line 7 we define the analytical result and at line 8 we compute the integral and store the result and the error estimation on the result. At line 9 I use the function `isapprox` which tests whether the two arguments are equal within the given tolerance, which equals to checking whether
 $$
-|a-b| < tollerance
+|a-b| < tolerance
 $$
 
 Next we need to write many more tests to check all the options available. I will not deal with all the tests for this package, but I want to focus on two: checking whether units of measurement are handled properly and checking that an error is thrown when I pass an unavailable integration method.
@@ -159,11 +159,14 @@ An example report of a coverage test can be found [here](https://coveralls.io/gi
 
 # Setting up Codecov
 
-[Codecov](https://codecov.io/) is a free platform which performs coverage tests similar to Coveralls. Although it is not mandatory, if you log in with your GitHub account  you can have an overview of all your repository for which coverage data is available.
+[Codecov](https://codecov.io/) is a free platform which performs coverage tests similar to Coveralls. Although it is not mandatory, if you log in with your GitHub account  you can have an overview of all your repository for which coverage data is available. 
 
 There is no setup required and Travis will automatically submit coverage data to codecov at build time.
 
 An example report of a coverage test can be found [here](https://codecov.io/gh/aurelio-amerio/MultiQuad.jl).
+
+You can choose to use either or both Codecov and Coveralls, but at least one coverage test platform should be included in your project.
+{: .notice--info}
 
 # Setting up Travis
 
@@ -201,7 +204,7 @@ This is a pretty generic configuration file which should work for every project.
 
 From line 17 to 21 we state what to do after a successful build: we want to **push the coverage results to Coveralls and Codecov**.
 
-We will now register a free Travis account in order to create builds. Go to [travis-ci.com](https://travis-ci.com/) and log in with your GItHub account.
+We will now register a free Travis account in order to create builds. Go to [travis-ci.com](https://travis-ci.com/) and log in with your GitHub account.
 
 Go to your [account settings page](https://travis-ci.com/account/repositories):
 
@@ -252,6 +255,8 @@ Just replace `aurelio-amerio/MultiQuad.jl` with `your-username/repository-name`.
 
 Before we can publish our package on the Julia  registries, we need to take care of the `Project.toml` file.
 
+First of all, check that the first lines of your `Project.toml`file contain the `name`, `uuid`, `authors` and `version` fields.
+
 For the first release of your package, make sure that the version of you package is either `0.1.0` (if this is a beta release) or `1.0.0` (if the package is already mature and complete). `0.1.0` is the default version for the first release of the package.
 
 After we have set the version of the package (for example `0.1.0`) we should specify the compatibility bounds of your package. In particular you need to specify the maximum (and optionally minimum) version of the packages you use for which your package will work.
@@ -282,6 +287,10 @@ The step of adding the `[compat]` entry to the `Project.toml` file is mandatory 
 {: .notice--warning}
 
 For more information on the `[compat]` entry and for a list of all the other available options, see the [official documentation page](https://julialang.github.io/Pkg.jl/v1/compatibility/). In order to better manage the `[compat]` entry, it is furthermore suggested to install the [CompatHelper](https://github.com/bcbi/CompatHelper.jl).
+
+# `PkgTemplates`
+
+The creation of a package and the integration with Travis, Codecov and Coveralls can be automated using [`PkgTemplates.jl`](https://github.com/invenia/PkgTemplates.jl). `PkgTemplates` has undergone large internal changes, and at present the user-facing API is still catching up. Once version 0.7 is released I will update this article to include an example on how to create a package using `PkgTemplates`.
 
 # Submitting the package
 
