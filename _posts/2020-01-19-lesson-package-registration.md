@@ -306,7 +306,7 @@ Now you should give the registrator permission to access your repository:
 
 ![image-center](/assets/images/2020/01/10/fig12b-registrator-1b.png){: .align-center}
 
-If you would like to let Julia automatically create releases and tags once your package is added to the registry, you can install [TagBot](https://github.com/apps/julia-tagbot) and give it permission to access your repository in a similar way to what you did for the registrator app.
+If you would like to let Julia automatically create releases and tags once your package is added to the registry, you can install [TagBot](https://github.com/JuliaRegistries/TagBot) and give it permission to access your repository in a similar way to what you did for the registrator app.
 
 ## Register your package
 
