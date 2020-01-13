@@ -365,6 +365,61 @@ function foo1(x,y=2) ... # preferable
 function foo2(x; y=2) ... # discouraged inside inner loops
 ```
 
+For example, if we define the following functions:
+
+```julia
+function test_positional(a, b, c)
+    return a + b + c
+end
+
+function test_keyword(;a, b, c)
+    return a + b + c
+end
+```
+
+We can see the LLVM code which gets compiled for each one using the `@code_llvm` macro. 
+
+```julia
+>>>@code_llvm test_positional(1,2,3)
+
+;  @ D:\Users\Aure\Documents\GitHub\techytok-examples\julia-code-optimization\code-optimization.jl:210 within `test_positional'
+; Function Attrs: uwtable
+define i64 @julia_test_positional_18504(i64, i64, i64) #0 {
+top:
+; ┌ @ operators.jl:529 within `+' @ int.jl:53
+   %3 = add i64 %1, %0
+   %4 = add i64 %3, %2
+; └
+  ret i64 %4
+}
+```
+
+```julia
+@code_llvm test_keyword(a=1,b=2,c=3)
+
+;  @ none within `#test_keyword'
+; Function Attrs: uwtable
+define i64 @"julia_#test_keyword_18505"({ i64, i64, i64 } addrspace(11)* nocapture nonnull readonly dereferenceable(24)) #0 {
+top:
+; ┌ @ namedtuple.jl:107 within `getindex'
+   %1 = getelementptr inbounds { i64, i64, i64 }, { i64, i64, i64 } addrspace(11)* %0, i64 0, i32 2
+   %2 = getelementptr inbounds { i64, i64, i64 }, { i64, i64, i64 } addrspace(11)* %0, i64 0, i32 1
+   %3 = getelementptr inbounds { i64, i64, i64 }, { i64, i64, i64 } addrspace(11)* %0, i64 0, i32 0
+; └
+; ┌ @ D:\Users\Aure\Documents\GitHub\techytok-examples\julia-code-optimization\code-optimization.jl:214 within `#test_keyword#9'
+; │┌ @ operators.jl:529 within `+' @ int.jl:53
+    %4 = load i64, i64 addrspace(11)* %3, align 8
+    %5 = load i64, i64 addrspace(11)* %2, align 8
+    %6 = add i64 %5, %4
+    %7 = load i64, i64 addrspace(11)* %1, align 8
+    %8 = add i64 %6, %7
+; └└
+  ret i64 %8
+}
+```
+
+As you can see, when we call `test_keyword` there are 9 more lines of code. If `test_keyword` is a function inside a critical inner loop this will lead to a considerable slowdown. 
+
 ## Avoid global scope variables
 
 As the title says, try to avoid global scope variables as much as you can, as it is more difficult for Julia to optimise them. If possible, try to declare them as `const`: most of the times a global variable is likely to be a constant, which is a good solution to in part alleviate the problem.  When possible, pass all the required data to the function by argument, this way the function will be more flexible and better optimised.  
