@@ -293,16 +293,26 @@ When you are working with **for loops** and you are sure that the loop condition
 using BenchmarkTools
 arr1=zeros(10000)
 
-@btime for i in 1:10000
-    arr1[i] = 1
+function put1!(arr)
+    for i in 1:length(arr)
+        arr[i]=1.0
+    end
 end
 
-@btime @inbounds for i in 1:10000
-    arr1[i] = 1
+function put1_inbounds!(arr)
+    @inbounds for i in 1:length(arr)
+        arr[i]=1.0
+    end
 end
+
+>>>@btime put1!($arr1)
+3.814 μs (0 allocations: 0 bytes)
+
+>>>@btime put1_inbounds!($arr1)
+1.210 μs (0 allocations: 0 bytes)
 ```
 
-On my PC the for loop starting at line 4 takes 197μs, while the one starting at line 8 only 192μs (which is a noticeable difference).
+On my PC `put1!` takes 3.814μs, while `put1_inbounds!` takes only 1.220μs (which is a noticeable difference).
 
 ## Static Arrays
 
