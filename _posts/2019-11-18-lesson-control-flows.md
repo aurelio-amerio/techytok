@@ -173,6 +173,35 @@ While blocks can access and change the values of variables in the scope of the b
 
 `enumerate` is a function which comes in handy when we need to iterate on an array (or similar) and we need to keep track of the number of iterations we have already performed.
 
+`enumerate` will return an iterator (which is something like an array which can be iterated in for loops). It will produce couples of the form `(i, x[i])`.
+
+For example:
+
+```julia
+x = ["a","b","c"]
+for couple in enumerate(x)
+    println(couple)
+end
+
+(1, "a")
+(2, "b")
+(3, "c")
+```
+
+The same result could have been obtained "manually":
+
+```julia
+x = ["a","b","c"]
+enum_array = [(1,"a"), (2,"b"), (3,"c")]
+for i in 1:length(x)
+    println(enum_array[i])
+end
+
+(1, "a")
+(2, "b")
+(3, "c")
+```
+
 Let's say we want to read the elements from an array, square them and store them in another array, we can do it in this way:
 
 ```julia
@@ -185,6 +214,21 @@ end
 >>>print(my_array2)
 [1.0, 4.0, 9.0, 16.0, 25.0, 36.0, 49.0, 64.0, 81.0, 100.0]
 ```
+
+For comparison, we could have written the same loop in the following way:
+
+```julia
+my_array1 = collect(1:10)
+my_array2 = zeros(10)
+for i in 1:length(my_array1)
+    my_array2[i] = my_array1[i]^2
+end
+
+>>>print(my_array2)
+[1.0, 4.0, 9.0, 16.0, 25.0, 36.0, 49.0, 64.0, 81.0, 100.0]
+```
+
+For more information on iterators and the enumerate function, please refer to [this documentation page](https://docs.julialang.org/en/v1/base/iterators/index.html). 
 
 # Conclusion
 
