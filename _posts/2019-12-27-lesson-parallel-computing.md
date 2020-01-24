@@ -111,6 +111,11 @@ end
 This operation takes 1.835 ms on my machine to complete. The difference in time is due to the fact that the second version has to read the values of `x` from the array at each iteration. If we were to use a slower function the two implementations would be equivalent:
 
 ```julia
+function slow_func(x)
+    sleep(0.005)
+    return x
+end
+
 y = 1:0.1:10
 res = zeros(length(y))
 
