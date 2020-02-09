@@ -70,6 +70,8 @@ zero-to-julia:
         url: /lesson-arrayfire/
       - title: "Lesson 19 - Package Registration and Tests"
         url: /lesson-package-registration/
+      - title: "Lesson 20 - Interoperability in Julia"
+        url: /lesson-other-languages/
 
 
   # - title: Customization

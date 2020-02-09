@@ -62,6 +62,9 @@
     },
     {
       "title": "Package Registration and Tests"
+    },
+    {
+      "title": "Interoperability in Julia"
     }
   ]
 }
