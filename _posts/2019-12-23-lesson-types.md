@@ -150,7 +150,7 @@ end
 
 The `::SomeType` notation indicates to Julia that `person` has to be of the aforementioned type or a sub-type. Only the most strict type requirement is considered (which is the lowest type in the type tree), for example `ricky` is a `Person`, but "more importantly" he is a `Rockstar` (`Rockstar` is placed lower in the type tree), thus `introduceMe(person::Rockstar)` is called. In other words, the function with the closest type signature will be called.
 
-This is an example of multiple dispatch, which means that we have written a single function with different methods depending on the type of the variable. We will come back again to multiple dispatch in another lesson, as it is one of the most important features of Julia and is considered a more advanced topic, together with type annotations. As an anticipation `::Rockstar` is a type annotation, the compiler will check if `person` is a `Rockstar` (or a sub-type of it) and if that is true it will execute the function.
+This is an example of multiple dispatch, which means that we have written a single function with different methods depending on the type of the variable. We will come back again to multiple dispatch in [this lesson](lesson-multiple-dispatch), as it is one of the most important features of Julia and is considered a more advanced topic, together with type annotations. As an anticipation `::Rockstar` is a type annotation, the compiler will check if `person` is a `Rockstar` (or a sub-type of it) and if that is true it will execute the function.
 
 # Type constructor
 
