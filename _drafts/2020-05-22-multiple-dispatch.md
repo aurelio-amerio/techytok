@@ -85,15 +85,15 @@ So as a rule of thumb, **don't add type annotations, unless they are general or 
 
 # Multiple dispatch
 
-Multiple dispatch is the practice of having a function behave differently according the number and the type of the parameters which it receives.
+Multiple dispatch is the practice of having a function behave differently according to the number and the type of the parameters which it receives.
 
-Multiple dispatch is one of the cases where type annotations are neaded. With the addition of type annotations, it is possible to write multiple definitions for a single function which will behave differently. 
+Multiple dispatch is one of the cases where type annotations are needed. With the addition of type annotations, it is possible to write multiple definitions for a single function which will behave differently. 
 
-In julia the "name" of a function is "the function", while the implementation of said function is called a method of said function. A single function may have different methods: for example the plus `+` function has a method to deal with each concrete type: it will behave differently when you sum two integers or two floating point numbers. 
+In Julia the "name" of a function is "the function", while an implementation of said function is called a method of the function. A single function may have different methods: for example the  `+` (plus) function has a method to deal with each concrete type: it will behave differently when you sum two integers or two floating point numbers. 
 
-We have already seen an example of multiple dispatch in the [lesson about types](lesson-types). We will now expore another example.
+We have already seen an example of multiple dispatch in the [lesson about types](lesson-types). We will now explore another example.
 
-Let's write a new function which will behave differenlty when we pass a `Number` or a `String`:
+Let's write a new function which will behave differently when we pass a `Number` or a `String`:
 
 ```julia
 function f3(x::Number)
@@ -122,7 +122,7 @@ If I try to call `f3` with an `x` which is neither a `Number` or a `String`, an 
 ERROR: MethodError: no method matching f3(::Array{Int64,1})
 ```
 
-Notice that we can always use the broadcasting syntax to compute `f3` elementwise:
+Notice that we can always use the broadcasting syntax to compute `f3` element-wise:
 
 ```julia
 >>>f3.([1,2,3])
@@ -137,7 +137,7 @@ Hello! I see you like oranges
 Hello! I see you like hugs
 ```
 
-Let's define a generic method which will work on everything which is not a `Number` or a `String`
+Let's define a generic method which will work on everything which is not a `Number` or a `String`:
 
 ```julia
 function f3(x)
@@ -176,6 +176,45 @@ In this case I've decide not to add type annotations and this function will work
 Multiple dispatch is a simple but powerful concept. Understanding and mastering it is one of the keys to write better code in Julia. 
 Since the methods for a single function can be extremely different, it enables us to keep names concise and simple while differentiating the implementation for each use case. 
 {: .notice--info}
+
+To list all the methods available for a function you can use `methods(fname)`:
+
+```julia
+>>>methods(f3)
+# 4 methods for generic function "f3":
+[1] f3(x::String) in Main at REPL[2]:2
+[2] f3(x::Number) in Main at REPL[1]:2
+[3] f3(x) in Main at REPL[3]:2
+[4] f3(x, y) in Main at REPL[4]:2
+```
+
+You can check which method will be used by a function call using the `@which` macro:
+
+```julia
+>>>@which f3(2)
+f3(x::Number)
+```
+
+# Adding new methods to existing functions
+
+While adding new methods to functions we have defined ourselves is useful, multiple dispatch is not limited to user defined functions. We can also define new methods for existing functions defined in other libraries.
+
+It is possible, for example, to extend the `+` function to concatenate `Strings`. In order to extend a function first we need to `import` it, then we can extend it adding a new method:
+
+```julia
+import Base.+
++(x::String, y::String) = "$x$y"
+
+>>>"Techy"+"Tok"
+"TechyTok"
+```
+
+This extension is not particularly useful, since there is a function explicitly designed to concatenate strings, but it is nonetheless possible. For the sake of completeness, the same result can be obtained using `join`:
+
+```julia
+>>>join(["Techy","Tok"])
+"TechyTok"
+```
 
 
 
