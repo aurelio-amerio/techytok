@@ -72,6 +72,8 @@ zero-to-julia:
         url: /lesson-package-registration/
       - title: "Lesson 20 - Interoperability in Julia"
         url: /lesson-other-languages/
+      - title: "Lesson 21 - Multiple Dispatch"
+        url: /lesson-multiple-dispatch/
 
 
   # - title: Customization
