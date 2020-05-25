@@ -28,9 +28,9 @@ In this lesson we will talk about **type annotations** and **multiple dispatch**
 
 # Type annotations
 
-Please refer to [this](lesson-types) lesson for a quick recap on types. The type, as the name suggests, specifies how a variable should be handled: a `Number` has a certain behaviour when summed or subtracted, a `Matrix` behaves differently when multiplied (we have the matrix multiplication operation) and `Strings` cannot be summed, but can be truncated, concatenated and handled in many different ways. 
+Please refer to [this](https://techytok.com/lesson-types) lesson for a quick recap on types. The type, as the name suggests, specifies how a variable should be handled: a `Number` has a certain behaviour when summed or subtracted, a `Matrix` behaves differently when multiplied (we have the matrix multiplication operation) and `Strings` cannot be summed, but can be truncated, concatenated and handled in many different ways. 
 
-Julia is based on many different types and even if you don't explicitly invoke them, **the REPL is in charge of inferring the type of each end every variable**, each return value, **and compile optimised machine code** like a C compiler would.  This is also why it is important to have type stable code (see [this](code-optimisation-in-julia/#type-stability) lesson): if the type of a variable or the returned value of a function can not be determined, Julia won't be able to compile efficient machine code and your program will run extremely slowly.
+Julia is based on many different types and even if you don't explicitly invoke them, **the REPL is in charge of inferring the type of each end every variable**, each return value, **and compile optimised machine code** like a C compiler would.  This is also why it is important to have type stable code (see [this](https://techytok.com/code-optimisation-in-julia/#type-stability) lesson): if the type of a variable or the returned value of a function can not be determined, Julia won't be able to compile efficient machine code and your program will run extremely slowly.
 
 Julia is an **optionally typed** language, which means that it is possible to specify the type of a parameter given to a function, but this is **not mandatory** and in general it is **not advised unless you need to**.
 
@@ -74,7 +74,7 @@ As we can see, an error is explicitly thrown when we try to pass a string to `f2
 ERROR: MethodError: no method matching +(::Int64, ::String)
 ```
 
-There is no performance gain in adding type annotations as long as a function is [type stable](code-optimisation-in-julia/#type-stability). In my opinion, they may make debugging easier and the code may become more readable if you specify that a variable must be a `Number` rather than a `String`, a `Dict` or something else. 
+There is no performance gain in adding type annotations as long as a function is [type stable](https://techytok.com/code-optimisation-in-julia/#type-stability). In my opinion, they may make debugging easier and the code may become more readable if you specify that a variable must be a `Number` rather than a `String`, a `Dict` or something else. 
 {: .notice--info}
 
 ## Abstract vs concrete types
@@ -91,7 +91,7 @@ Multiple dispatch is one of the cases where type annotations are needed. With th
 
 In Julia the "name" of a function is "the function", while an implementation of said function is called a method of the function. A single function may have different methods: for example the  `+` (plus) function has a method to deal with each concrete type: it will behave differently when you sum two integers or two floating point numbers. 
 
-We have already seen an example of multiple dispatch in the [lesson about types](lesson-types). We will now explore another example.
+We have already seen an example of multiple dispatch in the [lesson about types](https://techytok.com/lesson-types). We will now explore another example.
 
 Let's write a new function which will behave differently when we pass a `Number` or a `String`:
 
@@ -209,10 +209,13 @@ import Base.+
 "TechyTok"
 ```
 
-This extension is not particularly useful, since there is a function explicitly designed to concatenate strings, but it is nonetheless possible. For the sake of completeness, the same result can be obtained using `join`:
+This extension is not particularly useful, since there is a function explicitly designed to concatenate strings, but it is nonetheless possible. For the sake of completeness, the same result can be obtained using `join` or `*`
 
 ```julia
 >>>join(["Techy","Tok"])
+"TechyTok"
+
+>>> "Techy"*"Tok"
 "TechyTok"
 ```
 
