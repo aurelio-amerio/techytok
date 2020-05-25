@@ -216,14 +216,14 @@ This extension is not particularly useful, since there is a function explicitly 
 "TechyTok"
 ```
 
-Furthermore, we can add a new method to an existing function inside a module. When we import that module, and if the extended function has been exported, we will be able to use the "old" function with the new method too.
+Furthermore, we can add a new method to an existing function inside a module. When we import that module, we will be able to use the "old" function with the new method too.
 
 ```julia
 module TestMe
 import Base.+
-export +
 
 +(x::String, y::String) = "$x$y"
+
 end
 ```
 
