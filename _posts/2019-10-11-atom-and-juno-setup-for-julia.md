@@ -24,6 +24,8 @@ comments: true
 sidebar:
   nav: "zero-to-julia"
 ---
+**News from JuliaCon 2020!** Juno is currently stable but not under active development anymore. In the near future all the features available in Juno will be implemented in the [VSCode extension for Julia](https://www.julia-vscode.org/). You can still follow this guide and get acquainted with Juno since most of its features will remain the same in VSCode. In the next few weeks, once the transition to VSCode is complete, I'll write an indepth guide to the new extension, so if you are interested to the topic please stay tuned!
+{: .notice--info}
 
 In this tutorial you will learn how to setup a working development environment for Julia.
 
