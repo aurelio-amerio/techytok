@@ -1,6 +1,6 @@
 ---
-title: "From zero to Julia! Using Docker"
-date: 2019-05-04
+title: "Julia and Docker integration"
+date: 2020-08-11
 header:
   image: "/assets/images/2019/04/26/Docker-julia.png"
   og_image: "/assets/images/2019/04/26/teaser.png"
@@ -17,19 +17,28 @@ tags:
     - Julia
     - Docker
     - Atom
+	- VSCode
+	- Juno
 
 comments: true
+
+sidebar:
+  nav: "zero-to-julia"
 ---
-In this guide we will learn how to setup a fully containerized development environment for the Julia language.
+In this guide we will learn how to setup a fully containerized development environment for the Julia language. We will show you how to connect a docker container to both VSCode and Atom, though it is suggested to use VSCode as the procedure is simpler and the Julia extension for Atom is no longer under active development. 
+
+
 
 We will go through the following steps:
 
 - [Install Docker](#install-docker)
 - [Install DockStation](#install-dockstation)
 - [Create a Julia container](#create-a-julia-container)
+- Install and configure VSCode
+- Connect to the Docker container from VSCode
 - [Install Atom](#install-atom)
 - [Install and configure Juno IDE](#install-and-configure-juno-ide)
-- [Connect to the Docker container](#connect-to-the-docker-container)
+- [Connect to the Docker container from Atom](#connect-to-the-docker-container)
 
 But first, **what are Julia and Docker?** The following two paragraphs are meant to give you some context but they are not needed in order to follow through the tutorial. If you can't wait getting to work with Julia, you can directly skip to [Install Docker](#install-docker)!
 
@@ -91,7 +100,9 @@ This is an **optional step**, if you are already acquainted with Docker. DockSta
 
 ## Create a Julia container
 
-Ok, now that we have set up docker and docker compose, it is time to create a container for Julia: here is where the magic lies! I won't go into the details of how to write a **Dockerfile**, but I'll try to give you a flavour of it, in order to make you understands what's going on.
+Ok, now that we have set up docker and docker compose, it is time to create a container for Julia: here is where the magic lies! If you have decided to use VSCode you don't need to do anything in particular and you can use the default Julia container, but if you have decided to use Atom we will need to create and ad-hoc container. If you have decided to use VSCode (the suggested option) you can skip directly to [Install and configure VSCode](#Install and configure VSCode). If you have decided to use Atom, please continue reading this section.
+
+I won't go into the details of how to write a **Dockerfile**, but I'll try to give you a flavour of it, in order to make you understands what's going on.
 
 Let's start writing our **Dockerfile**. First create an empty file, named **Dockerfile**, then we need to open it and write a script which will build the Docker container.
 
@@ -254,6 +265,8 @@ Did you get your cup of tea? Nice! Now, while we wait for the build to finish, w
 
 If you don't want to build the image yourself, I have built it already and uploaded it on docker hub. You can safely skip the building step and download the docker image directly, but you won't get to change the default root/debugger password. If you plan to use Julia locally on your pc, not changing the default password won't be a problem.
 {: .notice--info}
+
+## Install and configure VSCode
 
 ## Install Atom
 
