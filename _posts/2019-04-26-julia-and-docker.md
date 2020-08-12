@@ -1,6 +1,6 @@
 ---
-title: "From zero to Julia! Using Docker"
-date: 2019-05-04
+title: "Julia and Docker integration"
+date: 2020-08-11
 header:
   image: "/assets/images/2019/04/26/Docker-julia.png"
   og_image: "/assets/images/2019/04/26/teaser.png"
@@ -17,19 +17,30 @@ tags:
     - Julia
     - Docker
     - Atom
+	- VSCode
+	- Juno
+	- SSH
+	- WSL
 
 comments: true
+
+sidebar:
+  nav: "zero-to-julia"
 ---
-In this guide we will learn how to setup a fully containerized development environment for the Julia language.
+In this guide we will learn how to setup a fully containerized development environment for the Julia language. We will show you how to connect a docker container to both VSCode and Atom, though it is suggested to use VSCode as the procedure is simpler and the Julia extension for Atom is no longer under active development. 
+
+
 
 We will go through the following steps:
 
 - [Install Docker](#install-docker)
 - [Install DockStation](#install-dockstation)
 - [Create a Julia container](#create-a-julia-container)
+- [Install and configure VSCode](#Install and configure VSCode)
+- [Connect to the Docker container from VSCode](#Connect to the Docker container from VSCode)
 - [Install Atom](#install-atom)
 - [Install and configure Juno IDE](#install-and-configure-juno-ide)
-- [Connect to the Docker container](#connect-to-the-docker-container)
+- [Connect to the Docker container from Atom](#connect-to-the-docker-container-from-atom)
 
 But first, **what are Julia and Docker?** The following two paragraphs are meant to give you some context but they are not needed in order to follow through the tutorial. If you can't wait getting to work with Julia, you can directly skip to [Install Docker](#install-docker)!
 
@@ -70,7 +81,7 @@ If you want to read more about docker, I encourage you to look at the project's 
 
 First we need to install Docker. I will not delve into the details as the procedure is well explained [here](<https://www.docker.com/get-started>) on the Docker website.
 
-If you are using **Windows** or **Mac**, I suggest that you install Docker for Windows/Mac.
+If you are using **Windows** or **Mac**, I suggest that you install Docker for Windows/Mac. For Windows users, if you can please install [windows subsystem for Linux 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2) (WSL2) and the [WSL2 kernel](https://docs.microsoft.com/windows/wsl/wsl2-kernel) as it makes Docker much faster. 
 
 If you are using **Linux**, you can find [here](<https://docs.docker.com/install/linux/docker-ce/debian/>) a guide on how to install Docker. Furthermore, after you have installed Docker, you need to also install Docker Compose running, for example
 
@@ -91,7 +102,9 @@ This is an **optional step**, if you are already acquainted with Docker. DockSta
 
 ## Create a Julia container
 
-Ok, now that we have set up docker and docker compose, it is time to create a container for Julia: here is where the magic lies! I won't go into the details of how to write a **Dockerfile**, but I'll try to give you a flavour of it, in order to make you understands what's going on.
+Ok, now that we have set up docker and docker compose, it is time to create a container for Julia: here is where the magic lies! If you have decided to use VSCode you don't need to do anything in particular and you can use the default Julia container, but if you have decided to use Atom we will need to create and ad-hoc container. If you have chosen VSCode (the suggested option) you can skip directly to [Install and configure VSCode](#Install and configure VSCode). If you have decided to use Atom, please continue reading this section.
+
+I won't go into the details of how to write a **Dockerfile**, but I'll try to give you a flavour of it, in order to make you understands what's going on.
 
 Let's start writing our **Dockerfile**. First create an empty file, named **Dockerfile**, then we need to open it and write a script which will build the Docker container.
 
@@ -100,11 +113,11 @@ Let's start writing our **Dockerfile**. First create an empty file, named **Dock
 In order to have a working Julia environment, we simply need to use the official Julia Docker image, like this
 
 ```dockerfile
-FROM julia:1.0.3
+FROM julia:latest
 MAINTAINER Aurelio Amerio
 ```
 
-Here, on line 1 we select the Julia version we want to use (1.0.3 is the long term support one, we could have chosen *latest* too). Line 2 is not mandatory, but it is useful to write an annotation of who is writing/maintaining the docker image.
+Here, on line 1 we select the Julia version we want to use (latest is the latest available version, currently 1.5). Line 2 is not mandatory, but it is useful to write an annotation of who is writing/maintaining the docker image.
 
 Now we need to install a series of Linux packages. In order to be able to connect to the Docker container using Atom/Juno, we need to install and configure an ssh server. Furthermore, I have decided to install also a C++ compiler, as it may/will be useful to have it for future experiments.
 
@@ -188,7 +201,7 @@ As you can see, you can easily add your language to this list, in order to have 
 The whole dockerfile should now look like this:
 
 ```dockerfile
-FROM julia:1.0.3
+FROM julia:latest
 MAINTAINER Aurelio Amerio
 
 ########################################################
@@ -233,7 +246,7 @@ COPY locale.gen /etc/locale.gen
 RUN locale-gen
 ```
 
-###  Build a Docker Image <a name="build"></a>
+###  Build a Docker Image
 
 Now that we have written our Dockerfile, it is time to build a Docker image.
 
@@ -248,12 +261,71 @@ docker build -t julia-container .
 `Julia contaier` may be any name of your choice: it is the name (tag) of the image you are going to build. Take note of it as we will need it later.
 
 This process may take some time, depending on your connection speed. On my pc it takes 20~30 minutes, so this might be the right time to grab a cup of tea!
-{: .notice--info}
+{:  .notice--info}
 
 Did you get your cup of tea? Nice! Now, while we wait for the build to finish, we shall head to the next step and install Atom!
 
 If you don't want to build the image yourself, I have built it already and uploaded it on docker hub. You can safely skip the building step and download the docker image directly, but you won't get to change the default root/debugger password. If you plan to use Julia locally on your pc, not changing the default password won't be a problem.
 {: .notice--info}
+
+## Install and configure VSCode
+
+To install VSCode, please follow [this guide]. Once you have installed VSCode it is advisable to install the docker extension to make it easier to manage the Julia container. To do it, open the extension panel (`Ctrl+Shift+X`), type `docker` and install the Docker extension (it should be the first result).
+
+We now need to install an extension called `Remote - Containers`, which you can find in the extension panel. Once you have installed this extension, we can start the Julia container. Make sure that Docker is running, open a shell (the terminal in Unix systems or Power Shell in Windows) and type the following command to create a Julia container:
+
+```bash
+docker run -it --name julia_docker -v /path/to/shared/folder:/home/julia/project julia:latest
+```
+
+You can choose a name for your container using the `--name` option: in this case I have decided to name my container `julia_docker` to make it easier to recognize. Instead of `/path/to/shared/folder` please choose a path to a folder on your computer which will be shared with the docker container: this way you can share code between the docker machine and your PC. Please note that the local folder will be mounted in the docker container at `/home/julia/project`, which is what is written after the `:`. For more informations on how to share volumes with docker, please check the volume [documentation page](https://docs.docker.com/storage/volumes/).  In my case, for example, I have used `/f/Users/Aure/Documents/GitHub/techytok-examples:/home/julia/project`. Now your container should be running and you should see the Julia REPL in your current shell window. You can now type `exit()` to close the REPL and shut down the container.
+
+## Connect to the Docker container from VSCode
+
+We can now move back to VSCode. Please open the docker extension (you can do so by clicking on the Docker icon in the toolbar on the left)
+
+![image-center](/assets/images/2020/08/12/docker-icon-vscode.png){: .align-center}
+
+You should now see your container in the top left panel of the docker extension:
+
+![image-center](/assets/images/2020/08/12/docker-container-julia.png){: .align-center}
+
+Right click on the container name and select `start`. You should now see a green icon indicating that the container is running:
+
+![image-center](/assets/images/2020/08/12/docker-container-julia-started.png){: .align-center}
+
+Now click the green button on the bottom left corner of VSCode:
+
+![image-center](/assets/images/2020/08/12/docker-connect.png){: .align-center}
+
+And select `Remote - Containers: Attach to Running Container...` 
+
+A menu should open where you can see the name of your container: click it to connect to your Julia container.
+
+![image-center](/assets/images/2020/08/12/docker-attach.png){: .align-center}
+
+A new VSCode window should open and this editor will run your code inside your docker container. In case it is not enabled, please install again the Julia VSCode extension from the extension panel.  
+
+Now you can open the folder where you want to work. Click on `File>Open Folder` and select/type the path to your working directory (in this case /home/julia/project). 
+
+We can now browse the `project` folder (which is the folder which is shared between your PC and the docker container) and create a test file.
+
+Let's create a Julia file and type:
+
+ ```julia	
+if Sys.islinux()
+    print("Hello, this is TechyTok")
+end
+ ```
+
+This is a simple check to test if the system (the docker container) is using Linux. If everything is setup correctly (and you are not using Windows containers), this should print `Hello, this is TechyTok` in the REPL.
+
+Now you can start developing like you normally would with VSCode and everything will run inside the container! 
+
+Please note that this procedure can be adapted to work with WSL containers or machines which you can access through SSH, the only difference is that you will need to install `Remote - WSL` or `Remote - SSH` to connect to the machine. 
+{: .notice--info}
+
+In the remaining part of this lesson we will deal with installing and setting up Atom. You can directly jump to the Conclusion section of the guide.
 
 ## Install Atom
 
@@ -323,7 +395,7 @@ You should be able to create a new server. Compile the module with the following
 
 Now it is time to connect Juno to the docker image!
 
-## Connect to the Docker container
+## Connect to the Docker container from Atom
 
 If you have reached this point and the build of your Docker image is finished (or you have chosen to use my remote image), you are almost ready to go!
 
@@ -446,8 +518,10 @@ Julia will download some initial packages and compile them. After that, you shou
 
 ## Conclusions
 
-You have successfully set up Julia to work with a Docker container. Now, when you want to start coding with Julia, you simply need start you containers either via DockStation or `docker-compose up` and connect to them using Atom and the Juno IDE.
+You have successfully set up Julia to work with a Docker container. Now, when you want to start coding with Julia, you simply need start your containers  and connect to them using VSCode or Atom and the Juno IDE.
 
 You can find all the code for this tutorial at <http://bit.ly/julia-docker-repo> and the docker hub repository at <http://bit.ly/julia-docker-hub>
 
-Have fun exploring Julia! I hope you enjoyed this tutorial, if you liked it stay tuned for further guides here, at TechyTok!
+If you liked this guide and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**! 
+
+Thank you for reading this guide and see you soon on TechyTok!

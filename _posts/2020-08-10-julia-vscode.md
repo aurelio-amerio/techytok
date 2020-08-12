@@ -2,12 +2,12 @@
 title: "VSCode: the future for Julia development"
 date: 2020-08-10
 header:
-  caption: ""
+  caption: "[julia-vscode.org](https://www.julia-vscode.org/)"
   image: "/assets/images/2020/08/10/header.jpg"
   og_image: "/assets/images/2020/08/10/teaser.jpg"
   teaser: "/assets/images/2020/08/10/teaser.jpg"
 excerpt: "Learn how to setup a Julia development environment using VSCode."
-permalink: /Julia-VSCode/
+permalink: /julia-vscode/
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "book"
@@ -30,9 +30,9 @@ In this tutorial you will learn how to install install Julia and setup VSCode wi
 
 # Introduction 
 
-Visual Studio Code is a free and open source text editor. With its many plug-ins, it can be customized to satisfy all the needs of a researcher and a programmer.
+Visual Studio Code is a free and open source text editor. With its many plug-ins, it can be customized to satisfy all the needs of a researcher/programmer.
 
-A bit of context: in the past years there have been two main IDE projects for Julia: the Juno project for Atom and the Julia VSCode extension project, but now things have changed! Starting from an exiting joint announcement made at JuliaCon2020, both development teams have joined their efforts in making a single better extension for VSCode: [Julia for VSCode](https://www.julia-vscode.org/). Currently Juno has been put in maintenance mode, meaning that it is still perfectly functional but new features will be added only to the VSCode extension. In case you were uncertain whether it would be better to use Juno for Atom or VSCode, **it is thus suggested to use the VSCode extension** rather then Juno.
+A bit of context: in the past years there have been two main IDE projects for Julia: the Juno project for Atom and the Julia VSCode extension project, but now things have changed! Starting from an exiting announcement made at JuliaCon2020, both development teams have joined their efforts in making a single better extension for VSCode: [Julia for VSCode](https://www.julia-vscode.org/). Currently Juno has been put in maintenance mode, meaning that it is still perfectly functional, but new features will be added only to the VSCode extension. In case you were uncertain whether it would be better to use Juno for Atom or VSCode, **it is thus suggested to use the VSCode extension** rather then Juno.
 
 In this tutorial we will first learn how to install Julia and then we will setup VSCode. 
 
@@ -74,7 +74,7 @@ Once you have installed the Julia extension, we need to open the settings tab. T
 
 ![image-center](/assets/images/2020/08/10/fig6-julia-settings-1.png){: .align-center}
 
-Now find the filed called `Julia: Executable Path` and type the path to your Julia executable:
+Now find the file called `Julia: Executable Path` and type the path to your Julia executable:
 
 ![image-center](/assets/images/2020/08/10/fig7-julia-settings-2.png){: .align-center}
 
@@ -108,13 +108,13 @@ print("Hello! This is TechyTok!")
 
 ![image-center](/assets/images/2020/08/10/fig12-new-file-hello-2.png){: .align-center} 
 
-To run this line of code, place the cursor on the line and press `Alt+Enter` to run this single line of code. A new terminal window should open the lower part of VSCode and you should see something similar to this:
+To run this line of code, place the cursor on the line and press `Alt+Enter` to run this single line of code. A new terminal window should open in the lower part of VSCode and you should see something similar to this:
 
 ![image-center](/assets/images/2020/08/10/fig13-new-file-hello-3.png){: .align-center} 
 
-This window is called the **REPL** and it is a Julia command prompt. When you press `Alt+Enter`, the code written on the `.jl` file gets sent to the **REPL**, where it is evaluated. In particular, the command `print` prints a message in the REPL. 
+This window is called the **REPL** and it is a Julia command prompt. When you press `Alt+Enter`, the code written on the `.jl` file gets sent to the **REPL**, where it is evaluated (it is actually a little bit more complicated than this, if you are interested please read this [documentation page](https://www.julia-vscode.org/docs/stable/userguide/runningcode/#Julia:-Execute-Code-Block-(AltEnter)-1)). In particular, the command `print` prints a message in the REPL. 
 
-Let's see another example. If you type `2+2`and press `Alt+Enter` you will get, as an inline result, 4:
+Let's see another example. If you type `2+2` and press `Alt+Enter` you will get, as an inline result, 4:
 
 ![image-center](/assets/images/2020/08/10/fig14-new-file-hello-4.png){: .align-center} 
 
@@ -144,12 +144,14 @@ println(42)
 
 Please note that since `#` is the character that denotes the beginning of a comment line in Julia, after `##` it is possible to write any comment to specify the content of the code cell, which makes the code much more readable. 
 
-For more informations about the Julia extension for VSCode, please visit the [official website](https://www.julia-vscode.org/) and read the [documentation](https://www.julia-vscode.org/docs/stable/). At the time of writing this guide, the documentation for the Julia VSCode extension is not yet complete and many pages are still missing since many new features are being ported from Juno to VSCode, but in the near future you can expect a complete and useful documentation. 
+For more informations about the Julia extension for VSCode, please visit the [official website](https://www.julia-vscode.org/) and read the [documentation](https://www.julia-vscode.org/docs/stable/). At the time of writing this guide, the documentation for the Julia VSCode extension is not yet complete and many pages are still missing since many new features are being ported from Juno to VSCode, but in the near future you can expect a rich and complete documentation. 
 
 
 # Conclusions
 
-In this lesson we have learned how 
+In this lesson we have learnt how to install Julia and how to setup VSCode with the Julia extension. We have learnt how to create files in VSCode and how to run both lines of code and code cells. 
+
+Now that you have a working development environment for Julia, you can move on and start learning with the first lesson on [variables and types](https://techytok.com/lesson-variables-and-types/). If you are and advanced user, you may be interested in [this guide](https://techytok.com/from-zero-to-julia-using-docker/) on how to use docker containers with Julia and VSCode in a simple and seamless way.  
 
 If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
 

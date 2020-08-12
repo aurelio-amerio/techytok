@@ -26,7 +26,9 @@ main:
 zero-to-julia:
   - title: From zero to Julia!
     children:
-      - title: "How to install Julia"
+      - title: "How to install Julia and VSCode"
+        url: /julia-vscode/
+      - title: "How to install Juno for Atom"
         url: /atom-and-juno-setup-for-julia/
       - title: "Introduction to the REPL"
         url: /introduction-to-the-repl/
@@ -74,6 +76,8 @@ zero-to-julia:
         url: /lesson-other-languages/
       - title: "Lesson 21 - Multiple Dispatch"
         url: /lesson-multiple-dispatch/
+      - title: "Lesson 22 - Julia and Docker integration"
+        url: /from-zero-to-julia-using-docker/
 
 
   # - title: Customization
