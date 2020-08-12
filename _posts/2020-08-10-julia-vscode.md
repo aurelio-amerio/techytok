@@ -17,7 +17,6 @@ categories:
     - "Lessons"
 tags:
     - Julia
-	- VSCode
 
 comments: true
 
