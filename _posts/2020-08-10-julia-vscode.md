@@ -2,7 +2,7 @@
 title: "VSCode: the future for Julia development"
 date: 2020-08-10
 header:
-  caption: ""
+  caption: "[julia-vscode.org](https://www.julia-vscode.org/)"
   image: "/assets/images/2020/08/10/header.jpg"
   og_image: "/assets/images/2020/08/10/teaser.jpg"
   teaser: "/assets/images/2020/08/10/teaser.jpg"
