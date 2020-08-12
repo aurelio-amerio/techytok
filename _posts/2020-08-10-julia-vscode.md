@@ -18,7 +18,6 @@ categories:
 tags:
     - Julia
 	- VSCode
-	- Julia 1.5
 
 comments: true
 
