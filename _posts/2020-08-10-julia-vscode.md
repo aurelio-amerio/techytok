@@ -7,7 +7,7 @@ header:
   og_image: "/assets/images/2020/08/10/teaser.jpg"
   teaser: "/assets/images/2020/08/10/teaser.jpg"
 excerpt: "Learn how to setup a Julia development environment using VSCode."
-permalink: /Julia-VSCode/
+permalink: /julia-vscode/
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "book"
