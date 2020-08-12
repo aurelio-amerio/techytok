@@ -31,7 +31,7 @@ We will go through the following steps:
 - [Install Docker](#install-docker)
 - [Install DockStation](#install-dockstation)
 - [Create a Julia container](#create-a-julia-container)
-- [Install and configure VSCode](#Install and configure VSCode)
+- [Install and configure VSCode](#install-and-configure-vscode)
 - [Connect to the Docker container from VSCode](#Connect to the Docker container from VSCode)
 - [Install Atom](#install-atom)
 - [Install and configure Juno IDE](#install-and-configure-juno-ide)
@@ -97,7 +97,7 @@ This is an **optional step**, if you are already acquainted with Docker. DockSta
 
 ## Create a Julia container
 
-Ok, now that we have set up docker and docker compose, it is time to create a container for Julia: here is where the magic lies! If you have decided to use VSCode you don't need to do anything in particular and you can use the default Julia container, but if you have decided to use Atom we will need to create and ad-hoc container. If you have chosen VSCode (the suggested option) you can skip directly to [Install and configure VSCode](#Install and configure VSCode). If you have decided to use Atom, please continue reading this section.
+Ok, now that we have set up docker and docker compose, it is time to create a container for Julia: here is where the magic lies! If you have decided to use VSCode you don't need to do anything in particular and you can use the default Julia container, but if you have decided to use Atom we will need to create and ad-hoc container. If you have chosen VSCode (the suggested option) you can skip directly to [Install and configure VSCode](#install-and-configure-vscode). If you have decided to use Atom, please continue reading this section.
 
 I won't go into the details of how to write a **Dockerfile**, but I'll try to give you a flavour of it, in order to make you understands what's going on.
 
