@@ -121,6 +121,6 @@ You should see a welcome message, meaning that the build and execution process w
 
 You have learned how to build a Docker image from a Github repository. You may now have multiple folders with different Dockerfiles and have several tags in you repository corresponding to that images. 
 
-Thank you for following this tutorial and I hope it has been useful. 
+If you liked this guide and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**! 
 
-Stay tuned for further updates and guide, here at TechyTok!
+Thank you for reading this guide and see you soon on TechyTok!
