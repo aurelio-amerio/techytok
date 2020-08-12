@@ -16,6 +16,11 @@ categories:
 tags:
     - Julia
     - Docker
+    - VSCode
+    - Atom
+    - Juno
+    - WSL
+    - SSH
 
 comments: true
 
