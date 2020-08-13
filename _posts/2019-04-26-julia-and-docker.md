@@ -270,7 +270,7 @@ If you don't want to build the image yourself, I have built it already and uploa
 
 ## Install and configure VSCode
 
-To install VSCode, please follow [this guide]. Once you have installed VSCode it is advisable to install the docker extension to make it easier to manage the Julia container. To do it, open the extension panel (`Ctrl+Shift+X`), type `docker` and install the Docker extension (it should be the first result).
+To install VSCode, please follow [this guide](https://techytok.com/julia-vscode/). Once you have installed VSCode it is advisable to install the docker extension to make it easier to manage the Julia container. To do it, open the extension panel (`Ctrl+Shift+X`), type `docker` and install the Docker extension (it should be the first result).
 
 We now need to install an extension called `Remote - Containers`, which you can find in the extension panel. Once you have installed this extension, we can start the Julia container. Make sure that Docker is running, open a shell (the terminal in Unix systems or Power Shell in Windows) and type the following command to create a Julia container:
 
