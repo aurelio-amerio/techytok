@@ -325,7 +325,7 @@ Now you can start developing like you normally would with VSCode and everything 
 Please note that this procedure can be adapted to work with WSL containers or machines which you can access through SSH, the only difference is that you will need to install `Remote - WSL` or `Remote - SSH` to connect to the machine. 
 {: .notice--info}
 
-In the remaining part of this lesson we will deal with installing and setting up Atom. You can directly jump to the Conclusion section of the guide.
+In the remaining part of this lesson we will deal with installing and setting up Atom. You can directly jump to the [conclusions](#conclusions) section of the guide.
 
 ## Install Atom
 
