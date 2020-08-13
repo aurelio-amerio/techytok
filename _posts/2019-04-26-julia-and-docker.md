@@ -37,7 +37,7 @@ We will go through the following steps:
 - [Install DockStation](#install-dockstation)
 - [Create a Julia container](#create-a-julia-container)
 - [Install and configure VSCode](#install-and-configure-vscode)
-- [Connect to the Docker container from VSCode](#Connect to the Docker container from VSCode)
+- [Connect to the Docker container from VSCode](#connect-to-the-docker-container-from-vscode)
 - [Install Atom](#install-atom)
 - [Install and configure Juno IDE](#install-and-configure-juno-ide)
 - [Connect to the Docker container from Atom](#connect-to-the-docker-container-from-atom)
