@@ -151,6 +151,9 @@ In this lesson we have learnt how to install Julia and how to setup VSCode with 
 
 Now that you have a working development environment for Julia, you can move on and start learning with the first lesson on [variables and types](https://techytok.com/lesson-variables-and-types/). If you are and advanced user, you may be interested in [this guide](https://techytok.com/from-zero-to-julia-using-docker/) on how to use docker containers with Julia and VSCode in a simple and seamless way.  
 
+I leave you with a video demonstration by David Anthoff (one of the developers behind Julia for VSCode) which was broadcasted during JuliaCon2020:
+{% include video id="IdhnP00Y1Ks" provider="youtube" %}
+
 If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!
