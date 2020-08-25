@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2020/08/25/header.jpg"
   og_image: "/assets/images/2020/08/25/teaser.jpg"
   teaser: "/assets/images/2020/08/25/teaser.jpg"
-excerpt: "From zero to Julia. Learn how to send messages and files using Telegram.jl"
+excerpt: "From zero to Julia. Learn how to send messages and files to your phone using Telegram.jl"
 permalink: /lesson-telegram/
 toc: true
 toc_label: "Table of Contents"
