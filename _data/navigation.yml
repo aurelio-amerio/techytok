@@ -78,6 +78,8 @@ zero-to-julia:
         url: /lesson-multiple-dispatch/
       - title: "Lesson 22 - Julia and Docker integration"
         url: /from-zero-to-julia-using-docker/
+      - title: "Lesson 23 - Messaging with Telegram"
+        url: /lesson-telegram/
 
 
   # - title: Customization

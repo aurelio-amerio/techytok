@@ -74,6 +74,9 @@
     },
     {
       "title": "Julia and Docker integration"
+    },
+    {
+      "title": "Messaging with Telegram"
     }
   ]
 }
