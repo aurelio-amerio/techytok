@@ -182,7 +182,7 @@ Telegram.sendDocument(document = "hello.txt" => io)
 
 For more information on what is possible to do with `Telegram.jl`, please refer to the [official documentation](https://arkoniak.github.io/Telegram.jl/stable/). 
 
-For example, it is possible to use Telegram as a remote logger for messages and errors: https://arkoniak.github.io/Telegram.jl/stable/usage/#Logging, or send messages to several different chats. It is even possible to code bots which will interact with the input sent by users in the respective chats. 
+For example, it is possible to use Telegram as a remote logger for messages and errors: [https://arkoniak.github.io/Telegram.jl/stable/usage/#Logging](https://arkoniak.github.io/Telegram.jl/stable/usage/#Logging), or send messages to several different chats. It is even possible to code bots which will interact with the input sent by users in the respective chats. 
 
 # Conclusions
 
