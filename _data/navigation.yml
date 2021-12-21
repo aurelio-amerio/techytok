@@ -47,7 +47,7 @@ zero-to-julia:
       - title: "Lesson 8 - Types"
         url: /lesson-types/
       - title: "Lesson 9 - Packages"
-      url: /lesson-packages/
+        url: /lesson-packages/
   - title: Advanced topics
     children:
       - title: "Lesson 10 - Plotting"
