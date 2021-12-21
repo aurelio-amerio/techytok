@@ -82,7 +82,7 @@ If you are used to working with Juno or want to work in a notebook-like environm
 
 This way, when you run a piece of code, you will see the results of the computation next to the line corresponding to the instruction.
 
-## Writing code
+#%% Writing code
 
 We are now ready to create our first Julia script and run it inside VSCode!
 
@@ -106,41 +106,44 @@ print("Hello! This is TechyTok!")
 
 ![image-center](/assets/images/2020/08/10/fig12-new-file-hello-2.png){: .align-center} 
 
-To run this line of code, place the cursor on the line and press `Alt+Enter` to run this single line of code. A new terminal window should open in the lower part of VSCode and you should see something similar to this:
+To run this line of code, place the cursor on the line and press `Shift+Enter` to run this single line of code. A new terminal window should open in the lower part of VSCode and you should see something similar to this:
 
 ![image-center](/assets/images/2020/08/10/fig13-new-file-hello-3.png){: .align-center} 
 
-This window is called the **REPL** and it is a Julia command prompt. When you press `Alt+Enter`, the code written on the `.jl` file gets sent to the **REPL**, where it is evaluated (it is actually a little bit more complicated than this, if you are interested please read this [documentation page](https://www.julia-vscode.org/docs/stable/userguide/runningcode/#Julia:-Execute-Code-Block-(AltEnter)-1)). In particular, the command `print` prints a message in the REPL. 
+This window is called the **REPL** and it is a Julia command prompt. When you press `Shift+Enter`, the code written on the `.jl` file gets sent to the **REPL**, where it is evaluated (it is actually a little bit more complicated than this, if you are interested please read this [documentation page](https://www.julia-vscode.org/docs/stable/userguide/runningcode/#Julia:-Execute-Code-Block-(AltEnter)-1)). In particular, the command `print` prints a message in the REPL. 
 
-Let's see another example. If you type `2+2` and press `Alt+Enter` you will get, as an inline result, 4:
+The default shortcuts for commands may change depending on the extension version and the operating system. Furthermore, please notice that the first time you start Julia inside VSCode, it will have to load the extension which might take a while. If you receive an error saying that the Language Server is not running, or if your code is not being executed, please wait a minute and retry.
+{: .notice--info}
+
+Let's see another example. If you type `2+2` and press `Shift+Enter` you will get, as an inline result, 4:
 
 ![image-center](/assets/images/2020/08/10/fig14-new-file-hello-4.png){: .align-center} 
 
-## Code cells 
+#%% Code cells 
 
-If you want to type several lines of code end execute them all at once, you can create a code cell.
+If you want to write several lines of code end execute them all at once, you can create a code cell.
 
-To create a code cell, enclose a one or more lines of code between `##` symbols:
+To create a code cell, enclose a one or more lines of code between `#%%` symbols:
 
 ```julia
-## this is a code cell
+#%% this is a code cell
 println("Hello")
 println("This is TechyTok!")
-##
+#%%
 ```
 
-To execute a code cell, place you cursor inside a code cell and press `Shift+Enter`. If you want to create another code cell right after the previous one there is no need to type `##` again, it is sufficient to type `##` once it is finished.
+To execute a code cell, place you cursor inside a code cell and press `Alt+Enter`. If you want to create another code cell right after the previous one there is no need to type `#%%` again, it is sufficient to type `#%%` once it is finished.
 
 ```julia	
-## this is a code cell
+#%% this is a code cell
 println("Hello")
 println("This is TechyTok!")
-## this is another code cell
+#%% this is another code cell
 println(42)
-##
+#%%
 ```
 
-Please note that since `#` is the character that denotes the beginning of a comment line in Julia, after `##` it is possible to write any comment to specify the content of the code cell, which makes the code much more readable. 
+Please note that since `#` is the character that denotes the beginning of a comment line in Julia, after `#%%` it is possible to write any comment to specify the content of the code cell, which makes the code much more readable. 
 
 For more informations about the Julia extension for VSCode, please visit the [official website](https://www.julia-vscode.org/) and read the [documentation](https://www.julia-vscode.org/docs/stable/). At the time of writing this guide, the documentation for the Julia VSCode extension is not yet complete and many pages are still missing since many new features are being ported from Juno to VSCode, but in the near future you can expect a rich and complete documentation. 
 
