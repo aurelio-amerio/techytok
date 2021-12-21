@@ -28,8 +28,6 @@ zero-to-julia:
     children:
       - title: "How to install Julia and VSCode"
         url: /julia-vscode/
-      - title: "How to install Juno for Atom"
-        url: /atom-and-juno-setup-for-julia/
       - title: "Introduction to the REPL"
         url: /introduction-to-the-repl/
       - title: "Lesson 1 - Variables and Types"
