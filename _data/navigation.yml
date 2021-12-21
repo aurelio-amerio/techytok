@@ -46,10 +46,10 @@ zero-to-julia:
         url: /lesson-modules/
       - title: "Lesson 8 - Types"
         url: /lesson-types/
+      - title: "Lesson 9 - Packages"
+      url: /lesson-packages/
   - title: Advanced topics
     children:
-      - title: "Lesson 9 - Packages"
-        url: /lesson-packages/
       - title: "Lesson 10 - Plotting"
         url: /lesson-plotting/
       - title: "Lesson 11 - Numerical Integration"

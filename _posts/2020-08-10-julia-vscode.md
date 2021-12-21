@@ -82,7 +82,7 @@ If you are used to working with Juno or want to work in a notebook-like environm
 
 This way, when you run a piece of code, you will see the results of the computation next to the line corresponding to the instruction.
 
-#%% Writing code
+## Writing code
 
 We are now ready to create our first Julia script and run it inside VSCode!
 
@@ -119,7 +119,7 @@ Let's see another example. If you type `2+2` and press `Shift+Enter` you will ge
 
 ![image-center](/assets/images/2020/08/10/fig14-new-file-hello-4.png){: .align-center} 
 
-#%% Code cells 
+## Code cells 
 
 If you want to write several lines of code end execute them all at once, you can create a code cell.
 
@@ -144,6 +144,9 @@ println(42)
 ```
 
 Please note that since `#` is the character that denotes the beginning of a comment line in Julia, after `#%%` it is possible to write any comment to specify the content of the code cell, which makes the code much more readable. 
+Whenever you feel like you need to add a note to the code, just add a `#` at the end of the line and write whatever you want. This will help you in the future when you read your code again and you need to remember what you were doing.
+
+If you are new to coding, I suggest you to make a `.jl` file for each one of your small projects. In that file, you will write all your functions on the top, and use them on the bottom part of the script. If you decide to group your code in cells (`#%%`), which I strongly advise when you are writing your first pieces of code,  you should write a small annotation before every cell to remember what they do. 
 
 For more informations about the Julia extension for VSCode, please visit the [official website](https://www.julia-vscode.org/) and read the [documentation](https://www.julia-vscode.org/docs/stable/). At the time of writing this guide, the documentation for the Julia VSCode extension is not yet complete and many pages are still missing since many new features are being ported from Juno to VSCode, but in the near future you can expect a rich and complete documentation. 
 
