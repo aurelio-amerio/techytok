@@ -279,7 +279,9 @@ It is also possible to display the profiling graphic as a  fire graphic. In orde
 
 ![image-center](/assets/images/2019/10/26/flame_profiler.png){: .align-center}
 
-In this case, the flame graph is not that informative, since the function is extremely simple, but it is a handy tool when profiling complex functions. The graph should be read from the top to the bottom. The functions on the top usually call the functions under them. If more than one function is involved you will see several branches and the graph will become more complex. I encourage you to hover the mouse on the functions in the fire graph: you will see the run time of each function involved and you are also able to jump to each function definition. In many cases, the profiler will also add a note on top of the called functions stating how long it took to run them. 
+In this case, the flame graph is not that informative, since the function is extremely simple, but it is a handy tool when profiling complex functions. The graph should be read from the top to the bottom. The functions on the top usually call the functions under them. If more than one function is involved you will see several branches and the graph will become more complex.
+
+I encourage you to hover your mouse pointer on the functions in the fire graph: you will see the run time of each function involved and you are also able to jump to each function definition. In many cases, the profiler will also add a note on top of the called functions stating how long it took to run them. In order to scroll the flame graph, press `ALT` and use the scroll wheel, or click and drag the plot. To zoom on a region of the flame graph, point to it and use the scroll wheel. 
 
 # Tips and Tricks
 
