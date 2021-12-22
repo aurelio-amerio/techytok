@@ -31,6 +31,13 @@ You can find the code for these examples at [----]
 
 Let's get going!
 
+- revise
+- code formatting
+- documentation panel
+- multi panel coding
+- code navigation
+- variable exploration debugging
+
 # Revise
 Imagine that you are writing a library. You have a package with a module with several functions inside (see the [lesson on packages](https://techytok.com/lesson-packages/)). As the number of functions inside a module increase, recompiling the whole module every time you add a new function, or modify one, becomes increasingly long and tedious. 
 
@@ -61,7 +68,7 @@ greet() = print("Hello from TechyTok!")
 
 Now, if we call `TestPackage1.greet()` again (without restarting Julia), it will print `Hello from TechyTok!`, and we didn't need to recompile the module!
 
-With the help of Revise, we can make any modification to our module, i.e. add or remove functions, change names, or add new variables without the need to restart Julia. This feature can save you a few minutes every time you need to do an edit, or while you are debugging a function 
+With the help of Revise, we can make any modification to our module, i.e. add or remove functions, change names, or add new variables without the need to restart Julia. This feature will save you a few minutes every time you need to do an edit, or while you are debugging.
 
 
 

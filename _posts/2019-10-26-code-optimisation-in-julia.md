@@ -27,7 +27,7 @@ sidebar:
 
 In this guide we will deal with some key points to write efficient Julia code and I will give you some suggestion on how to identify and deal with code bottlenecks.
 
-Although it is not necessary, I suggest you to run this code inside the Juno IDE. If you don't know what Juno is, I suggest you to take a look at [this]( https://techytok.ml/atom-and-juno-setup-for-julia/ ) guide on how to install and use it!
+Although it is not necessary, I suggest you to run this code inside the VSCode IDE with the Julia plugin installed. If you don't know what VSCode is, I suggest you to take a look at [this]( https://techytok.com/julia-vscode/ ) guide on how to install and use it!
 
 You can find all the code for this guide [here]( https://github.com/aurelio-amerio/techytok-examples/tree/master/julia-code-optimization).
 
@@ -216,9 +216,9 @@ In this section we will learn how to find the bottlenecks in the execution of a 
 
 As you probably already know, it is possible to measure the execution time of a function using the `@time` macro or preferably  `@btime` (which is included in the package `BenchmarkTools`). They are useful when we want to measure a single function call, but they give no information on what is making a function slow. For this reason we need a tool that enables us to identify which line of code is responsible for the bottleneck.
 
-Luckily there are two exceptional packages which help us in profiling: `Profile` and `Juno` with the **Juno IDE**. Both of the tools will run the desired function once and will log the execution time of each line of code.
+Luckily there are two exceptional packages which help us in profiling: `Profile` and the Julia IDE for VSCode. Both of the tools will run the desired function once and will log the execution time of each line of code.
 
-`Profile` works completely in the REPL and will produce a log file, while `Juno` works only inside the Juno IDE, and will display some information in a graph.
+`Profile` works completely in the REPL and will produce a log file. On the other hand, with the support of VSCode we will be able to display the profiling information in a graph.
 
 ## Profile
 
@@ -226,7 +226,7 @@ Let's write two new functions which perform heavy calculations:
 
 ```julia
 function take_a_breath()
-    sleep(22*1e-3)
+    sleep(0.2)
     return
 end
 
@@ -260,26 +260,26 @@ You should see something like:
 
 The number 8 (which may vary) is an indication of how long a function runs. We also have a 1 and a 4, so probably this block is the one responsible for the bottleneck. Profile thus gives you a hint that at line 101 (line 8 of the code snippet) there is a bottleneck: who would have imagined that sleeping for 22ms would have been a slow down?
 
-Unfortunately using `Profile.print()` is not really user friendly and for this reason Juno comes in our help!
+Unfortunately using `Profile.print()` is not really user friendly and for this reason VSCode comes in our help!
 
-Before trying the next steps please restart the Julia RELP as I have found that sometimes the Juno profiler doesn't work properly if you have already imported `Profile`.
-{: .notice--warning}
-
-After having defined `test8` again,  call the Juno `@profiler`
+After having called `test8` again,  to make sure that the function has been properly compiled, we call the profile viewer macro `@profview`
 
 ```julia
 test8()
-@profiler test8()
+@profview test8()
 ```
 
-Again, you may need to call `@profiler test8()` a few times before you get the right results which don't include the compilation process.
-{: .notice--info}
-
-If everything goes right, you should see something like this:
+If you have done everything correctly, a new panel should open on the right side of VSCode and you should see something like this:
 
 ![image-center](/assets/images/2019/10/26/profiler.png){: .align-center}
 
-As you can see there is a new panel on the right called "Profiler" which shows three smaller blocks: you can click on them and it will lead to the piece of code responsible for the relative call: the bigger the block, the longer it takes to run the piece of code. There will also be some bars on top of your code: they show which line of code has a greater impact on the run time (as you can see on the left in the picture), which is really useful to find at a glance where is the bottleneck!
+This list will show you at a glance which are the functions which take more time in your code (in our case, the `sleep` or `wait` function) and you can easily evaluate which are the bottlenecks. 
+
+It is also possible to display the profiling graphic as a  fire graphic. In order to do it, click on the small fire icon on the top right corner of the profiling window (you might have to install an extension). You will see something like this:
+
+![image-center](/assets/images/2019/10/26/flame_profiler.png){: .align-center}
+
+In this case, the flame graph is not that informative, since the function is extremely simple, but it is a handy tool when profiling complex functions. The graph should be read from the top to the bottom. The functions on the top usually call the functions under them. If more than one function is involved you will see several branches and the graph will become more complex. I encourage you to hover the mouse on the functions in the fire graph: you will see the run time of each function involved and you are also able to jump to each function definition. In many cases, the profiler will also add a note on top of the called functions stating how long it took to run them. 
 
 # Tips and Tricks
 
