@@ -269,7 +269,7 @@ The `Breakpoints` panel shows all the breakpoints in your code, and you can manu
 
 The `Call Stack` panel displays which function is being debugged, which is useful not to get lost in a rabbit hole while debugging. By clicking on one of the function names you will reach the corresponding function definition, which might be useful for code navigation.
 
-The `Compiled` tab allows the user to trigger compilation of some functions inside the call stack. If the code execution is extremely slow and you are not interested in debugging some of the functions involved, you can trigger compilation for those functions. This is an advanced topic which will not always be useful. For more informations, see the official [documentation](https://www.julia-vscode.org/docs/stable/userguide/debugging/#Compile-mode).
+The `Compiled` tab allows the user to trigger compilation of some functions inside the call stack. If the code execution is extremely slow and you are not interested in debugging some of the functions involved, you can trigger compilation for those functions. This is an advanced topic which will not always be useful. for further information, see the official [documentation](https://www.julia-vscode.org/docs/stable/userguide/debugging/#Compile-mode).
 
 ## Editing the function namespace
 
