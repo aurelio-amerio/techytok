@@ -38,7 +38,7 @@ Let's get going!
 - multi panel coding
 - code navigation
 - documentation panel
-- variable exploration debugging
+- variable exploration and debugging
 
 # Revise
 Imagine that you are writing a library. You have a package with a module with several functions inside (see the [lesson on packages](https://techytok.com/lesson-packages/)). As the number of functions inside a module increase, recompiling the whole module every time you add a new function, or modify one, becomes increasingly long and tedious. 
