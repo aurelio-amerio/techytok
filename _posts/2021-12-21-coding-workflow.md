@@ -29,7 +29,7 @@ We will see how `Revise` can improve our code writing and testing efficiency. Fu
 
 In this lesson I will feature the Windows/Linux shortcuts for commands. If you are using a mac, the shortcuts might be different. It will often be sufficient to replace the `CTRL` button with the `CMD` button. 
 
-You can find the code for these examples at [----]
+You can find the code for these examples [here](https://github.com/aurelio-amerio/techytok-examples/tree/master/lesson-workflow).
 
 Let's get going!
 
