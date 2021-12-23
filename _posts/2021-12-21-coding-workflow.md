@@ -344,7 +344,7 @@ There will now be an additional icon in the left toolbar with a tree which will 
 
 # Conclusions
 
-[todo]
+In this lesson we have explored how to use Revise, how to better navigate and organise your code an how to debug it. I encourage you to take your time to familiarise with all the tools available in the VSCode IDE. It will take some time, but they will help you improve your efficiency while coding.
 
 If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
