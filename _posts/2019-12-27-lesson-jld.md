@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2019/12/27/header.jpg"
   og_image: "/assets/images/2019/12/27/teaser.jpg"
   teaser: "/assets/images/2019/12/27/teaser.jpg"
-excerpt: "From zero to Julia Lesson 14. Data storage: HDF5"
+excerpt: "From zero to Julia Lesson 15. Data storage: HDF5"
 permalink: /lesson-jld/
 toc: true
 toc_label: "Table of Contents"
@@ -135,9 +135,28 @@ As you can see at line 4, we were able to import the file but we didn't get a `P
 At the time of writing, it is not possible to store data with units of measurement inside `.jld` files. 
 {: .notice--info}
 
+# JLD2
+In some cases, it might be necessary to store data in a more flexible or performant way. [`JLD2`](https://github.com/JuliaIO/JLD2.jl) is an evolution of `JLD` which supports more extensively data types natives of Julia. Furthermore, it is implemented 100% in Julia. This package is still in active development. While its features are extremely nice, and it often outperforms `JLD` and other `HDF5` implementations, if stability is your main concern you might want to stick to `JLD`. 
+
+`JLD2` has the same interface as `JLD`, but it exports files in the `.jld2` format. For example:
+
+```
+using JLD2
+using Unitful
+
+data_dict = Dict{String,Any}()
+a = [1,2,3]*u"m"
+data_dict["a"]=a
+save("data_dict.jld2", data_dict)
+
+data_dict_loaded = load("data_dict.jld2")
+
+data_dict["a"] == data_dict_loaded["a"]
+```julia
+
 # Conclusions
 
-In this lesson we have learned how it is possible to store and retrieve data using `JLD.jl`. Moreover, in the case of structures, we have seen that it is better to define the desired structure before importing the data. 
+In this lesson we have learned how it is possible to store and retrieve data using `JLD` and `JLD2`. Moreover, in the case of structures, we have seen that it is better to define the desired structure before importing the data. 
 
 If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
 

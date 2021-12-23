@@ -48,35 +48,37 @@ zero-to-julia:
         url: /lesson-types/
       - title: "Lesson 9 - Packages"
         url: /lesson-packages/
+      - title: "Lesson 10 - Coding workflow with VSCode"
+        url: /lesson-workflow/
   - title: Advanced topics
     children:
-      - title: "Lesson 10 - Plotting"
+      - title: "Lesson 11 - Plotting"
         url: /lesson-plotting/
-      - title: "Lesson 11 - Numerical Integration"
+      - title: "Lesson 12 - Numerical Integration"
         url: /lesson-numerical-integration/
-      - title: "Lesson 12 - Units of measurement"
+      - title: "Lesson 13 - Units of measurement"
         url: /lesson-unitful/
-      - title: "Lesson 13 - Interacting with Python"
+      - title: "Lesson 14 - Interacting with Python"
         url: /lesson-interacting-with-python/
-      - title: "Lesson 14 - Data storage: HDF5"
+      - title: "Lesson 15 - Data storage: HDF5"
         url: /lesson-jld/
-      - title: "Lesson 15 - Parallel computing"
+      - title: "Lesson 16 - Parallel computing"
         url: /lesson-parallel-computing/
-      - title: "Lesson 16 - Modules and multi-processing"
+      - title: "Lesson 17 - Modules and multi-processing"
         url: /multiprocessing-in-julia-module/
-      - title: "Lesson 17 - Code optimisation"
+      - title: "Lesson 18 - Code optimisation"
         url: /code-optimisation-in-julia/
-      - title: "Lesson 18 - GPU computations"
+      - title: "Lesson 19 - GPU computations"
         url: /lesson-arrayfire/
-      - title: "Lesson 19 - Package Registration and Tests"
+      - title: "Lesson 20 - Package Registration and Tests"
         url: /lesson-package-registration/
-      - title: "Lesson 20 - Interoperability in Julia"
+      - title: "Lesson 21 - Interoperability in Julia"
         url: /lesson-other-languages/
-      - title: "Lesson 21 - Multiple Dispatch"
+      - title: "Lesson 22 - Multiple Dispatch"
         url: /lesson-multiple-dispatch/
-      - title: "Lesson 22 - Julia and Docker integration"
+      - title: "Lesson 23 - Julia and Docker integration"
         url: /from-zero-to-julia-using-docker/
-      - title: "Lesson 23 - Messaging with Telegram"
+      - title: "Lesson 24 - Messaging with Telegram"
         url: /lesson-telegram/
 
 

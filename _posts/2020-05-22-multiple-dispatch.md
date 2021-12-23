@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2020/05/25/header.jpg"
   og_image: "/assets/images/2020/05/25/teaser.jpg"
   teaser: "/assets/images/2020/05/25/teaser.jpg"
-excerpt: "From zero to Julia Lesson 21. Multiple Dispatch"
+excerpt: "From zero to Julia Lesson 22. Multiple Dispatch"
 permalink: /lesson-multiple-dispatch/
 toc: true
 toc_label: "Table of Contents"

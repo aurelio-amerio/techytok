@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2019/12/26b/header.jpg"
   og_image: "/assets/images/2019/12/26b/teaser.jpg"
   teaser: "/assets/images/2019/12/26b/teaser.jpg"
-excerpt: "From zero to Julia Lesson 13. Interacting with Python"
+excerpt: "From zero to Julia Lesson 14. Interacting with Python"
 permalink: /lesson-interacting-with-python/
 toc: true
 toc_label: "Table of Contents"

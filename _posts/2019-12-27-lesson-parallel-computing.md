@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2019/12/27b/header.jpg"
   og_image: "/assets/images/2019/12/27b/teaser.jpg"
   teaser: "/assets/images/2019/12/27b/teaser.jpg"
-excerpt: "From zero to Julia Lesson 15. Parallel computing"
+excerpt: "From zero to Julia Lesson 16. Parallel computing"
 permalink: /lesson-parallel-computing/
 toc: true
 toc_label: "Table of Contents"

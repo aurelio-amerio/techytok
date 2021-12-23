@@ -7,7 +7,7 @@ header:
   image: "/assets/images/2020/02/07/header.jpg"
   og_image: "/assets/images/2020/02/07/teaser.jpg"
   teaser: "/assets/images/2020/02/07/teaser.jpg"
-excerpt: "From zero to Julia Lesson 20. Interoperating with other programming languages"
+excerpt: "From zero to Julia Lesson 21. Interoperating with other programming languages"
 permalink: /lesson-other-languages/
 toc: true
 toc_label: "Table of Contents"

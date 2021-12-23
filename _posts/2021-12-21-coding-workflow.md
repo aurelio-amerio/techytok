@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2021/12/22/header.jpg"
   og_image: "/assets/images/2021/12/22/teaser.jpg"
   teaser: "/assets/images/2021/12/22/teaser.jpg"
-excerpt: "From zero to Julia. Coding workflow: how to write code efficiently"
+excerpt: "From zero to Julia Lesson 10. Coding workflow: how to write code efficiently"
 permalink: /lesson-workflow/
 toc: true
 toc_label: "Table of Contents"

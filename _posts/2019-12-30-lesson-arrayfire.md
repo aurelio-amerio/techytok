@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2019/12/30/header.jpg"
   og_image: "/assets/images/2019/12/30/teaser.jpg"
   teaser: "/assets/images/2019/12/30/teaser.jpg"
-excerpt: "From zero to Julia Lesson 18. GPU computations using ArrayFire"
+excerpt: "From zero to Julia Lesson 19. GPU computations using ArrayFire"
 permalink: /lesson-arrayfire/
 toc: true
 toc_label: "Table of Contents"

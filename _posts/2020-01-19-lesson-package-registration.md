@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2020/01/10/header.jpg"
   og_image: "/assets/images/2020/01/10/teaser.jpg"
   teaser: "/assets/images/2020/01/10/teaser.jpg"
-excerpt: "From zero to Julia Lesson 19. Learn how to write tests for a package using Travis and how to publish a finished package to the Julia Registry"
+excerpt: "From zero to Julia Lesson 20. Learn how to write tests for a package using Travis and how to publish a finished package to the Julia Registry"
 permalink: /lesson-package-registration/
 toc: true
 toc_label: "Table of Contents"

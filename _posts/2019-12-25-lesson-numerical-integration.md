@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2019/12/25/header.jpg"
   og_image: "/assets/images/2019/12/25/teaser.jpg"
   teaser: "/assets/images/2019/12/25/teaser.jpg"
-excerpt: "From zero to Julia Lesson 11. Introduction to numerical integration"
+excerpt: "From zero to Julia Lesson 12. Introduction to numerical integration"
 permalink: /lesson-numerical-integration/
 toc: true
 toc_label: "Table of Contents"

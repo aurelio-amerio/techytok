@@ -6,7 +6,7 @@ header:
   image: "/assets/images/2019/12/26/header.jpg"
   og_image: "/assets/images/2019/12/26/teaser.jpg"
   teaser: "/assets/images/2019/12/26/teaser.jpg"
-excerpt: "From zero to Julia Lesson 12. Units of measurement"
+excerpt: "From zero to Julia Lesson 13. Units of measurement"
 permalink: /lesson-unitful/
 toc: true
 toc_label: "Table of Contents"
