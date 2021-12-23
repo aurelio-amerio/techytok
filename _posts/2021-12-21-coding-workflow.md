@@ -33,7 +33,7 @@ You can find the code for these examples [here](https://github.com/aurelio-ameri
 
 Let's get going!
 
-- revise
+- Revise
 - code formatting
 - multi panel coding
 - code navigation
