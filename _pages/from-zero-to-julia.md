@@ -19,7 +19,7 @@ I also want the thank the wonderful [Julia community](https://www.reddit.com/r/J
 During this series of lesson we will review some of the basic elements of this programming language, such as functions, variables and control flow. We will then explore the rich type system of julia and **multiple dispatch** (which is one of the most important Julia features). We will then learn how to work with more complex data structures, such as arrays and types.
 Once we have studied the basics of the Julia language, we will study how to better organise our code through packages and we will study how to optimise it for numerical efficiency.
 
-We will finally deal with a series of advanced topics which I find of particular interest for physicits and data scientists. 
+We will finally deal with a series of advanced topics which I find of particular interest for physicists and data scientists. 
 
 This guide, as well as this website, is a work in progress: any feedback or correction is welcome! In order to make better and free content for everybody, please write your thoughts and suggestions in the discussion thread which is available under each post!
 {: .notice--info}
