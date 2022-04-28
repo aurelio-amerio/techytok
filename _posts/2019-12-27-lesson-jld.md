@@ -140,7 +140,7 @@ In some cases, it might be necessary to store data in a more flexible or perform
 
 `JLD2` has the same interface as `JLD`, but it exports files in the `.jld2` format. For example:
 
-```
+```julia
 using JLD2
 using Unitful
 
@@ -152,7 +152,7 @@ save("data_dict.jld2", data_dict)
 data_dict_loaded = load("data_dict.jld2")
 
 data_dict["a"] == data_dict_loaded["a"]
-```julia
+```
 
 # Conclusions
 
