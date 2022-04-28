@@ -110,9 +110,9 @@ analytics:
 # Site Author
 author:
   name             : "Aurelio Amerio"
-  avatar           : "/assets/images/avatar/foto_profilo.jpg"
-  bio              : "Master student in Theoretical Physics at the University of Turin, he likes to experiment with new programming techniques"
-  location         : "Torino, TO"
+  avatar           : "/assets/images/avatar/foto_profilo2.jpg"
+  bio              : "PhD student at the Instituto de Física Corpuscular (Valencia). I love physics, machine learning, drinking tea and walking in the mountains."
+  location         : "Valencia"
   email            :
   links:
     - label: "Email"

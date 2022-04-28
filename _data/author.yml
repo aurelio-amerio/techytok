@@ -1,7 +1,7 @@
 Aurelio Amerio:
   name        : "Aurelio Amerio"
-  bio         : "Master student in Theoretical Physics at the University of Turin, he likes to experiment with new programming techniques"
-  avatar      : "/assets/images/avatar/foto_profilo.jpg"
+  bio         : "PhD student at the Instituto de Física Corpuscular (Valencia). I love physics, machine learning, drinking tea and walking in the mountains."
+  avatar      : "/assets/images/avatar/foto_profilo2.jpg"
   location    : "Torino, TO"
   links:
     - label: "Email"
