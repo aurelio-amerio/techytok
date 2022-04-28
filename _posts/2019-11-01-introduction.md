@@ -30,7 +30,7 @@ Before we can start delving in the wonderful world of Julia, we need to be able 
 
 We will deal with two ways to run Julia code: the first one is through the Julia REPL, the latter is through the Juno IDE.
 
-To install Julia and the Juno IDE, please follow [this]( https://techytok.com/atom-and-juno-setup-for-julia/ ) guide!
+To install Julia and VSCode, please follow [this]( https://techytok.com/julia-vscode/ ) guide!
 
 # REPL
 
@@ -52,11 +52,11 @@ That's it, during the next lessons simply type the code snippets inside the REPL
 
 Although you can copy paste the code, I encourage you to type it yourself as it is useful to better remember the lesson!
 
-# Juno IDE
+# VSCode
 
-Sometimes, especially when your code starts to become pretty lengthy, it is useful to organise it in scripts, i.e. files ending with the `.jl` extension. The Juno IDE lets you edit such files and run them directly line by line from the editor.
+Sometimes, especially when your code starts to become pretty lengthy, it is useful to organise it in scripts, i.e. files ending with the `.jl` extension. VSCode lets you edit such files and run them directly line by line from the editor.
 
-To run a line of code, simply click on the line and press `Ctrl+Enter`.
+To run a line of code, simply click on the line and press `Alt+Enter`.
 
 To run a block of code altogether, include it between `#%%` annotations like this:
 
@@ -70,8 +70,8 @@ println("TechyTok!")
 
 and press `Alt-Shift-Enter `.
 
-I encourage you to take a look at the [official documentation]( https://docs.junolab.org/latest/man/basic_usage/ ) for further details on how to use the Juno IDE.
+I encourage you to take a look at the [official documentation]( https://www.julia-vscode.org/ ) for further details on how to use VSCode.
 
 # Conclusions
 
-You should now be able to run Julia code either in the REPL or inside the Juno IDE and you are now ready to move on to the first real lesson on Julia!
+You should now be able to run Julia code either in the REPL or inside VSCode and you are now ready to move on to the first real lesson on Julia!

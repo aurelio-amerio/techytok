@@ -302,6 +302,81 @@ This is a REPL which runs "inside" the namespace of the function. This means tha
 
 Please note that you can also change the value of any of the variables which exist inside the function, for example by writing `a .+= 2` . This is a double-edged sword and you have to pay attention to what you are doing if you are evaluating code inside the function context. Anyway, if you commit some mistakes, you can always restart the function debugging, so nothing you do in the debug console is permanent. 
 
+# Function profiling
+This section is an excerpt from the [code optimisation](https://techytok.com/code-optimisation-in-julia) lesson. 
+
+Profiling is the practice of measuing the execution time and memory usage of each part of a piece of code, in order to better understand how to optimise it. 
+In this section we will learn how to find the bottlenecks in the execution of a function, so that we know which parts of the function should be optimised. 
+
+As you probably already know, it is possible to measure the execution time of a function using the `@time` macro or preferably  `@btime` (which is included in the package `BenchmarkTools`). They are useful when we want to measure a single function call, but they give no information on what is making a function slow. For this reason we need a tool that enables us to identify which line of code is responsible for the bottleneck.
+
+Luckily there are two exceptional packages which help us in profiling: `Profile` and the Julia IDE for VSCode. Both of the tools will run the desired function once and will log the execution time of each line of code.
+
+`Profile` works completely in the REPL and will produce a log file. On the other hand, with the support of VSCode we will be able to display the profiling information in a graph.
+
+## Profile
+
+Let's write two new functions which perform heavy calculations:
+
+```julia
+function take_a_breath()
+    sleep(0.2)
+    return
+end
+
+function test8()
+    r=zeros(100,100)
+    take_a_breath()
+    for i in 1:100
+        A=rand(100,100)
+        r+=A
+    end
+    return r
+end
+```
+
+We shall now profile `test8`:
+
+```julia
+using Profile
+test8()
+Profile.clear()
+@profile test8()
+Profile.print()
+```
+
+If you see a log file extraordinarily long, run line 2 to 4 again as it is possible that you have profiled the compilation of some functions and not `test8`.
+{: .notice--info}
+
+You should see something like:
+
+![image-center](/assets/images/2019/10/26/profiler_log.png){: .align-center}
+
+The number 8 (which may vary) is an indication of how long a function runs. We also have a 1 and a 4, so probably this block is the one responsible for the bottleneck. Profile thus gives you a hint that at line 101 (line 8 of the code snippet) there is a bottleneck: who would have imagined that sleeping for 22ms would have been a slow down?
+
+Unfortunately using `Profile.print()` is not really user friendly and for this reason VSCode comes in our help!
+
+After having called `test8` again,  to make sure that the function has been properly compiled, we call the profile viewer macro `@profview`
+
+```julia
+test8()
+@profview test8()
+```
+
+If you have done everything correctly, a new panel should open on the right side of VSCode and you should see something like this:
+
+![image-center](/assets/images/2019/10/26/profiler.png){: .align-center}
+
+This list will show you at a glance which are the functions which take more time in your code (in our case, the `sleep` or `wait` function) and you can easily evaluate which are the bottlenecks. 
+
+It is also possible to display the profiling graphic as a  fire graphic. In order to do it, click on the small fire icon on the top right corner of the profiling window (you might have to install an extension). You will see something like this:
+
+![image-center](/assets/images/2019/10/26/flame_profiler.png){: .align-center}
+
+In this case, the flame graph is not that informative, since the function is extremely simple, but it is a handy tool when profiling complex functions. The graph should be read from the top to the bottom. The functions on the top usually call the functions under them. If more than one function is involved you will see several branches and the graph will become more complex.
+
+I encourage you to hover your mouse pointer on the functions in the fire graph: you will see the run time of each function involved and you are also able to jump to each function definition. In many cases, the profiler will also add a note on top of the called functions stating how long it took to run them. In order to scroll the flame graph, press `ALT` and use the scroll wheel, or click and drag the plot. To zoom on a region of the flame graph, point to it and use the scroll wheel. 
+
 # Problem tab
 
 VSCode will also suggest you if there are some possible problems with your code. For example, you might have called a function with the wrong arguments, or redefined a constant. It is possible to see all the possible problems with your code in the `Problems` tab:

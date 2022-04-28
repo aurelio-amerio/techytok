@@ -211,6 +211,7 @@ Variables
 As you can see `r` at the beginning is an `Int64` and then is converted into a `Float64`, which slows down the function. In this case it is enough to declare `r=0.00` to solve the problem.
 
 # Function profiling
+Profiling is the practice of measuing the execution time and memory usage of each part of a piece of code, in order to better understand how to optimise it. 
 
 In this section we will learn how to find the bottlenecks in the execution of a function, so that we know which parts of the function should be optimised.
 

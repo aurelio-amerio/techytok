@@ -1,6 +1,6 @@
 ---
 title: "VSCode: the future for Julia development"
-date: 2020-08-10
+date: 2022-04-28
 header:
   caption: "[julia-vscode.org](https://www.julia-vscode.org/)"
   image: "/assets/images/2020/08/10/header.jpg"
@@ -36,17 +36,22 @@ In this tutorial we will first learn how to install Julia and then we will setup
 
 # Install Julia
 
-Depending on your operating system, you will need to download the appropriate Julia package from [julialang.org/downloads/](https://julialang.org/downloads/). It is suggested that you install the latest stable version (currently 1.5)
+Depending on your operating system, you will need to download the appropriate Julia package from [julialang.org/downloads/](https://julialang.org/downloads/). It is suggested that you install the latest stable version (currently 1.7)
 
 ![image-center](/assets/images/2020/08/10/fig1-julia-download.png){: .align-center}
 
 If you have **Windows** or **OSX**, just download and run the installer and follow the instructions. When you are prompted to choose an installation directory, I suggest you to choose your home directory: this way it will be easier when time comes to upgrade Julia to the next version. Nonetheless, the default directory should be fine. **Please take note of where you installed Julia**, since we will need this path when we setup VSCode.
 
-If you are a **Linux** user, you should download and extract the archive into an appropriate folder (pay attention to the architecture of the binaries you are downloading!). 
+If you are a **Linux** user, you should download and extract the archive into an appropriate folder (pay attention to the architecture of the binaries you are downloading!). Usually a good option is to unpack the julia binaries in your home directory. 
 
 ![image-center](/assets/images/2020/08/10/fig1b-julia-installation.png){: .align-center}
 
-You can find additional information on how to install Julia [here](https://julialang.org/downloads/platform/). I don't advise adding Julia to your system path unless you need to call Julia from the command line and you know what you are doing. 
+You can find additional information on how to install Julia [here](https://julialang.org/downloads/platform/). 
+I advise you to add julia to path during the installation (Windows) to make it easier to configure VSCode, and to call Julia directly from the terminal. If you use [Mac](https://julialang.org/downloads/platform/#macos) or [Linux](https://julialang.org/downloads/platform/#linux_and_freebsd), I advise you to add julia to path by editing your `.bashrc` or `.zshrc` and adding something like this (properly modified in accordance to where you saved the julia binary):
+```
+export PATH="$PATH:/path/to/<Julia directory>/bin"
+```bash
+
 
 Once you have installed Julia successfully, you can move to the next section: installing VSCode!
 
@@ -54,7 +59,7 @@ Once you have installed Julia successfully, you can move to the next section: in
 
 ![image-center](/assets/images/2020/08/10/fig2-vscode.png){: .align-center}
 
-You can get VSCode from its download page: https://code.visualstudio.com/Download
+You can get VSCode from its download page: [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
 
 Please run the installer and start VSCode.
 
@@ -148,7 +153,8 @@ Whenever you feel like you need to add a note to the code, just add a `#` at the
 
 If you are new to coding, I suggest you to make a `.jl` file for each one of your small projects. In that file, you will write all your functions on the top, and use them on the bottom part of the script. If you decide to group your code in cells (`#%%`), which I strongly advise when you are writing your first pieces of code,  you should write a small annotation before every cell to remember what they do. 
 
-For more informations about the Julia extension for VSCode, please visit the [official website](https://www.julia-vscode.org/) and read the [documentation](https://www.julia-vscode.org/docs/stable/). At the time of writing this guide, the documentation for the Julia VSCode extension is not yet complete and many pages are still missing since many new features are being ported from Juno to VSCode, but in the near future you can expect a rich and complete documentation. 
+If you are interested to see some of the more advanced features of VSCode, please refere to the lesson on [VSCode workflow](https://techytok.com/lesson-workflow/) and [profiling](https://techytok.com/code-optimisation-in-julia/#profile). 
+For more informations about the Julia extension for VSCode, please visit the [official website](https://www.julia-vscode.org/) and read the [documentation](https://www.julia-vscode.org/docs/stable/). At the time of writing this guide, the documentation for the Julia VSCode extension is not yet complete and many pages are still missing since many new features are being ported from Juno to VSCode, but in the near future you can expect a rich and complete documentation.
 
 
 # Conclusions
