@@ -48,9 +48,9 @@ If you are a **Linux** user, you should download and extract the archive into an
 
 You can find additional information on how to install Julia [here](https://julialang.org/downloads/platform/). 
 I advise you to add julia to path during the installation (Windows) to make it easier to configure VSCode, and to call Julia directly from the terminal. If you use [Mac](https://julialang.org/downloads/platform/#macos) or [Linux](https://julialang.org/downloads/platform/#linux_and_freebsd), I advise you to add julia to path by editing your `.bashrc` or `.zshrc` and adding something like this (properly modified in accordance to where you saved the julia binary):
-```
-export PATH="$PATH:/path/to/<Julia directory>/bin"
 ```bash
+export PATH="$PATH:/path/to/<Julia directory>/bin"
+```
 
 
 Once you have installed Julia successfully, you can move to the next section: installing VSCode!
