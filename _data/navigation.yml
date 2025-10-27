@@ -4,6 +4,8 @@ main:
     url: /about/
   - title: "From zero to Julia!"
     url: /from-zero-to-julia/
+  - title: "CV"
+    url: /assets/cv_and_publications.pdf
   - title: "Archive"
     url: /categories/
   - title: "Newsletter"
