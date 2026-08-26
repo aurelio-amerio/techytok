@@ -18,7 +18,7 @@
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
             {%- if link.url contains '://' -%}
-              {%- assign url = link.url -%}
+              {%- assign url = link.url | replace: '{slapform-ID}', site.slapform-ID -%}
             {%- else -%}
               {%- assign url = link.url | relative_url -%}
             {%- endif -%}

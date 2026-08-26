@@ -11,7 +11,7 @@ main:
   - title: "Newsletter"
     url: /newsletter/
   - title: "Contact Me"
-    url: /contact/
+    url: https://slapform.com/form?id={slapform-ID}
 #   - title: "Quick-Start Guide"
 #     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
 #   - title: "About"
