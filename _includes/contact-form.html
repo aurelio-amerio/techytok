@@ -1,20 +1,3 @@
 <section>
-  <form method="POST" action="https://api.slapform.com/{{site.slapform-mail}}">
-    <div class="field">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" />
-    </div>
-    <div class="field">
-      <label for="email">Email</label>
-      <input type="text" name="slap_replyto" id="email" /> <!-- slap_replyto will set the reply-to as the submitter's email! -->
-    </div>
-    <div class="field">
-      <label for="message">Message</label>
-      <textarea name="message" id="message" rows="3" style="resize: none;"></textarea>
-    </div>
-    <ul class="actions">
-      <li><input type="submit" value="Send Message" class="btn btn--primary"/></li>
-    </ul>
-    <input type="hidden" name="slap_redirect" value="{{site.url}}/thank-you" /> <!-- slap_redirect allows you to set a custom redirect/thank you page --> 
-  </form>
+<iframe src="https://slapform.com/form?id={{site.slapform-ID}}" width="100%" height="600" frameborder="0"></iframe>
 </section>

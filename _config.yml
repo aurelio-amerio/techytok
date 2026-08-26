@@ -27,6 +27,7 @@ teaser                   : # path of fallback teaser image, e.g. "/assets/images
 logo                     : "/assets/images/logo.png"
 masthead_title           : "TechyTok!"
 slapform-mail            : "aure.amerio@techytok.com"
+slapform-ID              : "iYIdvx4cQ"  
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
