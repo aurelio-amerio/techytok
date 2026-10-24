@@ -158,6 +158,6 @@ data_dict["a"] == data_dict_loaded["a"]
 
 In this lesson we have learned how it is possible to store and retrieve data using `JLD` and `JLD2`. Moreover, in the case of structures, we have seen that it is better to define the desired structure before importing the data. 
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, follow the [**RSS feed**]({{ '/feed.xml' | relative_url }}). If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!

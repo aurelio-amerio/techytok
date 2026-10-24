@@ -522,6 +522,6 @@ You have successfully set up Julia to work with a Docker container. Now, when yo
 
 You can find all the code for this tutorial at <http://bit.ly/julia-docker-repo> and the docker hub repository at <http://bit.ly/julia-docker-hub>
 
-If you liked this guide and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**! 
+If you liked this guide and you would like to receive further updates on what is being published on this website, follow the [**RSS feed**]({{ '/feed.xml' | relative_url }}). If you have any **question** or **suggestion**, please post them in the **discussion below**! 
 
 Thank you for reading this guide and see you soon on TechyTok!

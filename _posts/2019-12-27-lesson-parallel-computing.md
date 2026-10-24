@@ -372,6 +372,6 @@ In this lesson we have learned how to use multi-threading and multi-processing t
 
 You can find more information about multi-processing on [this guide](https://techytok.com/multiprocessing-in-julia-module/) and at the [official documentation page](https://docs.julialang.org/en/v1/manual/parallel-computing/) about Parallel Computing.
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, follow the [**RSS feed**]({{ '/feed.xml' | relative_url }}). If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!

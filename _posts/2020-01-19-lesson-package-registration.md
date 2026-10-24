@@ -344,6 +344,6 @@ Once you have changed the version of your package in the `Project.toml` file, yo
 
 In this lesson we have learned how to **write tests for our code** and how to test our package on many different operating systems and configurations using **Travis**. Finally we have learned how to **submit a pull request to the Julia Registry**, in order to register our package.
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, follow the [**RSS feed**]({{ '/feed.xml' | relative_url }}). If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!

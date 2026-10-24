@@ -229,6 +229,6 @@ The two language problem consists in the need to often write a code first in a l
 
 In this lesson we have learned how it is possible to use **ArrayFire to perform computations on the GPU**. Furthermore, we have seen two examples of how to use ArrayFire in concrete applications: **computing π** and **computing the Mandelbrot set**. We have then highlighted the possibility to write **native CUDA kernels** in Julia using a series of packages and how Julia can solve the two language problem in this case.
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, follow the [**RSS feed**]({{ '/feed.xml' | relative_url }}). If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!

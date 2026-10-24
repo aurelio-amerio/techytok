@@ -137,6 +137,6 @@ You can find more information on how to write and use packages at the [official 
 
 In this lesson we have learnt how to create a package and how to import it inside our project. Furthermore, we have learnt how to add dependencies to a package and how to automatically install the dependencies required for a package.
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, follow the [**RSS feed**]({{ '/feed.xml' | relative_url }}). If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!

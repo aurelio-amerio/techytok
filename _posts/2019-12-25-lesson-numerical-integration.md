@@ -135,6 +135,6 @@ For multidimensional integration, see the [HCubature.jl](https://github.com/stev
 
 In this lesson we have learnt how to compute uni-dimensional integrals numerically. Furthermore we have seen how it is possible to integrate functions which take multiple arguments.
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, follow the [**RSS feed**]({{ '/feed.xml' | relative_url }}). If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!

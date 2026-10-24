@@ -241,6 +241,6 @@ using .TestMe
 
 In this lesson we have learned how to add **type annotations** to our functions and how it is possible to **add new methods to existing functions**, which is called **multiple dispatch**. We have also seen how you can add a new method to an existing function inside a module and how to seamlessly use the new method once the module is imported.  
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, follow the [**RSS feed**]({{ '/feed.xml' | relative_url }}). If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!

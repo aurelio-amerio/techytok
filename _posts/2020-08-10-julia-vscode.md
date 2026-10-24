@@ -166,6 +166,6 @@ Now that you have a working development environment for Julia, you can move on a
 I leave you with a video demonstration by David Anthoff (one of the developers behind Julia for VSCode) which was broadcasted during JuliaCon2020:
 {% include video id="IdhnP00Y1Ks" provider="youtube" %}
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, follow the [**RSS feed**]({{ '/feed.xml' | relative_url }}). If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!

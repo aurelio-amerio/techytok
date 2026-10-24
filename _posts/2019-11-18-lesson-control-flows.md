@@ -234,6 +234,6 @@ For more information on iterators and the enumerate function, please refer to [t
 
 In this lesson we have learned how to let a program take "decisions" using `if ... elseif ... else` blocks, how to perform loops using `for `and `while` and how to have control on such loops using `break` and `continue`. We have then given an example of how `enumerate` can be used to help the process of filling an array.
 
-If you liked this lesson and you would like to receive further updates on what is being published on this website, I encourage you to subscribe to the [**newsletter**]( https://techytok.com/newsletter/ )! If you have any **question** or **suggestion**, please post them in the **discussion below**!
+If you liked this lesson and you would like to receive further updates on what is being published on this website, follow the [**RSS feed**]({{ '/feed.xml' | relative_url }}). If you have any **question** or **suggestion**, please post them in the **discussion below**!
 
 Thank you for reading this lesson and see you soon on TechyTok!
