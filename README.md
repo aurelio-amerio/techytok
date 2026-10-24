@@ -36,7 +36,7 @@ These are the overrides:
 | `_includes/page__related.html` | Related posts grid, four items, uses the plain card | Theme file with one include name changed. |
 | `_includes/post_collection.html` | Course landing page article grid | Site file. |
 | `_layouts/single.html` | "Acknowledgements" section after the body | Theme file with the section re-applied. |
-| `assets/css/main.scss` | Theme imports plus `add_line_numbers` | Theme file plus one import line. |
+| `assets/css/main.scss` | Theme imports plus `add_line_numbers`, list-card title spacing | Theme file plus one import and one rule. |
 | `_sass/_add_line_numbers.scss` | Line-number styling for code blocks | Site file. |
 | `assets/js/add_line_number.js` | Line-number script | Site file, loaded via `after_footer_scripts` in `_config.yml`. |
 | `_data/ui-text.yml` | UI strings | Verbatim theme file (GitHub Pages does not load theme data files). |

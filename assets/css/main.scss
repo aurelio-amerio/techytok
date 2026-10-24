@@ -8,3 +8,8 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 @import "add_line_numbers"; // numbered code blocks (site override)
+
+// keep the 4.17.2 spacing between teaser and title in list cards (site override)
+.list__item .archive__item-title {
+  margin-top: 0.5em;
+}
