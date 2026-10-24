@@ -1,11 +1,11 @@
 ---
 title: "Finally got my PhD!"
 date: 2026-10-24
-# header:
-#   caption: ""
-#   image: "/assets/images/2021/12/22/header.jpg"
-#   og_image: "/assets/images/2021/12/22/teaser.jpg"
-#   teaser: "/assets/images/2021/12/22/teaser.jpg"
+header:
+  caption: ""
+  image: "/assets/images/2026/10/24/header.jpg"
+  og_image: "/assets/images/2026/10/24/teaser.jpg"
+  teaser: "/assets/images/2026/10/24/teaser.jpg"
 excerpt: "I finally got my PhD! Expect updates on what I have worked on these past years, and my future research direction."
 permalink: /phd-and-steps-foward/
 toc: true
