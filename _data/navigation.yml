@@ -8,10 +8,8 @@ main:
     url: /assets/cv_and_publications.pdf
   - title: "Archive"
     url: /categories/
-  - title: "Newsletter"
-    url: /newsletter/
   - title: "Contact Me"
-    url: https://slapform.com/form?id={slapform-ID}
+    url: https://slapform.com/form?id=iYIdvx4cQ
 #   - title: "Quick-Start Guide"
 #     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
 #   - title: "About"
