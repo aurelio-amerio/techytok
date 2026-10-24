@@ -4,20 +4,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-The source for https://techytok.com — Aurelio Amerio's personal blog and the "From zero to Julia" tutorial series. It is a Jekyll site based on a vendored copy of the Minimal Mistakes theme (v4.17.2): the theme's `_includes/`, `_layouts/`, `_sass/`, and `assets/` live directly in this repo and have been customized, while `_config.yml` also points at `remote_theme: mmistakes/minimal-mistakes`. Deployment is GitHub Pages from `master` (CNAME → techytok.com); there is no CI.
+The source for https://techytok.com — Aurelio Amerio's personal blog and the "From zero to Julia" tutorial series. It is a Jekyll site on the Minimal Mistakes theme, loaded at build time via `remote_theme: "mmistakes/minimal-mistakes@4.28.1"` in `_config.yml` (jekyll-remote-theme, bundled in the `github-pages` gem). The theme's files are **not** vendored: any repo file at the same path as a theme file overrides it. The overrides are:
+
+- `_includes/head/custom.html` (MathJax 2.7.9 from cdnjs, favicons), `_includes/footer/custom.html` (footer links)
+- `_includes/archive-single.html` (list cards: teaser image + full excerpt + "Read more"), `_includes/archive-single-plain.html` (verbatim theme card, used by related posts and the course grid), `_includes/page__related.html` (uses the plain card)
+- `_includes/post_collection.html` (course landing grid), `_layouts/single.html` (adds the `acknowledgements` front-matter section)
+- `assets/css/main.scss` (theme imports + `_sass/_add_line_numbers.scss`), `assets/js/add_line_number.js` (loaded via `after_footer_scripts`)
+- `_data/ui-text.yml` (verbatim theme copy; required on GitHub Pages), `_data/navigation.yml`, `_data/from_zero_to_julia.json`
+
+When upgrading the theme, follow the "Yearly sync procedure" in `README.md`: bump the tag, diff upstream for the override paths, re-apply. Never copy other theme files into the repo.
+
+Deployment is GitHub Pages from `master` (CNAME → techytok.com); there is no CI.
 
 ## Commands
 
-- `bundle install` — install Ruby dependencies (Gemfile delegates to the theme gemspec).
-- `bundle exec jekyll serve` — build and serve locally; add `--drafts` to include `_drafts/`.
-- `npm run build:js` — only needed when editing files under `assets/js/`; concatenates/uglifies plugins into `assets/js/main.min.js` and re-adds the banner. Editing `main.min.js` directly is pointless — it gets overwritten.
-- The `Rakefile` (`rake preview`) is a leftover from theme development and targets a `test/` directory; it is not how this site is previewed.
+- `bundle install` — install Ruby dependencies. The `Gemfile` uses the `github-pages` gem (pinned `~> 232`) so local builds match GitHub Pages (Jekyll 3.10); `Gemfile.lock` is committed.
+- `bundle exec jekyll serve` — build and serve locally; add `--drafts` to include `_drafts/`. Needs network access to github.com to download the theme.
 
 There are no tests or linters.
 
 ## Content architecture
 
-- `_posts/` — blog posts and lessons, named `YYYY-MM-DD-slug.md`. Every post sets an explicit `permalink:` (e.g. `/lesson-functions/`), so URLs are decoupled from filenames. Header/teaser images conventionally live in `assets/images/YYYY/MM/DD/`. Defaults in `_config.yml` already give posts the `single` layout, author profile, Disqus comments, read time, and sharing — don't repeat those in front matter.
+- `_posts/` — blog posts and lessons, named `YYYY-MM-DD-slug.md`. Every post sets an explicit `permalink:` (e.g. `/lesson-functions/`), so URLs are decoupled from filenames. Header/teaser images conventionally live in `assets/images/YYYY/MM/DD/`. Defaults in `_config.yml` already give posts the `single` layout, author profile, Disqus comments, read time, sharing, and related posts (and pages the `single` layout with author profile) — don't repeat those in front matter.
 - `_pages/` — static pages (about, contact, 404, archives), each with an explicit `permalink`.
 - `_drafts/` — unpublished drafts.
 
@@ -33,4 +41,4 @@ Some lessons link Colab notebooks stored under `assets/colab/`.
 
 ## Site configuration
 
-`_config.yml` holds all site settings (Disqus, Algolia/lunr search, analytics, author profile in combination with `_data/author.yml`). It is not hot-reloaded — restart `jekyll serve` after changing it.
+`_config.yml` holds all site settings (Disqus, Algolia/lunr search, analytics, author profile and its links, footer links). It is not hot-reloaded — restart `jekyll serve` after changing it.
