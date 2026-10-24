@@ -107,6 +107,8 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://github.com/aurelio-amerio"
+    - "https://www.linkedin.com/in/aurelio-amerio/"
 
 # Analytics
 analytics:
@@ -121,7 +123,7 @@ analytics:
 author:
   name             : "Aurelio Amerio"
   avatar           : "/assets/images/avatar/foto_profilo2.jpg"
-  bio              : "PhD student at the Instituto de Física Corpuscular (Valencia). I love physics, machine learning, drinking tea and walking in the mountains."
+  bio              : "Postdoctoral researcher at the University of Valencia (Spain). I love physics, machine learning, drinking tea and walking in the mountains."
   location         : "Valencia"
   email            :
   links:
@@ -140,6 +142,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/aurelio-amerio"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/aurelio-amerio/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -156,6 +161,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/aurelio-amerio"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/aurelio-amerio/"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
