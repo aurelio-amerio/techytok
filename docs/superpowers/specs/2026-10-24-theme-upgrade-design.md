@@ -114,8 +114,11 @@ builds (remove it from `.gitignore`).
 
 ## Builder calls (Claude's, flagged for the owner)
 
-- **MathJax moves from the legacy v2 CDN to MathJax 3 on jsDelivr.** Equations should
-  render the same; revert to the old script tag if anything looks off.
+- **MathJax stays on version 2, loaded directly from cdnjs (2.7.9, same `TeX-MML-AM_CHTML`
+  config).** The legacy `cdn.mathjax.org` URL now serves a shim that redirects to 2.7.1 on
+  cdnjs, so this removes a hop without changing behavior. MathJax 3 was considered and
+  rejected: the four math posts use kramdown `$$` blocks, which emit `script type="math/tex"`
+  tags that MathJax 3 does not render without extra configuration.
 - **Dead code is deleted rather than carried** (contact-form include, card include,
   cards stylesheet, author.yml). All of it stays in git history.
 - **Local build uses the `github-pages` gem** so the preview matches what GitHub Pages
