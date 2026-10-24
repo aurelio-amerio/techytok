@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 The source for https://techytok.com — Aurelio Amerio's personal blog and the "From zero to Julia" tutorial series. It is a Jekyll site on the Minimal Mistakes theme, loaded at build time via `remote_theme: "mmistakes/minimal-mistakes@4.28.1"` in `_config.yml` (jekyll-remote-theme, bundled in the `github-pages` gem). The theme's files are **not** vendored: any repo file at the same path as a theme file overrides it. The overrides are:
 
-- `_includes/head/custom.html` (MathJax 2.7.9 from cdnjs, favicons), `_includes/footer/custom.html` (footer links)
+- `_includes/head/custom.html` (MathJax 4 from jsDelivr, favicons), `_includes/footer/custom.html` (footer links)
 - `_includes/archive-single.html` (list cards: teaser image + full excerpt + "Read more"), `_includes/archive-single-plain.html` (verbatim theme card, used by related posts and the course grid), `_includes/page__related.html` (uses the plain card)
 - `_includes/post_collection.html` (course landing grid), `_layouts/single.html` (adds the `acknowledgements` front-matter section)
 - `assets/css/main.scss` (theme imports + `_sass/_add_line_numbers.scss`), `assets/js/add_line_number.js` (loaded via `after_footer_scripts`)
