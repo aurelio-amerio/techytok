@@ -1,19 +1,15 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
+search: false
 ---
 
 @charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+@import "add_line_numbers"; // numbered code blocks (site override)
 
-//cards
-// @import "cards/abstracts/card_variables";
-// @import "cards/abstracts/card_mixins";
-// @import "cards/card";
-
-//tinyletter
-@import "tinyletter/tinyletter";
-
-//code line numbered
-@import "add_line_numbers";
+// keep the 4.17.2 spacing between teaser and title in list cards (site override)
+.list__item .archive__item-title {
+  margin-top: 0.5em;
+}
